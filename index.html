@@ -1,0 +1,2786 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- SEO Meta Tags -->
+    <title>AquaDiagnostyka | Badanie Wody - Nowy Sącz</title>
+    <meta name="description" content="AquaDiagnostyka - profesjonalne badania mikrobiologiczne i fizykochemiczne wody w Nowym Sączu. Akredytowane laboratorium, szybkie wyniki, darmowa konsultacja. Zadzwoń!">
+    <meta name="keywords" content="badanie wody, analiza wody, badanie wody pitnej, badanie wody studni, badanie mikrobiologiczne wody, badanie fizykochemiczne wody, laboratorium wody Nowy Sącz, jakość wody Małopolska">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aquadiagnostyka.pl/">
+    <meta property="og:title" content="AquaDiagnostyka | Badanie Wody - Nowy Sącz">
+    <meta property="og:description" content="Profesjonalne badania mikrobiologiczne i fizykochemiczne wody. Akredytowane laboratorium w Nowym Sączu. Szybkie wyniki i fachowa interpretacja.">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%23050505'/%3E%3Ctext x='50' y='65' font-size='44' fill='%230099ff' text-anchor='middle' font-weight='800' font-family='sans-serif'%3EAD%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "AquaDiagnostyka",
+        "description": "Profesjonalne laboratorium badania wody w Nowym Sączu. Wykonujemy analizy mikrobiologiczne i fizykochemiczne wody pitnej, studnianej, basenowej i przemysłowej. Szybkie terminy, akredytowane metody, fachowa interpretacja wyników.",
+        "telephone": "+48181234567",
+        "email": "kontakt@aquadiagnostyka.pl",
+        "url": "https://aquadiagnostyka.pl",
+        "image": "https://aquadiagnostyka.pl/og-image.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Lwowska 12",
+            "addressLocality": "Nowy Sącz",
+            "postalCode": "33-300",
+            "addressRegion": "małopolskie",
+            "addressCountry": "PL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "49.6218",
+            "longitude": "20.6920"
+        },
+        "areaServed": [
+            "Nowy Sącz", "Stary Sącz", "Gorlice", "Limanowa", "Krynica-Zdrój", "Muszyna", "Piwniczna-Zdrój", "Grybów", "Łącko", "Podegrodzie"
+        ],
+        "openingHours": ["Mo-Fr 07:30-16:00", "Sa 08:00-12:00"],
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Usługi badania wody",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Badanie mikrobiologiczne wody"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Badanie fizykochemiczne wody"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Analiza wody pitnej"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Badanie wody ze studni"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Monitoring jakości wody"}}
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        /* ===== ZMIENNE ===== */
+        :root {
+            --primary: #0099ff;
+            --primary-glow: rgba(0, 153, 255, 0.5);
+            --primary-dark: #0077cc;
+            --dark-bg: #050508;
+            --card-bg: #0d1117;
+            --text-white: #ffffff;
+            --text-gray: #9ca3af;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== PROGRESS BAR ===== */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 2000;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            box-shadow: 0 0 15px var(--primary-glow);
+            transition: width 0.1s linear;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: rgba(5, 5, 8, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 14px 5%;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 0 15px var(--primary-glow);
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 25px var(--primary-glow);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-title-center {
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 60px;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .section-subtitle-center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .accent {
+            color: var(--primary);
+        }
+
+        /* ===== REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(0, 153, 255, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.15;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hero-badge {
+            background: rgba(0, 153, 255, 0.1);
+            border: 1px solid rgba(0, 153, 255, 0.25);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .cta-primary {
+            background: var(--primary);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 25px var(--primary-glow);
+            transition: var(--transition);
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px var(--primary-glow);
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-primary:hover::before {
+            left: 100%;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ===== TRUST BADGES ===== */
+        .trust-section {
+            padding: 60px 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .trust-badge {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .trust-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .trust-label {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .about-feature {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+        }
+
+        .about-feature:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 25px rgba(0, 153, 255, 0.1);
+        }
+
+        .about-feature-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .about-feature h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .about-feature p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 0;
+        }
+
+        /* ===== CARDS / SERVICES ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 153, 255, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 153, 255, 0.1);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .card-features {
+            list-style: none;
+        }
+
+        .card-features li {
+            color: var(--text-gray);
+            padding: 6px 0;
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .card-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        /* ===== PROCESS / STEPS ===== */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), rgba(0, 153, 255, 0.1));
+        }
+
+        .step {
+            display: flex;
+            gap: 30px;
+            padding: 30px 0;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* ===== GALLERY / REALIZACJE ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 153, 255, 0.1);
+            border-color: rgba(0, 153, 255, 0.3);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .gallery-info {
+            padding: 25px;
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            background: rgba(0, 153, 255, 0.1);
+            color: var(--primary);
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .gallery-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .gallery-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===== REVIEWS ===== */
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .rating-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .rating-big {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+        }
+
+        .rating-count {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            border-color: rgba(0, 153, 255, 0.2);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .review-header h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .review-meta {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.8rem;
+        }
+
+        /* ===== CALCULATOR ===== */
+        .calc-section {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .calc-group {
+            margin-bottom: 25px;
+        }
+
+        .calc-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .calc-group select {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--dark-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .calc-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .calc-checkboxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .calc-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--dark-bg);
+            padding: 12px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+        }
+
+        .calc-checkbox:hover {
+            border-color: var(--primary);
+        }
+
+        .calc-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            margin: 0;
+        }
+
+        .calc-checkbox span {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .calc-result {
+            background: var(--dark-bg);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px solid rgba(0, 153, 255, 0.2);
+        }
+
+        .calc-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .calc-range {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===== LEAD MAGNET ===== */
+        .leadmagnet {
+            background: linear-gradient(135deg, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0.02) 100%);
+            border: 1px solid rgba(0, 153, 255, 0.2);
+            border-radius: 24px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .leadmagnet-benefits {
+            list-style: none;
+        }
+
+        .leadmagnet-benefits li {
+            padding: 10px 0;
+            font-size: 1.05rem;
+            color: var(--text-gray);
+        }
+
+        .leadmagnet-benefits li strong {
+            color: var(--text-white);
+        }
+
+        .leadmagnet-form input {
+            width: 100%;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background: var(--dark-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .leadmagnet-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .leadmagnet-form button {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .leadmagnet-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--primary-glow);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 16px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(0, 153, 255, 0.2);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 28px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            gap: 20px;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 28px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 28px 24px;
+        }
+
+        .faq-answer p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 153, 255, 0.08) 0%, transparent 70%);
+            border-radius: 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .cta-trust {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-form button[type="submit"] {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 0 20px var(--primary-glow);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--primary-glow);
+        }
+
+        .form-status {
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .form-status.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: rgba(0, 153, 255, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .contact-info-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .contact-info-item p,
+        .contact-info-item a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .contact-info-item a:hover {
+            color: var(--primary);
+        }
+
+        .hours-table {
+            width: 100%;
+        }
+
+        .hours-table tr td {
+            padding: 6px 0;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .hours-table tr td:first-child {
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--card-bg);
+            padding: 60px 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-gray);
+            line-height: 2;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            line-height: 1.8;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 3000;
+            padding: 20px;
+            overflow-y: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 650px;
+            width: 100%;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--dark-bg);
+            padding: 100px 40px 40px;
+            transition: right 0.4s ease;
+            z-index: 999;
+            border-left: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 18px 0;
+            text-decoration: none;
+            transition: color 0.3s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 998;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .leadmagnet {
+                grid-template-columns: 1fr;
+                padding: 40px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.05rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .trust-badges {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .trust-number {
+                font-size: 2.2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .calc-section {
+                padding: 30px 20px;
+            }
+
+            .calc-checkboxes {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container::before {
+                left: 30px;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .rating-big {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .cta-primary, .cta-secondary {
+                padding: 16px 32px;
+                font-size: 0.95rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .leadmagnet {
+                padding: 30px 20px;
+            }
+        }
+
+        /* ===== SELECTION COLOR ===== */
+        ::selection {
+            background: rgba(0, 153, 255, 0.3);
+            color: white;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ===== FLOATING PHONE BUTTON ===== */
+        .float-phone {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 900;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .float-phone-tooltip {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 153, 255, 0.3);
+            border-radius: 14px;
+            padding: 16px 22px;
+            display: none;
+            animation: tooltipIn 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            white-space: nowrap;
+        }
+
+        .float-phone-tooltip.active {
+            display: block;
+        }
+
+        @keyframes tooltipIn {
+            from { opacity: 0; transform: translateY(10px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .float-phone-tooltip a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s;
+        }
+
+        .float-phone-tooltip a:hover {
+            color: var(--primary);
+        }
+
+        .float-phone-tooltip .phone-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            font-weight: 400;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .float-phone-btn {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 25px var(--primary-glow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .float-phone-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 35px var(--primary-glow);
+        }
+
+        .float-phone-btn svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .float-phone-btn .phone-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            animation: phoneRing 2s ease-out infinite;
+        }
+
+        @keyframes phoneRing {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+
+        /* ===== SOCIAL PROOF NOTIFICATIONS ===== */
+        .social-proof {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 900;
+            pointer-events: none;
+        }
+
+        .social-proof-toast {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            pointer-events: auto;
+            max-width: 340px;
+        }
+
+        .social-proof-toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .social-proof-toast.hide {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .sp-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .sp-icon.call {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .sp-icon.order {
+            background: rgba(0, 153, 255, 0.15);
+        }
+
+        .sp-text {
+            flex: 1;
+        }
+
+        .sp-text strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: var(--text-white);
+        }
+
+        .sp-text span {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        .sp-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 0 0 8px;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+
+        .sp-close:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .float-phone {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-phone-btn {
+                width: 56px;
+                height: 56px;
+            }
+
+            .float-phone-btn svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .social-proof {
+                bottom: 20px;
+                left: 15px;
+                right: 90px;
+            }
+
+            .social-proof-toast {
+                max-width: none;
+            }
+
+            .float-phone-tooltip {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <a href="#" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="42" height="42" rx="10" fill="#0d1117"/>
+                    <path d="M12 28 L21 10 L30 28" stroke="#0099ff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="21" cy="24" r="4" fill="#0099ff" opacity="0.6"/>
+                    <path d="M16 30 Q21 34 26 30" stroke="#0099ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span>AquaDiagnostyka</span>
+        </a>
+        <div class="nav-links">
+            <a href="#o-nas">O nas</a>
+            <a href="#uslugi">Uslugi</a>
+            <a href="#proces">Jak dzialamy</a>
+            <a href="#realizacje">Realizacje</a>
+            <a href="#opinie">Opinie</a>
+            <a href="#faq">FAQ</a>
+            <a href="#kontakt" class="nav-cta">Kontakt</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#o-nas">O nas</a>
+        <a href="#uslugi">Uslugi</a>
+        <a href="#proces">Jak dzialamy</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kalkulator">Kalkulator ceny</a>
+        <a href="#kontakt">Kontakt</a>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-content reveal">
+            <div class="hero-badges">
+                <span class="hero-badge">Akredytowane metody</span>
+                <span class="hero-badge">Wyniki w 48h</span>
+                <span class="hero-badge">Darmowa konsultacja</span>
+            </div>
+            <h1>Profesjonalne <span class="accent">Badanie Wody</span> w Nowym Saczu</h1>
+            <p class="hero-subtitle">Kompleksowe analizy mikrobiologiczne i fizykochemiczne wody pitnej, studnianej i przemyslowej. Pewnosc, ze woda ktora pijesz jest bezpieczna.</p>
+            <div class="hero-cta">
+                <a href="#kontakt" class="cta-primary">Zamow badanie wody</a>
+                <a href="tel:+48181234567" class="cta-secondary">Zadzwon: 18 123 45 67</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TRUST BADGES ==================== -->
+    <div class="trust-section">
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <div class="trust-number" data-count="12">0</div>
+                <div class="trust-label">Lat doswiadczenia</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-number" data-count="3500">0</div>
+                <div class="trust-label">Wykonanych analiz</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-number" data-count="48">0</div>
+                <div class="trust-label">Godzin na wynik</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-number">4.9</div>
+                <div class="trust-label">Ocena Google</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== O NAS ==================== -->
+    <section id="o-nas">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <span class="section-label">O nas</span>
+                    <h2 class="section-title">Wiemy, co kryje sie w Twojej <span class="accent">wodzie</span></h2>
+                    <p>AquaDiagnostyka to laboratorium analityczne z ponad 12-letnim doswiadczeniem w badaniu jakosci wody na terenie Sadecczyzny i calej Malopolski. Od 2014 roku pomagamy mieszkancom, firmom i instytucjom miec pewnosc, ze woda z ktorej korzystaja spelnia wszystkie normy bezpieczenstwa.</p>
+                    <p>Nasz zespol tworca wykwalifikowani analitycy i chemicy, ktorzy korzystaja z nowoczesnego sprzetu laboratoryjnego i akredytowanych metod badawczych. Kazda proba wody traktujemy z najwyzsza starannoscia - od momentu pobrania az po szczegolowa interpretacje wynikow.</p>
+                    <p>Obslugujemy klientow z Nowego Sacza, Starego Sacza, Gorlic, Limanowej, Krynicy-Zdroj i okolicznych gmin. Oferujemy rowniez dojazd do klienta w celu profesjonalnego pobrania probek wody. Wyniki dostarczamy juz w ciagu 48 godzin.</p>
+                </div>
+                <div class="about-features reveal">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">🔬</div>
+                        <h4>Akredytowane metody</h4>
+                        <p>Badania zgodne z normami PN-EN ISO</p>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">⚡</div>
+                        <h4>Ekspresowe wyniki</h4>
+                        <p>Standardowe analizy w 24-48h</p>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">🚗</div>
+                        <h4>Dojazd do klienta</h4>
+                        <p>Profesjonalne pobranie probek</p>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">📋</div>
+                        <h4>Pelna interpretacja</h4>
+                        <p>Zrozumiale omowienie wynikow</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== USLUGI ==================== -->
+    <section id="uslugi" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">Uslugi</span>
+                <h2 class="section-title section-title-center">Kompleksowe <span class="accent">badania wody</span></h2>
+                <p class="section-subtitle section-subtitle-center">Oferujemy pelny zakres analiz laboratoryjnych wody - od podstawowych badan fizykochemicznych po zaawansowane testy mikrobiologiczne.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card reveal">
+                    <div class="card-icon">🦠</div>
+                    <h3>Badania mikrobiologiczne</h3>
+                    <p>Wykrywamy obecnosc bakterii, wirusow i grzybow w wodzie. Kluczowe badanie dla bezpieczenstwa zdrowotnego.</p>
+                    <ul class="card-features">
+                        <li>Escherichia coli i bakterie grupy coli</li>
+                        <li>Enterokoki, Clostridium perfringens</li>
+                        <li>Ogolna liczba mikroorganizmow</li>
+                        <li>Legionella pneumophila</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">⚗️</div>
+                    <h3>Badania fizykochemiczne</h3>
+                    <p>Kompleksowa analiza parametrow fizycznych i chemicznych wody - sklad mineralny, twardosc, pH i wiele wiecej.</p>
+                    <ul class="card-features">
+                        <li>pH, twardosc, mętnosc, barwa</li>
+                        <li>Azotany, azotyny, amoniak</li>
+                        <li>Zelazo, mangan, chlorki, siarczany</li>
+                        <li>Przewodnosc i utlenialnosc</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🚰</div>
+                    <h3>Analiza wody pitnej</h3>
+                    <p>Pelne badanie wody z kranu pod katem zgodnosci z Rozporzadzeniem Ministra Zdrowia dotyczacym jakosci wody.</p>
+                    <ul class="card-features">
+                        <li>Monitoring parametrow grupy A</li>
+                        <li>Monitoring parametrow grupy B</li>
+                        <li>Ocena zgodnosci z normami</li>
+                        <li>Raport z rekomendacjami</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">💧</div>
+                    <h3>Badanie wody studnianej</h3>
+                    <p>Specjalistyczna analiza wody ze studni glebinowych i kopanych. Niezbedne do oceny przydatnosci do spozycia.</p>
+                    <ul class="card-features">
+                        <li>Pelny panel mikrobiologiczny</li>
+                        <li>Metale ciezkie (olow, kadm, arsen)</li>
+                        <li>Pestycydy i azotany</li>
+                        <li>Atesty do celow urzedowych</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🏊</div>
+                    <h3>Woda basenowa i uzdatnianie</h3>
+                    <p>Kontrola jakosci wody w basenach, uzdrowiskach i instalacjach wodnych. Zgodnosc z wymaganiami sanitarnymi.</p>
+                    <ul class="card-features">
+                        <li>Chlor wolny i zwiazany</li>
+                        <li>Parametry mikrobiologiczne</li>
+                        <li>Kontrola skutecznosci uzdatniania</li>
+                        <li>Regularne monitoringi</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">🏭</div>
+                    <h3>Badania dla przemyslu</h3>
+                    <p>Analizy wody technologicznej, sciekow i wody chlodniczej. Spełnianie wymagan srodowiskowych i technologicznych.</p>
+                    <ul class="card-features">
+                        <li>Scieki przemyslowe i komunalne</li>
+                        <li>Woda chlodnicza i kotlowa</li>
+                        <li>Monitoring srodowiskowy</li>
+                        <li>Raporty dla WIOS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROCES ==================== -->
+    <section id="proces">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">Proces</span>
+                <h2 class="section-title section-title-center">Jak <span class="accent">dzialamy</span>?</h2>
+                <p class="section-subtitle section-subtitle-center">Od kontaktu do wynikow - prosty i przejrzysty proces badania wody, ktory nie wymaga od Ciebie specjalistycznej wiedzy.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step reveal">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Kontakt i konsultacja</h3>
+                        <p>Zadzwon lub wypelnij formularz. Nasz specjalista pomoze dobrac odpowiedni zakres badan do Twoich potrzeb - bezplatnie.</p>
+                    </div>
+                </div>
+                <div class="step reveal">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Pobranie probki wody</h3>
+                        <p>Mozesz dostarczyc probke do laboratorium samodzielnie lub zamowic nasz dojazd. Zapewniamy sterylne pojemniki i instrukcje pobrania.</p>
+                    </div>
+                </div>
+                <div class="step reveal">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Analiza laboratoryjna</h3>
+                        <p>Twoja probka trafia do naszego laboratorium, gdzie doswiadczeni analitycy przeprowadzaja badania zgodnie z akredytowanymi metodami.</p>
+                    </div>
+                </div>
+                <div class="step reveal">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Raport z wynikami</h3>
+                        <p>Otrzymujesz szczegolowe sprawozdanie z badania w ciagu 24-48h - elektronicznie lub w formie papierowej z pieczecia laboratorium.</p>
+                    </div>
+                </div>
+                <div class="step reveal">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Konsultacja wynikow</h3>
+                        <p>Nasz ekspert omowi z Toba wyniki, wyjasni co oznaczaja poszczegolne parametry i doradzi ewentualne dzialania naprawcze.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== REALIZACJE ==================== -->
+    <section id="realizacje" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">Realizacje</span>
+                <h2 class="section-title section-title-center">Nasze <span class="accent">projekty</span></h2>
+                <p class="section-subtitle section-subtitle-center">Wspolpracujemy z gminami, spoldzielniami, firmami i klientami indywidualnymi. Oto wybrane realizacje z ostatnich lat.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card reveal">
+                    <div class="gallery-img" style="background:linear-gradient(135deg,#0a1628,#0d1f3c); display:flex; align-items:center; justify-content:center;">
+                        <span style="font-size:3.5rem;">🏘️</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Wodociag gminny</span>
+                        <h4>Monitoring wody - Gmina Podegrodzie</h4>
+                        <p>Regularne badania sieci wodociagowej - 24 punkty pomiarowe</p>
+                    </div>
+                </div>
+                <div class="gallery-card reveal">
+                    <div class="gallery-img" style="background:linear-gradient(135deg,#0a1628,#0d1f3c); display:flex; align-items:center; justify-content:center;">
+                        <span style="font-size:3.5rem;">🏠</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Studnia prywatna</span>
+                        <h4>Badanie studni glebinowej - Lacko</h4>
+                        <p>Pelna analiza fizykochemiczna i mikrobiologiczna dla nowej studni</p>
+                    </div>
+                </div>
+                <div class="gallery-card reveal">
+                    <div class="gallery-img" style="background:linear-gradient(135deg,#0a1628,#0d1f3c); display:flex; align-items:center; justify-content:center;">
+                        <span style="font-size:3.5rem;">🏊</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Obiekt sportowy</span>
+                        <h4>Kontrola wody basenowej - OSiR Nowy Sacz</h4>
+                        <p>Comiesięczny monitoring parametrow wody w krytej plywalniaz</p>
+                    </div>
+                </div>
+                <div class="gallery-card reveal">
+                    <div class="gallery-img" style="background:linear-gradient(135deg,#0a1628,#0d1f3c); display:flex; align-items:center; justify-content:center;">
+                        <span style="font-size:3.5rem;">🏭</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Przemysl</span>
+                        <h4>Analiza sciekow - zaklad produkcyjny Gorlice</h4>
+                        <p>Badanie sciekow przemyslowych na potrzeby raportu srodowiskowego</p>
+                    </div>
+                </div>
+                <div class="gallery-card reveal">
+                    <div class="gallery-img" style="background:linear-gradient(135deg,#0a1628,#0d1f3c); display:flex; align-items:center; justify-content:center;">
+                        <span style="font-size:3.5rem;">🏥</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Sluzba zdrowia</span>
+                        <h4>Badanie Legionelli - szpital powiatowy</h4>
+                        <p>Kontrola obecnosci Legionella pneumophila w instalacji cieplej wody</p>
+                    </div>
+                </div>
+                <div class="gallery-card reveal">
+                    <div class="gallery-img" style="background:linear-gradient(135deg,#0a1628,#0d1f3c); display:flex; align-items:center; justify-content:center;">
+                        <span style="font-size:3.5rem;">🏫</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Instytucja publiczna</span>
+                        <h4>Monitoring jakosci - szkoly w gminie Grybow</h4>
+                        <p>Cykliczne badanie wody pitnej w placowkach oswiatowych</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== OPINIE ==================== -->
+    <section id="opinie">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">Opinie</span>
+                <h2 class="section-title section-title-center">Co mowia nasi <span class="accent">klienci</span>?</h2>
+            </div>
+            <div class="reviews-header reveal">
+                <div class="rating-display">
+                    <div class="rating-big">4.9</div>
+                    <div>
+                        <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="rating-count">127 opinii w Google Maps</div>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <div class="review-header">
+                        <h4>Marek W.</h4>
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <p class="review-text">"Kupilismy dzialke z wlasna studnia i chcielismy sie upewnic, ze woda nadaje sie do picia. AquaDiagnostyka przeprowadzila pelne badanie i szczegolowo wyjasnila nam wyniki. Profesjonalna obsluga."</p>
+                    <p class="review-meta">3 miesiace temu &bull; Google Maps</p>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-header">
+                        <h4>Anna K.</h4>
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <p class="review-text">"Szybkie wyniki, zrozumiale sprawozdanie i bardzo pomocna konsultacja telefoniczna. Okazalo sie, ze nasza studnia ma podwyzszone azotany - doradzona instalacja filtracyjna rozwiazala problem."</p>
+                    <p class="review-meta">2 miesiace temu &bull; Google Maps</p>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-header">
+                        <h4>Tomasz R.</h4>
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <p class="review-text">"Korzystamy z uslug AquaDiagnostyki od kilku lat - regularne monitoring wodociagu gminnego. Rzetelne wyniki, terminowosc i kompetentny zespol. Polecam kazdej instytucji."</p>
+                    <p class="review-meta">1 miesiac temu &bull; Google Maps</p>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-header">
+                        <h4>Elzbieta M.</h4>
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <p class="review-text">"Potrzebowalam wynikow badan wody do pozwolenia na budowe. Sprawnie, szybko i bez problemow. Wyniki byly gotowe nastepnego dnia. Bardzo mila obsluga."</p>
+                    <p class="review-meta">5 miesiecy temu &bull; Google Maps</p>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-header">
+                        <h4>Piotr Z.</h4>
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <p class="review-text">"Zamowilem badanie wody z kranu po wymianie rur w domu. Pan, ktory przyjechal pobrac probke, byl bardzo rzeczowy i wyjasnil na co zwrocic uwage. Wynik okazal sie w normie - ulga!"</p>
+                    <p class="review-meta">4 miesiace temu &bull; Google Maps</p>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-header">
+                        <h4>Jadwiga S.</h4>
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    </div>
+                    <p class="review-text">"Solidne laboratorium z kompetentnym personelem. Jedyne co bym zmienila to rozszerzenie godzin otwarcia w soboty. Poza tym super obsluga i przystepne ceny."</p>
+                    <p class="review-meta">6 miesiecy temu &bull; Google Maps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KALKULATOR ==================== -->
+    <section id="kalkulator" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">Kalkulator</span>
+                <h2 class="section-title section-title-center">Sprawdz orientacyjna <span class="accent">cene badania</span></h2>
+                <p class="section-subtitle section-subtitle-center">Dobierz zakres analizy do swoich potrzeb. Ostateczna cene potwierdzimy po konsultacji.</p>
+            </div>
+            <div class="calc-section reveal">
+                <div class="calc-group">
+                    <label>Typ zrodla wody</label>
+                    <select id="calcSource">
+                        <option value="1">Studnia (kopana lub glebinowa)</option>
+                        <option value="1.1">Wodociag / woda z kranu</option>
+                        <option value="1.2">Basen / jacuzzi</option>
+                        <option value="1.3">Woda przemyslowa / scieki</option>
+                    </select>
+                </div>
+                <div class="calc-group">
+                    <label>Zakres badania</label>
+                    <select id="calcScope">
+                        <option value="150">Podstawowy (pH, twardosc, barwa, mętnosc)</option>
+                        <option value="280">Rozszerzony fizykochemiczny (15+ parametrow)</option>
+                        <option value="180">Mikrobiologiczny (E.coli, enterokoki, OLM)</option>
+                        <option value="420">Pelny (fizykochemia + mikrobiologia)</option>
+                        <option value="650">Kompleksowy (pelny + metale ciezkie)</option>
+                    </select>
+                </div>
+                <div class="calc-group">
+                    <label>Dodatkowe opcje</label>
+                    <div class="calc-checkboxes">
+                        <label class="calc-checkbox">
+                            <input type="checkbox" value="80" id="calcLegionella">
+                            <span>Legionella (+80 zl)</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox" value="120" id="calcPestycydy">
+                            <span>Pestycydy (+120 zl)</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox" value="60" id="calcDojazd">
+                            <span>Dojazd i pobranie (+60 zl)</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox" value="50" id="calcExpress">
+                            <span>Tryb ekspres 24h (+50 zl)</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="calc-price" id="calcPrice">150 zl</div>
+                    <div class="calc-range" id="calcRange">Zakres: 120 - 180 zl</div>
+                    <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 12px;">Cena orientacyjna. Dokladna kalkulacja po konsultacji.</p>
+                </div>
+                <div style="text-align:center; margin-top:25px;">
+                    <a href="#kontakt" class="cta-primary">Zamow badanie</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LEAD MAGNET ==================== -->
+    <section id="poradnik">
+        <div class="container">
+            <div class="leadmagnet reveal">
+                <div>
+                    <span class="section-label">Darmowy poradnik</span>
+                    <h2 class="section-title" style="font-size:2rem;">7 rzeczy, ktore musisz wiedziec o <span class="accent">wodzie ze studni</span></h2>
+                    <ul class="leadmagnet-benefits">
+                        <li>&#10003; <strong>Jak czesto badac wode</strong> - harmonogram badan dla wlascicieli studni</li>
+                        <li>&#10003; <strong>Najczestsze zanieczyszczenia</strong> - na co zwrocic szczegolna uwage</li>
+                        <li>&#10003; <strong>Jak prawidlowo pobrac probke</strong> - aby wyniki byly wiarygodne</li>
+                        <li>&#10003; <strong>Co zrobic gdy woda nie spelnia norm</strong> - praktyczne rozwiazania</li>
+                    </ul>
+                </div>
+                <div class="leadmagnet-form">
+                    <h3 style="font-size:1.3rem; margin-bottom:20px;">Pobierz darmowy PDF</h3>
+                    <form action="https://formspree.io/f/TWOJ_KOD" method="POST">
+                        <input type="text" name="name" placeholder="Twoje imie" required>
+                        <input type="email" name="email" placeholder="Twoj adres email" required>
+                        <input type="hidden" name="_subject" value="Pobranie poradnika PDF - AquaDiagnostyka">
+                        <button type="submit">Wyslij mi poradnik</button>
+                    </form>
+                    <p style="color: var(--text-gray); font-size: 0.8rem; margin-top: 12px; text-align:center;">Nie wysylamy spamu. Mozesz sie wypisac w kazdej chwili.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title section-title-center">Najczesciej zadawane <span class="accent">pytania</span></h2>
+                <p class="section-subtitle section-subtitle-center">Odpowiedzi na pytania, ktore najczesciej slyszymy od naszych klientow.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Jak czesto powinienem badac wode ze studni?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Zalecamy badanie wody ze studni co najmniej raz w roku - najlepiej wiosna, po roztopach. Jesli korzystasz ze studni jako jedynego zrodla wody pitnej, warto wykonywac badanie dwa razy w roku (wiosna i jesienia). Dodatkowo badanie jest wskazane po kazdej powodzi, dlugotrwalych opadach lub pracach budowlanych w poblizu studni.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Jak prawidlowo pobrac probke wody?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Najwazniejsze to uzyc sterylnego pojemnika (dostarczamy bezplatnie). Przed pobraniem nalezy przeplukai kran przez ok. 3 minuty, a nastepnie napelnic pojemnik po sam brzeg, unikajac kontaktu z wewnetrzna scianka butelki. Probke nalezy dostarczyc do laboratorium w ciagu 6 godzin od pobrania, przechowujac ja w chlodnym miejscu. Mozemy rowniez przyjechac i pobrac probke za Ciebie.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Ile czasu trwa oczekiwanie na wyniki?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Standardowe badanie fizykochemiczne realizujemy w ciagu 24 godzin. Badanie mikrobiologiczne wymaga hodowli bakterii, dlatego wyniki sa dostepne po 48 godzinach. Pelne badanie (fizykochemia + mikrobiologia) zajmuje 48h. Oferujemy rowniez tryb ekspresowy za dodatkowa oplata - wyniki fizykochemiczne tego samego dnia.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Czy wyniki badan sa uznawane urzedowo?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tak. Nasze sprawozdania z badan sa pelnowarosciowymi dokumentami, ktore mozna przedlozyc w urzedach, przy odbiorze budynku, do celow sanepidowskich oraz w postepowaniach administracyjnych. Stosujemy akredytowane metody badawcze zgodne z normami PN-EN ISO, a kazde sprawozdanie jest opatrzone pieczatka laboratorium i podpisem kierownika.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Ile kosztuje badanie wody?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ceny zaleza od zakresu badania. Podstawowe badanie fizykochemiczne zaczyna sie od ok. 150 zl. Badanie mikrobiologiczne to koszt ok. 180 zl. Pelne badanie (oba zakresy) kosztuje ok. 420 zl. Skorzystaj z naszego kalkulatora powyzej, aby poznac orientacyjna cene, lub skontaktuj sie z nami - cheinie przygotujemy indywidualna wycene.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Co zrobic, jesli wyniki wykazuja przekroczenia norm?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Jesli badanie wykaze przekroczenia dopuszczalnych parametrow, nasz ekspert omowi z Toba sytuacje i doradzi odpowiednie dzialania. W zaleznosci od rodzaju problemu moze to byc dezynfekcja studni, instalacja filtra, wymiana elementow instalacji lub kontakt z odpowiednia sluzba sanitarna. Pomagamy rowniez w doborze urzadzen filtracyjnych i uzdatniajacych.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Czy przyjezydzacie do klienta?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tak, oferujemy usluge dojazdu i profesjonalnego pobrania probek na terenie Nowego Sacza i okolic (do ok. 40 km). Koszt dojazdu to 60 zl. Jest to szczegolnie zalecane przy badaniach mikrobiologicznych, gdzie prawidlowe pobranie probki ma kluczowe znaczenie dla wiarygodnosci wynikow.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Jakie normy obowiazuja dla wody pitnej w Polsce?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Jakosc wody pitnej w Polsce reguluje Rozporzadzenie Ministra Zdrowia z dnia 7 grudnia 2017 r. w sprawie jakosci wody przeznaczonej do spozycia przez ludzi. Okresla ono dopuszczalne wartosci dla kilkudziesieciu parametrow mikrobiologicznych, chemicznych i wskaznikowych. Nasze sprawozdania zawsze odnosza wyniki do obowiazujacych norm, dlatego latwo ocenisz, czy Twoja woda jest bezpieczna.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Czy badacie wode z aquaparków i basenow publicznych?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tak, wykonujemy regularne badania wody basenowej zgodnie z wymaganiami Rozporzadzenia Ministra Zdrowia dotyczacego wymagan dla wody na plywalniach. Sprawdzamy m.in. poziom chloru wolnego i zwiazanego, pH, mętnosc oraz parametry mikrobiologiczne. Oferujemy tez umowy na staly monitoring - comiesięczne lub cotygodniowe badania.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Chcesz miec pewnosc, ze Twoja <span class="accent">woda jest bezpieczna</span>?</h2>
+            <p>Skontaktuj sie z nami juz dzis. Darmowa konsultacja, szybkie wyniki i pelna interpretacja badan. Zadbaj o zdrowie swojej rodziny.</p>
+            <div class="cta-buttons">
+                <a href="#kontakt" class="cta-primary">Zamow badanie wody</a>
+                <a href="tel:+48181234567" class="cta-secondary">Zadzwon: 18 123 45 67</a>
+            </div>
+            <p class="cta-trust">&#10003; Darmowa konsultacja &bull; Wyniki w 48h &bull; Akredytowane metody &bull; Dojazd do klienta</p>
+        </div>
+    </section>
+
+    <!-- ==================== KONTAKT ==================== -->
+    <section id="kontakt" style="background: rgba(0,0,0,0.3);">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">Kontakt</span>
+                <h2 class="section-title section-title-center">Skontaktuj sie z <span class="accent">nami</span></h2>
+                <p class="section-subtitle section-subtitle-center">Wypelnij formularz lub zadzwon - odpowiemy w ciagu kilku godzin. Pomozemy dobrac odpowiedni zakres badan.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form reveal">
+                    <!-- TODO: Zamień TWOJ_KOD na własny ID z formspree.io -->
+                    <form id="contactForm" action="https://formspree.io/f/TWOJ_KOD" method="POST">
+                        <input type="text" name="name" placeholder="Imie i nazwisko" required>
+                        <input type="email" name="email" placeholder="Adres email" required>
+                        <input type="tel" name="phone" placeholder="Numer telefonu" required>
+                        <select name="service" required>
+                            <option value="">Wybierz rodzaj badania</option>
+                            <option value="fizykochemiczne">Badanie fizykochemiczne</option>
+                            <option value="mikrobiologiczne">Badanie mikrobiologiczne</option>
+                            <option value="pelne">Pelne badanie (fizykochemia + mikrobio)</option>
+                            <option value="studnia">Badanie wody ze studni</option>
+                            <option value="basenowe">Badanie wody basenowej</option>
+                            <option value="przemyslowe">Badanie przemyslowe / scieki</option>
+                            <option value="inne">Inne / nie wiem - prosze o doradztwo</option>
+                        </select>
+                        <textarea name="message" placeholder="Opisz swoja potrzebe - np. rodzaj studni, cel badania, liczba punktow pomiarowych..." rows="5" required></textarea>
+                        <input type="hidden" name="_subject" value="Nowe zapytanie ze strony AquaDiagnostyka">
+                        <button type="submit">Wyslij wiadomosc</button>
+                    </form>
+                    <div class="form-status" id="formStatus"></div>
+                </div>
+                <div class="contact-info reveal">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📞</div>
+                        <div>
+                            <h4>Telefon</h4>
+                            <a href="tel:+48181234567">+48 18 123 45 67</a>
+                            <p style="font-size:0.85rem; margin-top:4px;">Pon-Pt: 7:30-16:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:kontakt@aquadiagnostyka.pl">kontakt@aquadiagnostyka.pl</a>
+                            <p style="font-size:0.85rem; margin-top:4px;">Odpowiadamy w ciagu kilku godzin</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📍</div>
+                        <div>
+                            <h4>Adres laboratorium</h4>
+                            <p>ul. Lwowska 12<br>33-300 Nowy Sacz</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🕐</div>
+                        <div>
+                            <h4>Godziny otwarcia</h4>
+                            <table class="hours-table">
+                                <tr><td>Poniedzialek - Piatek</td><td>7:30 - 16:00</td></tr>
+                                <tr><td>Sobota</td><td>8:00 - 12:00</td></tr>
+                                <tr><td>Niedziela</td><td>Zamkniete</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🚗</div>
+                        <div>
+                            <h4>Obszar dzialalnosci</h4>
+                            <p>Nowy Sacz, Stary Sacz, Gorlice, Limanowa, Krynica-Zdroj, Muszyna, Grybow, Lacko i okolice</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <h4>AquaDiagnostyka</h4>
+                <p>Profesjonalne laboratorium badania wody w Nowym Saczu. Od ponad 12 lat pomagamy mieszkancom i firmom Sadecczyzny dbac o jakosc wody i bezpieczenstwo zdrowotne.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Nawigacja</h4>
+                <a href="#o-nas">O nas</a>
+                <a href="#uslugi">Uslugi</a>
+                <a href="#realizacje">Realizacje</a>
+                <a href="#opinie">Opinie</a>
+                <a href="#faq">FAQ</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+            <div class="footer-section">
+                <h4>Uslugi</h4>
+                <a href="#uslugi">Badania mikrobiologiczne</a>
+                <a href="#uslugi">Badania fizykochemiczne</a>
+                <a href="#uslugi">Woda pitna</a>
+                <a href="#uslugi">Woda studniowa</a>
+                <a href="#uslugi">Woda basenowa</a>
+                <a href="#uslugi">Analizy przemyslowe</a>
+            </div>
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+                <a href="tel:+48181234567">Tel: +48 18 123 45 67</a>
+                <a href="mailto:kontakt@aquadiagnostyka.pl">kontakt@aquadiagnostyka.pl</a>
+                <p>ul. Lwowska 12</p>
+                <p>33-300 Nowy Sacz</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 AquaDiagnostyka. Wszelkie prawa zastrzezone.</p>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING PHONE BUTTON ==================== -->
+    <div class="float-phone" id="floatPhone">
+        <div class="float-phone-tooltip" id="phoneTooltip">
+            <span class="phone-label">Zadzwon do nas</span>
+            <a href="tel:+48181234567">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+                +48 18 123 45 67
+            </a>
+        </div>
+        <button class="float-phone-btn" id="phoneBtn" aria-label="Zadzwon">
+            <span class="phone-ring"></span>
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+        </button>
+    </div>
+
+    <!-- ==================== SOCIAL PROOF NOTIFICATIONS ==================== -->
+    <div class="social-proof" id="socialProof">
+        <div class="social-proof-toast" id="spToast">
+            <div class="sp-icon" id="spIcon"></div>
+            <div class="sp-text">
+                <strong id="spTitle"></strong>
+                <span id="spDesc"></span>
+            </div>
+            <button class="sp-close" id="spClose" aria-label="Zamknij">&times;</button>
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        // ===== PROGRESS BAR =====
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+
+        // ===== NAV SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== REVEAL ON SCROLL =====
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        reveals.forEach(reveal => revealObserver.observe(reveal));
+
+        // ===== MOBILE MENU =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMobileMenu() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // ===== ANIMATED COUNTERS =====
+        function animateCounter(element, target, suffix, duration) {
+            duration = duration || 2000;
+            suffix = suffix || '+';
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString('pl-PL') + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString('pl-PL') + suffix;
+                }
+            }, 16);
+        }
+
+        const trustObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('[data-count]').forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-count'));
+                        animateCounter(counter, target, '+', 2000);
+                    });
+                    trustObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.trust-badges').forEach(section => {
+            trustObserver.observe(section);
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ===== CALCULATOR =====
+        function calculatePrice() {
+            const sourceMultiplier = parseFloat(document.getElementById('calcSource').value) || 1;
+            const basePrice = parseInt(document.getElementById('calcScope').value) || 150;
+
+            let total = basePrice * sourceMultiplier;
+
+            document.querySelectorAll('.calc-checkboxes input[type="checkbox"]:checked').forEach(cb => {
+                total += parseFloat(cb.value);
+            });
+
+            total = Math.round(total);
+            const minPrice = Math.floor(total * 0.85);
+            const maxPrice = Math.ceil(total * 1.15);
+
+            document.getElementById('calcPrice').textContent = total.toLocaleString('pl-PL') + ' zl';
+            document.getElementById('calcRange').textContent =
+                'Zakres: ' + minPrice.toLocaleString('pl-PL') + ' - ' + maxPrice.toLocaleString('pl-PL') + ' zl';
+        }
+
+        document.getElementById('calcSource').addEventListener('change', calculatePrice);
+        document.getElementById('calcScope').addEventListener('change', calculatePrice);
+        document.querySelectorAll('.calc-checkboxes input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', calculatePrice);
+        });
+
+        // Initial calculation
+        calculatePrice();
+
+        // ===== FORM HANDLING =====
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                const statusDiv = document.getElementById('formStatus');
+
+                try {
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        statusDiv.className = 'form-status success';
+                        statusDiv.textContent = 'Dziekujemy! Wiadomosc wyslana. Odezwiemy sie wkrotce.';
+                        this.reset();
+                    } else {
+                        throw new Error('Form error');
+                    }
+                } catch (error) {
+                    statusDiv.className = 'form-status error';
+                    statusDiv.textContent = 'Blad wysylki. Sprobuj ponownie lub zadzwon do nas.';
+                }
+
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                    statusDiv.className = 'form-status';
+                }, 8000);
+            });
+        }
+
+        // ===== FLOATING PHONE BUTTON =====
+        (function() {
+            const phoneBtn = document.getElementById('phoneBtn');
+            const phoneTooltip = document.getElementById('phoneTooltip');
+            let tooltipOpen = false;
+
+            phoneBtn.addEventListener('click', function() {
+                tooltipOpen = !tooltipOpen;
+                phoneTooltip.classList.toggle('active', tooltipOpen);
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.float-phone') && tooltipOpen) {
+                    tooltipOpen = false;
+                    phoneTooltip.classList.remove('active');
+                }
+            });
+        })();
+
+        // ===== SOCIAL PROOF NOTIFICATIONS =====
+        (function() {
+            const notifications = [
+                { type: 'call', name: 'Krzysztof z Nowego Sacza', action: 'wlasnie zadzwonil', desc: 'w sprawie badania wody ze studni' },
+                { type: 'order', name: 'Anna z Gorlic', action: 'zamowila badanie', desc: 'analiza fizykochemiczna wody pitnej' },
+                { type: 'call', name: 'Marek z Limanowej', action: 'wlasnie zadzwonil', desc: 'pytanie o badanie mikrobiologiczne' },
+                { type: 'order', name: 'Gmina Podegrodzie', action: 'zamowila monitoring', desc: 'regularne badanie wodociagu gminnego' },
+                { type: 'call', name: 'Ewa z Krynicy-Zdroj', action: 'wlasnie zadzwonila', desc: 'konsultacja wynikow badan' },
+                { type: 'order', name: 'Piotr ze Starego Sacza', action: 'zamowil badanie', desc: 'pelna analiza wody ze studni glebinowej' },
+                { type: 'call', name: 'Tomasz z Grybowa', action: 'wlasnie zadzwonil', desc: 'wycena badania wody basenowej' },
+                { type: 'order', name: 'Monika z Lacka', action: 'zamowila badanie', desc: 'badanie mikrobiologiczne studni' },
+                { type: 'call', name: 'Janusz z Muszyny', action: 'wlasnie zadzwonil', desc: 'pytanie o dojazd i pobranie probki' },
+                { type: 'order', name: 'Szkola w Podegrodziu', action: 'zamowila badanie', desc: 'kontrola jakosci wody pitnej' },
+                { type: 'order', name: 'Robert z Nowego Sacza', action: 'zamowil badanie', desc: 'analiza wody po wymianie rur' },
+                { type: 'call', name: 'Agnieszka z Gorlic', action: 'wlasnie zadzwonila', desc: 'pytanie o cene pelnego badania' },
+            ];
+
+            const toast = document.getElementById('spToast');
+            const spIcon = document.getElementById('spIcon');
+            const spTitle = document.getElementById('spTitle');
+            const spDesc = document.getElementById('spDesc');
+            const spClose = document.getElementById('spClose');
+
+            let currentTimeout = null;
+            let dismissed = false;
+            let shownIndices = [];
+
+            function getRandomNotification() {
+                if (shownIndices.length >= notifications.length) {
+                    shownIndices = [];
+                }
+                let idx;
+                do {
+                    idx = Math.floor(Math.random() * notifications.length);
+                } while (shownIndices.includes(idx));
+                shownIndices.push(idx);
+                return notifications[idx];
+            }
+
+            function getTimeAgo() {
+                const times = ['Przed chwila', '2 min temu', '5 min temu', '8 min temu', '12 min temu', '15 min temu'];
+                return times[Math.floor(Math.random() * times.length)];
+            }
+
+            function showNotification() {
+                if (dismissed) return;
+
+                const notif = getRandomNotification();
+                const timeAgo = getTimeAgo();
+
+                spIcon.className = 'sp-icon ' + notif.type;
+                spIcon.textContent = notif.type === 'call' ? '📞' : '💧';
+                spTitle.textContent = notif.name + ' ' + notif.action;
+                spDesc.textContent = notif.desc + ' \u2022 ' + timeAgo;
+
+                toast.classList.remove('hide');
+                toast.classList.add('show');
+
+                currentTimeout = setTimeout(function() {
+                    hideNotification();
+                }, 5000);
+            }
+
+            function hideNotification() {
+                toast.classList.remove('show');
+                toast.classList.add('hide');
+            }
+
+            spClose.addEventListener('click', function() {
+                hideNotification();
+                dismissed = true;
+                if (currentTimeout) clearTimeout(currentTimeout);
+            });
+
+            // Pierwsza notyfikacja po 8 sekundach
+            setTimeout(function() {
+                showNotification();
+                // Nastepne co 15-30 sekund
+                setInterval(function() {
+                    if (!dismissed) {
+                        showNotification();
+                    }
+                }, 15000 + Math.random() * 15000);
+            }, 8000);
+        })();
+    </script>
+
+    <noscript>
+        <style>
+            .reveal {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
+    </noscript>
+
+</body>
+</html>
