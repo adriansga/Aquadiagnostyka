@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 628px; overflow: hidden; }
+
+  .baner {
+    width: 1200px;
+    height: 628px;
+    background: #050508;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Tło — gradient świetlny */
+  .baner::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 700px; height: 700px;
+    background: radial-gradient(ellipse, rgba(0,153,255,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .baner::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; right: 200px;
+    width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(16,185,129,0.10) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* Lewa — treść */
+  .left {
+    flex: 1;
+    padding: 60px 60px 60px 72px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .logo-icon {
+    width: 52px; height: 52px;
+    background: #0099ff;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 800; color: white;
+    letter-spacing: -1px;
+  }
+  .logo-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+
+  .tagline {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0099ff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  h1 span {
+    color: #0099ff;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #9ca3af;
+  }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    flex-shrink: 0;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #0099ff;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 8px;
+    letter-spacing: 0.3px;
+  }
+
+  /* Prawa — duża grafika / liczby */
+  .right {
+    width: 420px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px 40px 40px 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid rgba(0,153,255,0.2);
+    border-radius: 14px;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .card-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .card-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0099ff;
+    line-height: 1;
+  }
+  .card-label {
+    font-size: 13px;
+    color: #9ca3af;
+    font-weight: 500;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .phone-bar {
+    width: 100%;
+    background: rgba(0,153,255,0.08);
+    border: 1px solid rgba(0,153,255,0.3);
+    border-radius: 10px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="baner">
+
+  <div class="left">
+    <div class="logo">
+      <div class="logo-icon">AD</div>
+      <div class="logo-name">AquaDiagnostyka</div>
+    </div>
+
+    <div class="tagline">Nowy Sącz i okolice</div>
+
+    <h1>Badanie wody<br><span>u Ciebie w domu</span></h1>
+
+    <div class="features">
+      <div class="feature"><div class="dot"></div>Próbkę pobieramy osobiście — bez wychodzenia z domu</div>
+      <div class="feature"><div class="dot"></div>Badania mikrobiologiczne i fizykochemiczne</div>
+      <div class="feature"><div class="dot"></div>Sprawozdanie ważne urzędowo (Sanepid)</div>
+      <div class="feature"><div class="dot"></div>Studnie, hotele, restauracje, obiekty</div>
+    </div>
+
+    <div class="cta">📞 696 053 282</div>
+  </div>
+
+  <div class="right">
+    <div class="card">
+      <div class="card-icon">💧</div>
+      <div class="card-text">
+        <div class="card-value">250 zł</div>
+        <div class="card-label">Pełne badanie wody</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <div class="card-text">
+        <div class="card-value">Akredytowane</div>
+        <div class="card-label">laboratorium</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <div class="card-text">
+        <div class="card-value">Dojeżdżamy</div>
+        <div class="card-label">Nowy Sącz i okolice</div>
+      </div>
+    </div>
+    <div class="phone-bar">
+      📞 aquadiagnostyka.pl
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
