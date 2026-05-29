@@ -72,13 +72,9 @@
     <!-- GitHub Pages Analytics (automatyczne) -->
     <!-- GitHub Pages zbiera podstawowe statystyki w Settings → Pages -->
 
-    <!-- Crisp Live Chat (DARMOWY do 2 osób) -->
-    <!-- TODO: Zamień XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX na swój Crisp Website ID z crisp.chat -->
-    <script type="text/javascript">
-        window.$crisp=[];window.CRISP_WEBSITE_ID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
-        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
-        s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
-    </script>
+    <!-- Crisp Live Chat - WYLACZONY: brak skonfigurowanego Website ID powodowal badge "Invalid website" na stronie. -->
+    <!-- Aby wlaczyc: wstaw prawdziwy CRISP_WEBSITE_ID z crisp.chat i przywroc skrypt. -->
+
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -2271,22 +2267,22 @@
                 <div class="step reveal">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Kontakt i konsultacja</h3>
-                        <p>Zadzwon lub wypelnij formularz. Nasz specjalista pomoze dobrac odpowiedni zakres badan do Twoich potrzeb - bezplatnie.</p>
+                        <h3>Zloz zlecenie online</h3>
+                        <p>Wypelnij krotki formularz - imie, adres, zakres badan i telefon. Bez dzwonienia na infolinie, zajmuje minute.</p>
                     </div>
                 </div>
                 <div class="step reveal">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Pobranie probki wody</h3>
-                        <p>Mozesz dostarczyc probke do laboratorium samodzielnie lub zamowic nasz dojazd. Zapewniamy sterylne pojemniki i instrukcje pobrania.</p>
+                        <h3>Oddzwaniamy i umawiamy termin</h3>
+                        <p>Po otrzymaniu zlecenia oddzwaniamy w ciagu kilku godzin - potwierdzamy zakres badan i ustalamy dogodny termin pobrania probki.</p>
                     </div>
                 </div>
                 <div class="step reveal">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Analiza laboratoryjna</h3>
-                        <p>Twoja probka trafia do naszego laboratorium, gdzie doswiadczeni analitycy przeprowadzaja badania zgodnie z akredytowanymi metodami.</p>
+                        <h3>Pobranie probki i analiza</h3>
+                        <p>Przyjezdzamy na umowiony termin i pobieramy probke (sterylne pojemniki) - lub dostarczasz ja sam. Probka trafia do laboratorium i jest badana akredytowanymi metodami.</p>
                     </div>
                 </div>
                 <div class="step reveal">
@@ -2702,32 +2698,34 @@
     <section id="kontakt" style="background: rgba(0,0,0,0.3);">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <span class="section-label">Kontakt</span>
-                <h2 class="section-title section-title-center">Skontaktuj sie z <span class="accent">nami</span></h2>
-                <p class="section-subtitle section-subtitle-center">Wypelnij formularz lub zadzwon - odpowiemy w ciagu kilku godzin. Pomozemy dobrac odpowiedni zakres badan.</p>
+                <span class="section-label">Zamow badanie</span>
+                <h2 class="section-title section-title-center">Zloz <span class="accent">zlecenie</span> online</h2>
+                <p class="section-subtitle section-subtitle-center">Wypelnij krotki formularz - oddzwaniamy w ciagu kilku godzin, doradzamy zakres badan i umawiamy dogodny termin pobrania probki. Bez dzwonienia na infolinie.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-form reveal">
                     <form id="contactForm" action="https://formspree.io/f/mdawepne" method="POST">
-                        <input type="text" name="name" placeholder="np. Jan Kowalski" required aria-label="Imie i nazwisko">
-                        <input type="tel" name="phone" placeholder="np. 600 100 200" required aria-label="Numer telefonu">
-                        <select name="service" required aria-label="Rodzaj badania">
-                            <option value="">Wybierz rodzaj badania</option>
+                        <input type="text" name="imie_nazwisko" placeholder="Imie i nazwisko *" required aria-label="Imie i nazwisko">
+                        <input type="tel" name="telefon" placeholder="Numer telefonu *" required aria-label="Numer telefonu">
+                        <input type="text" name="adres" placeholder="Adres pobrania probki - miejscowosc, ulica *" required aria-label="Adres pobrania probki">
+                        <select name="zakres_badan" required aria-label="Zakres badan">
+                            <option value="">Zakres badan *</option>
                             <option value="fizykochemiczne">Badanie fizykochemiczne</option>
                             <option value="mikrobiologiczne">Badanie mikrobiologiczne</option>
                             <option value="pelne">Pelne badanie (fizykochemia + mikrobio)</option>
                             <option value="studnia">Badanie wody ze studni</option>
                             <option value="basenowe">Badanie wody basenowej</option>
                             <option value="przemyslowe">Badanie przemyslowe / scieki</option>
-                            <option value="inne">Inne / nie wiem - prosze o doradztwo</option>
+                            <option value="inne">Nie wiem - prosze o doradztwo</option>
                         </select>
-                        <textarea name="message" placeholder="Opisz swoja potrzebe - np. rodzaj studni, cel badania, liczba punktow pomiarowych..." rows="5" required aria-label="Wiadomosc"></textarea>
+                        <input type="text" name="firma_nip" placeholder="Firma i NIP (opcjonalnie - jesli na firme)" aria-label="Firma i NIP (opcjonalnie)">
+                        <textarea name="uwagi" placeholder="Uwagi (opcjonalnie) - np. preferowany termin, dodatkowe informacje..." rows="3" aria-label="Uwagi"></textarea>
                         <label class="rodo-consent">
                             <input type="checkbox" required>
-                            <span>Wyrazam zgode na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie, zgodnie z <a href="#polityka-prywatnosci">Polityka Prywatnosci</a>. Administratorem danych jest AquaDiagnostyka.</span>
+                            <span>Wyrazam zgode na przetwarzanie moich danych osobowych w celu realizacji zlecenia, zgodnie z <a href="#polityka-prywatnosci">Polityka Prywatnosci</a>. Administratorem danych jest AquaDiagnostyka.</span>
                         </label>
-                        <input type="hidden" name="_subject" value="Nowe zapytanie ze strony AquaDiagnostyka">
-                        <button type="submit">Otrzymaj darmowa wycene</button>
+                        <input type="hidden" name="_subject" value="NOWE ZLECENIE ze strony AquaDiagnostyka">
+                        <button type="submit">Zamow badanie - zloz zlecenie</button>
                     </form>
                     <p class="form-security">&#128274; Twoje dane sa bezpieczne. Nie spamujemy.</p>
                     <div class="form-status" id="formStatus"></div>
@@ -2858,7 +2856,7 @@
 
     <!-- ==================== MOBILE STICKY CTA ==================== -->
     <div class="mobile-sticky-cta" id="mobileCta">
-        <a href="tel:+48696053282">Zadzwon teraz - darmowa konsultacja</a>
+        <a href="#kontakt">Zamow badanie online - zloz zlecenie</a>
     </div>
 
 
@@ -3063,7 +3061,7 @@
                     if (response.ok) {
                         if (statusDiv) {
                             statusDiv.className = 'form-status success';
-                            statusDiv.textContent = 'Dziekujemy! Wiadomosc wyslana pomyslnie. Odpowiemy w ciagu kilku godzin.';
+                            statusDiv.textContent = 'Zlecenie przyjete! Oddzwonimy do Ciebie w ciagu kilku godzin, zeby potwierdzic zakres i umowic termin pobrania probki.';
                         }
                         this.reset();
                     } else {
@@ -3187,37 +3185,41 @@
         // ===== URGENCY COUNTDOWN TIMER (72h od pierwszej wizyty) =====
         (function() {
             const key = 'urgencyDeadline';
-            let deadline = localStorage.getItem(key);
-            
-            if (!deadline) {
-                deadline = Date.now() + 72 * 60 * 60 * 1000;
+            const WINDOW = 72 * 60 * 60 * 1000; // 72h
+            let deadline = parseInt(localStorage.getItem(key), 10);
+
+            // Brak deadline albo juz minal -> ustaw swieze okno.
+            // Dzieki temu licznik NIGDY nie znika na stale (wczesniej dla powracajacych pokazywal "WYGASLA" i chowal pasek).
+            if (!deadline || isNaN(deadline) || deadline - Date.now() <= 0) {
+                deadline = Date.now() + WINDOW;
                 localStorage.setItem(key, deadline);
             }
-            
+
             const timerEl = document.getElementById('urgencyTimer');
             const urgencyBar = document.getElementById('urgencyBar');
-            
+
             if (!timerEl || !urgencyBar) return;
-            
+
             function updateTimer() {
-                const diff = parseInt(deadline) - Date.now();
-                
+                let diff = deadline - Date.now();
+
+                // Po wygasnieciu resetuj okno zamiast chowac pasek.
                 if (diff <= 0) {
-                    timerEl.textContent = 'WYGASŁA';
-                    urgencyBar.style.display = 'none';
-                    return;
+                    deadline = Date.now() + WINDOW;
+                    localStorage.setItem(key, deadline);
+                    diff = deadline - Date.now();
                 }
-                
+
                 const hours = Math.floor(diff / (1000 * 60 * 60));
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                
-                timerEl.textContent = 
+
+                timerEl.textContent =
                     String(hours).padStart(2, '0') + ':' +
                     String(minutes).padStart(2, '0') + ':' +
                     String(seconds).padStart(2, '0');
             }
-            
+
             updateTimer();
             setInterval(updateTimer, 1000);
         })();
