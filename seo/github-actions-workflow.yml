@@ -1,0 +1,47 @@
+# AUTOPILOT TREŚCI SEO — workflow GitHub Actions
+# ───────────────────────────────────────────────────────────────
+# AKTYWACJA (jednorazowo, ~1 min):
+# 1. Wejdź na repo: https://github.com/adriansga/Aquadiagnostyka
+# 2. Add file → Create new file → w polu nazwy wpisz:
+#       .github/workflows/seo-content.yml
+# 3. Wklej CAŁĄ zawartość tego pliku (od linii "name:" w dół) i commituj.
+#    (Robisz to przez stronę GitHub, bo masz uprawnienia 'workflow' — agent ich nie ma.)
+# Sekret ANTHROPIC_API_KEY jest już ustawiony w repo. To wszystko — od tej chwili działa sam.
+# ───────────────────────────────────────────────────────────────
+name: SEO content autopilot
+
+on:
+  schedule:
+    # pon/śr/pt 06:00 UTC = 08:00 czasu polskiego (lato). Min. interwał 1h.
+    - cron: '0 6 * * 1,3,5'
+  workflow_dispatch: {}   # pozwala odpalić ręcznie z zakładki Actions
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generuj artykuł
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python seo/auto_article.py
+
+      - name: Commit i push
+        run: |
+          git config user.name "AquaDiagnostyka Bot"
+          git config user.email "bot@aquadiagnostyka.pl"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "feat(content): auto artykuł SEO (autopilot)"
+            git push
+          else
+            echo "Brak zmian — kolejka tematów pusta."
+          fi
