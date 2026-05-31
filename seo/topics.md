@@ -6,9 +6,9 @@ realna wartość, frazy lokalne naturalnie), generuje stronę i oznacza temat ja
 Format: `- [ ] slug | Tytuł | główna fraza`
 
 - [x] jak-zbadac-wode-ze-studni | Jak zbadać wodę ze studni? Poradnik krok po kroku | badanie wody ze studni
-- [ ] normy-wody-pitnej | Normy wody pitnej w Polsce — co musisz wiedzieć | normy wody pitnej
-- [ ] azotany-w-wodzie | Azotany w wodzie ze studni — dlaczego są groźne | azotany w wodzie
-- [ ] bakterie-coli-w-wodzie | Bakterie coli i E. coli w wodzie — co oznacza wynik | bakterie coli w wodzie
+- [x] normy-wody-pitnej | Normy wody pitnej w Polsce — co musisz wiedzieć | normy wody pitnej
+- [x] azotany-w-wodzie | Azotany w wodzie ze studni — dlaczego są groźne | azotany w wodzie
+- [x] bakterie-coli-w-wodzie | Bakterie coli i E. coli w wodzie — co oznacza wynik | bakterie coli w wodzie
 - [ ] badanie-wody-do-sanepidu | Badanie wody do Sanepidu — kiedy i jak | badanie wody do sanepidu
 - [ ] jak-czesto-badac-wode | Jak często badać wodę ze studni? | jak często badać wodę
 - [ ] twarda-woda-co-zrobic | Twarda woda — przyczyny, skutki i jak ją zmiękczyć | twarda woda
