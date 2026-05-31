@@ -3061,6 +3061,10 @@
                             statusDiv.className = 'form-status success';
                             statusDiv.textContent = 'Zlecenie przyjete! Oddzwonimy do Ciebie w ciagu kilku godzin, zeby potwierdzic zakres i umowic termin pobrania probki.';
                         }
+                        // Konwersja w GA4 - lead zapisuje sie w Analytics
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'generate_lead', { event_category: 'formularz', event_label: 'zamowienie_badania' });
+                        }
                         this.reset();
                     } else {
                         throw new Error('Form error');
