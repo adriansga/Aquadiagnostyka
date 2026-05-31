@@ -200,6 +200,8 @@ def main():
     print("OK:", os.path.basename(out))
 
     update_index(a.slug, a.title, a.desc, d)
+    import related
+    related.rebuild_related()
     build_sitemap.build()
 
 
