@@ -7,10 +7,10 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aquadiagnostyka.pl/badanie-wody-stary-sacz.html</loc>
+    <loc>https://aquadiagnostyka.pl/poradnik.html</loc>
     <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-gorlice.html</loc>
@@ -19,13 +19,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aquadiagnostyka.pl/badanie-wody-limanowa.html</loc>
+    <loc>https://aquadiagnostyka.pl/badanie-wody-grybow.html</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-krynica-zdroj.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aquadiagnostyka.pl/badanie-wody-lacko.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aquadiagnostyka.pl/badanie-wody-limanowa.html</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -43,21 +55,21 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aquadiagnostyka.pl/badanie-wody-grybow.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aquadiagnostyka.pl/badanie-wody-lacko.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-podegrodzie.html</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aquadiagnostyka.pl/badanie-wody-stary-sacz.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aquadiagnostyka.pl/poradnik-jak-zbadac-wode-ze-studni.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
