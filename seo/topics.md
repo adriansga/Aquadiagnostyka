@@ -10,7 +10,7 @@ Format: `- [ ] slug | Tytuł | główna fraza`
 - [x] azotany-w-wodzie | Azotany w wodzie ze studni — dlaczego są groźne | azotany w wodzie
 - [x] bakterie-coli-w-wodzie | Bakterie coli i E. coli w wodzie — co oznacza wynik | bakterie coli w wodzie
 - [x] badanie-wody-do-sanepidu | Badanie wody do Sanepidu — kiedy i jak | badanie wody do sanepidu
-- [ ] jak-czesto-badac-wode | Jak często badać wodę ze studni? | jak często badać wodę
+- [x] jak-czesto-badac-wode | Jak często badać wodę ze studni? | jak często badać wodę
 - [ ] twarda-woda-co-zrobic | Twarda woda — przyczyny, skutki i jak ją zmiękczyć | twarda woda
 - [ ] zelazo-i-mangan-w-wodzie | Żelazo i mangan w wodzie — rdzawa woda z kranu | żelazo w wodzie
 - [ ] woda-mętna-przyczyny | Mętna woda ze studni — przyczyny i co zrobić | mętna woda ze studni
