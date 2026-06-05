@@ -2,109 +2,115 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aquadiagnostyka.pl/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/poradnik.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-gorlice.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-grybow.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-krynica-zdroj.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-lacko.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-limanowa.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-muszyna.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-piwniczna-zdroj.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-podegrodzie.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/badanie-wody-stary-sacz.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/poradnik-azotany-w-wodzie.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/poradnik-badanie-wody-do-sanepidu.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/poradnik-bakterie-coli-w-wodzie.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/poradnik-jak-czesto-badac-wode.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/poradnik-jak-zbadac-wode-ze-studni.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/poradnik-normy-wody-pitnej.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aquadiagnostyka.pl/poradnik-twarda-woda-co-zrobic.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aquadiagnostyka.pl/poradnik-zelazo-i-mangan-w-wodzie.html</loc>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
