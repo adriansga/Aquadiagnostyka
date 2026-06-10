@@ -14,7 +14,7 @@ Format: `- [ ] slug | Tytuł | główna fraza`
 - [x] twarda-woda-co-zrobic | Twarda woda — przyczyny, skutki i jak ją zmiękczyć | twarda woda
 - [x] zelazo-i-mangan-w-wodzie | Żelazo i mangan w wodzie — rdzawa woda z kranu | żelazo w wodzie
 - [x] woda-mętna-przyczyny | Mętna woda ze studni — przyczyny i co zrobić | mętna woda ze studni
-- [ ] badanie-wody-przed-zakupem-domu | Badanie wody przed zakupem domu z ujęciem | badanie wody zakup domu
+- [x] badanie-wody-przed-zakupem-domu | Badanie wody przed zakupem domu z ujęciem | badanie wody zakup domu
 - [ ] woda-basenowa-badanie | Badanie wody basenowej — parametry i normy | badanie wody basenowej
 - [ ] jak-pobrac-probke-wody | Jak prawidłowo pobrać próbkę wody do badania | pobranie próbki wody
 - [ ] interpretacja-wynikow-badania-wody | Jak czytać wyniki badania wody | interpretacja wyników badania wody
