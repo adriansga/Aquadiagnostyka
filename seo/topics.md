@@ -15,7 +15,7 @@ Format: `- [ ] slug | Tytuł | główna fraza`
 - [x] zelazo-i-mangan-w-wodzie | Żelazo i mangan w wodzie — rdzawa woda z kranu | żelazo w wodzie
 - [x] woda-mętna-przyczyny | Mętna woda ze studni — przyczyny i co zrobić | mętna woda ze studni
 - [x] badanie-wody-przed-zakupem-domu | Badanie wody przed zakupem domu z ujęciem | badanie wody zakup domu
-- [ ] woda-basenowa-badanie | Badanie wody basenowej — parametry i normy | badanie wody basenowej
+- [x] woda-basenowa-badanie | Badanie wody basenowej — parametry i normy | badanie wody basenowej
 - [ ] jak-pobrac-probke-wody | Jak prawidłowo pobrać próbkę wody do badania | pobranie próbki wody
 - [ ] interpretacja-wynikow-badania-wody | Jak czytać wyniki badania wody | interpretacja wyników badania wody
 - [ ] woda-studnia-czy-zdatna-do-picia | Czy woda z mojej studni nadaje się do picia? | woda ze studni do picia
