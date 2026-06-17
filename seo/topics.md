@@ -16,7 +16,7 @@ Format: `- [ ] slug | Tytuł | główna fraza`
 - [x] woda-mętna-przyczyny | Mętna woda ze studni — przyczyny i co zrobić | mętna woda ze studni
 - [x] badanie-wody-przed-zakupem-domu | Badanie wody przed zakupem domu z ujęciem | badanie wody zakup domu
 - [x] woda-basenowa-badanie | Badanie wody basenowej — parametry i normy | badanie wody basenowej
-- [ ] jak-pobrac-probke-wody | Jak prawidłowo pobrać próbkę wody do badania | pobranie próbki wody
+- [x] jak-pobrac-probke-wody | Jak prawidłowo pobrać próbkę wody do badania | pobranie próbki wody
 - [ ] interpretacja-wynikow-badania-wody | Jak czytać wyniki badania wody | interpretacja wyników badania wody
 - [ ] woda-studnia-czy-zdatna-do-picia | Czy woda z mojej studni nadaje się do picia? | woda ze studni do picia
 - [ ] badanie-wody-dla-firmy | Badanie wody dla firmy i gastronomii | badanie wody dla firmy
