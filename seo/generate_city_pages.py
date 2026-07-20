@@ -4,11 +4,14 @@ Generator podstron lokalnych AquaDiagnostyka (programmatic SEO).
 Tworzy badanie-wody-<slug>.html dla kazdego miasta + krzyzowe linkowanie wewnetrzne.
 Uruchom z katalogu projektu:  python seo/generate_city_pages.py
 """
-import os, datetime
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import build_sitemap as shared_sitemap
 
 OUT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://aquadiagnostyka.pl"
-TODAY = datetime.date.today().isoformat()
 
 # name = mianownik (do title), loc = miejscownik (do "w ..."), lat/lon, oraz unikalne tresci
 CITIES = [
@@ -274,7 +277,7 @@ TEMPLATE = r"""<!DOCTYPE html>
                     <span class="badge">Dojazd GRATIS</span>
                 </div>
                 <h1>Badanie wody w <span class="accent">%%LOC%%</span> — sprawdzamy to za Ciebie</h1>
-                <p class="lead">%%INTRO%% Bez dzwonienia na infolinię — całość zamawiasz online.</p>
+                <p class="lead">%%INTRO%%</p>
                 <div class="cta-row">
                     <a href="%%DOMAIN%%/#kontakt" class="btn-primary">Zamów badanie wody</a>
                     <a href="#uslugi" class="btn-secondary">Zobacz zakres badań</a>
@@ -377,20 +380,10 @@ def render(city):
     return html
 
 
-def build_sitemap():
-    urls = ['  <url>\n    <loc>%s/</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>' % (DOMAIN, TODAY)]
-    for c in CITIES:
-        urls.append('  <url>\n    <loc>%s/badanie-wody-%s.html</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>' % (DOMAIN, c["slug"], TODAY))
-    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(urls) + "\n</urlset>\n"
-    with open(os.path.join(OUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
-        f.write(xml)
-
-
 if __name__ == "__main__":
     for c in CITIES:
         path = os.path.join(OUT_DIR, "badanie-wody-%s.html" % c["slug"])
         with open(path, "w", encoding="utf-8") as f:
             f.write(render(c))
         print("OK:", os.path.basename(path))
-    build_sitemap()
-    print("OK: sitemap.xml (%d URL)" % (len(CITIES) + 1))
+    shared_sitemap.build()

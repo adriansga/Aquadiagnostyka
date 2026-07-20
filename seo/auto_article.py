@@ -12,7 +12,8 @@ import os, re, json, subprocess, sys, urllib.request, urllib.error
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOPICS = os.path.join(ROOT, "seo", "topics.md")
 BODY_TMP = os.path.join(ROOT, "seo", "_body_tmp.html")
-MODEL = "claude-sonnet-4-6"
+MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")
+FALLBACK_MODELS = [m.strip() for m in os.getenv("ANTHROPIC_FALLBACK_MODELS", "claude-haiku-4-5").split(",") if m.strip()]
 
 SYSTEM = (
     "Jesteś ekspertem SEO i copywriterem laboratorium badania wody AquaDiagnostyka "
@@ -47,27 +48,47 @@ def next_topic():
     return None, lines, None, None, None
 
 
+def model_candidates():
+    seen = set()
+    for model in [MODEL] + FALLBACK_MODELS:
+        if model and model not in seen:
+            seen.add(model)
+            yield model
+
+
 def call_api(title, kw):
     key = os.environ["ANTHROPIC_API_KEY"]
-    payload = {
-        "model": MODEL,
-        "max_tokens": 4000,
-        "system": SYSTEM,
-        "messages": [{"role": "user", "content": PROMPT.format(title=title, kw=kw)}],
-    }
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=json.dumps(payload).encode(),
-        headers={"x-api-key": key, "anthropic-version": "2023-06-01",
-                 "content-type": "application/json"},
-        method="POST")
-    with urllib.request.urlopen(req, timeout=120) as r:
-        resp = json.loads(r.read().decode())
-    text = "".join(b.get("text", "") for b in resp["content"])
-    text = text.strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```(json)?\s*|\s*```$", "", text)
-    return json.loads(text)
+    errors = []
+    for model in model_candidates():
+        payload = {
+            "model": model,
+            "max_tokens": 4000,
+            "system": SYSTEM,
+            "messages": [{"role": "user", "content": PROMPT.format(title=title, kw=kw)}],
+        }
+        req = urllib.request.Request(
+            "https://api.anthropic.com/v1/messages",
+            data=json.dumps(payload).encode(),
+            headers={"x-api-key": key, "anthropic-version": "2023-06-01",
+                     "content-type": "application/json"},
+            method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                resp = json.loads(r.read().decode())
+            text = "".join(b.get("text", "") for b in resp["content"])
+            text = text.strip()
+            if text.startswith("```"):
+                text = re.sub(r"^```(json)?\s*|\s*```$", "", text)
+            print("Model:", model)
+            return json.loads(text)
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="replace")[:500]
+            errors.append("%s -> HTTP %s: %s" % (model, e.code, body))
+            if e.code not in (400, 404, 429, 500, 502, 503, 504):
+                break
+        except urllib.error.URLError as e:
+            errors.append("%s -> URL error: %s" % (model, e.reason))
+    raise RuntimeError("Anthropic API failed for all model candidates:\n" + "\n".join(errors))
 
 
 def main():
