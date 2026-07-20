@@ -20,21 +20,21 @@ DOMAIN = "https://aquadiagnostyka.pl"
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_sitemap  # noqa: E402
 
-CSS = """:root { --primary:#0099ff; --primary-glow:rgba(0,153,255,0.35); --bg:#050505; --card-bg:#0f0f10; --text:#f2f2f2; --text-gray:#9ca3af; --border:rgba(255,255,255,0.08); --transition:all 0.25s ease; }
+CSS = """:root { --primary:#147fa8; --primary-glow:rgba(20,127,168,0.18); --primary-dark:#0e6282; --secondary:#2fa36b; --bg:#f5fafc; --card-bg:#ffffff; --text:#173040; --text-gray:#526675; --muted:#7d909d; --border:rgba(16,37,50,0.10); --soft:#e7f6fb; --transition:all 0.25s ease; }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; -webkit-font-smoothing:antialiased; }
 a { color:inherit; text-decoration:none; }
 .container { max-width:820px; margin:0 auto; padding:0 22px; }
 .accent { color:var(--primary); }
-header.topbar { position:sticky; top:0; z-index:100; background:rgba(5,5,5,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); padding:14px 0; }
+header.topbar { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); padding:14px 0; box-shadow:0 8px 28px rgba(16,37,50,0.05); }
 .topbar-inner { max-width:820px; margin:0 auto; padding:0 22px; display:flex; align-items:center; justify-content:space-between; }
 .logo { font-weight:800; font-size:1.25rem; }
 .topbar a.back { color:var(--text-gray); font-size:0.9rem; }
 .topbar a.back:hover { color:var(--primary); }
 .breadcrumb { font-size:0.82rem; color:var(--text-gray); padding:18px 0 0; }
 .breadcrumb a:hover { color:var(--primary); }
-article { padding:30px 0 10px; }
+article { padding:34px 0 10px; }
 .meta { color:var(--text-gray); font-size:0.85rem; margin-bottom:18px; }
 h1 { font-size:clamp(1.7rem,4.5vw,2.6rem); line-height:1.2; font-weight:800; margin-bottom:18px; }
 article h2 { font-size:clamp(1.3rem,3vw,1.7rem); font-weight:800; margin:34px 0 14px; }
@@ -43,12 +43,12 @@ article p { color:var(--text-gray); margin-bottom:16px; }
 article ul, article ol { color:var(--text-gray); margin:0 0 16px 22px; }
 article li { margin-bottom:8px; }
 article strong { color:var(--text); }
-.cta-band { text-align:center; background:linear-gradient(180deg,rgba(0,153,255,0.06),transparent); border:1px solid var(--border); border-radius:20px; padding:38px 24px; margin:40px 0; }
+.cta-band { text-align:center; background:#fff; border:1px solid var(--border); border-radius:14px; padding:38px 24px; margin:40px 0; box-shadow:0 14px 38px rgba(16,37,50,0.07); }
 .cta-band h2 { margin:0 0 12px; }
 .cta-band p { color:var(--text-gray); margin-bottom:22px; }
-.btn-primary { background:var(--primary); color:#fff; padding:15px 32px; border-radius:50px; font-weight:600; box-shadow:0 8px 30px var(--primary-glow); transition:var(--transition); display:inline-block; }
+.btn-primary { background:var(--primary); color:#fff; padding:15px 32px; border-radius:50px; font-weight:600; box-shadow:0 10px 24px var(--primary-glow); transition:var(--transition); display:inline-block; }
 .btn-primary:hover { transform:translateY(-2px); }
-footer { border-top:1px solid var(--border); padding:30px 0; color:var(--text-gray); font-size:0.85rem; text-align:center; margin-top:30px; }
+footer { border-top:1px solid var(--border); padding:30px 0; color:var(--text-gray); font-size:0.85rem; text-align:center; margin-top:30px; background:#eef7fa; }
 footer a { color:var(--primary); }"""
 
 PAGE = """<!DOCTYPE html>
@@ -114,6 +114,7 @@ PAGE = """<!DOCTYPE html>
     }}
     </script>
     <style>{css}</style>
+    <script defer src="/aqua-tracking.js"></script>
 </head>
 <body>
     <header class="topbar">
