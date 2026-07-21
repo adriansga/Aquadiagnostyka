@@ -1,4 +1,4 @@
-# Google Business Profile — status i operacje 20.07.2026
+# Google Business Profile — status i operacje 21.07.2026
 
 ## Status
 
@@ -6,6 +6,9 @@
 - Edycja profilu: https://business.google.com
 - Strategia kontaktu: główna konwersja przez formularz na stronie, nie przez losowe telefony.
 - Priorytet: prywatni klienci B2C z Nowego Sącza i okolic.
+- Front komunikacji: mikrobiologiczne badanie wody ze studni/domów/działek.
+- Fizykochemia zostaje jako rozszerzenie po opisie sytuacji klienta.
+- Nie promujemy na froncie: przemysłu, ścieków, aquaparków, dużych obiektów i ogólnego B2B.
 
 ## Linki do ustawienia w wizytówce
 
@@ -29,10 +32,18 @@ https://aquadiagnostyka.pl/?utm_source=google&utm_medium=organic&utm_campaign=gb
 3. Opis B2C z `WIZYTOWKA_GOOGLE_PAKIET.md`.
 4. Link strony i kontaktu z UTM.
 5. Obszar działania: Nowy Sącz, Stary Sącz, Gorlice, Limanowa, Krynica-Zdrój, Muszyna, Piwniczna-Zdrój, Grybów, Łącko, Podegrodzie.
-6. Usługi B2C: studnia, mikrobiologia, fizykochemia, pełne badanie, basen, badanie przed zakupem domu/działki.
+6. Usługi B2C: mikrobiologia studni, kontrola po dezynfekcji, zakup domu/działki, po ulewach/podtopieniach, dobór zakresu, fizykochemia jako rozszerzenie.
 7. Minimum 8 zdjęć: logo, pobranie próbki, sprzęt, anonimizowany wynik, okolice.
 8. Pierwszy post z linkiem `utm_campaign=gbp_post`.
 9. Skopiować link do proszenia o opinię i zapisać go w tym pliku.
+
+## Status publikacji 21.07.2026
+
+- Pakiet treści GBP jest gotowy i zgodny z B2C mikrobiologią: `WIZYTOWKA_GOOGLE_PAKIET.md`.
+- Kolejka GBP/FB jest gotowa do publikacji: `OPERACJE/GBP_FB_PUBLISH_QUEUE_2026-07-21.md`.
+- Status publikacji zewnętrznej: `READY_NOT_PUBLISHED_ACCESS_REQUIRED`.
+- Powód: w tej sesji nie ma aktywnego konektora ani zalogowanej sesji właściciela Google Business Profile/Facebook Page.
+- Po uzyskaniu OAuth/logowania publikujemy według kolejki i zapisujemy publiczne linki postów w pliku kolejki.
 
 ## Cotygodniowy rytm
 
@@ -44,10 +55,11 @@ https://aquadiagnostyka.pl/?utm_source=google&utm_medium=organic&utm_campaign=gb
 
 ## Twarde ograniczenie
 
-Nie mam zalogowanego dostępu do konta Google powiązanego z profilem, więc nie mogę sam kliknąć edycji profilu ani pobrać prywatnych danych Performance. Wszystko poza panelem jest przygotowane lokalnie i mierzone po stronie strony.
+Nie mam zalogowanego dostępu do konta Google powiązanego z profilem ani aktywnego konektora GBP/Meta, więc nie mogę sam kliknąć edycji profilu, pobrać prywatnych danych Performance ani opublikować posta z konta właściciela. Wszystko poza panelem jest przygotowane lokalnie i mierzone po stronie strony.
 
 ## Źródła
 
 - Lokalny pakiet: `WIZYTOWKA_GOOGLE_PAKIET.md`
+- Kolejka publikacji: `OPERACJE/GBP_FB_PUBLISH_QUEUE_2026-07-21.md`
 - NAP/katalogi: `KATALOGI_NAP.md`
 - Google Help: Business Profile Performance mierzy m.in. wyszukiwania, kliknięcia strony, połączenia i wskazówki dojazdu; dane są dostępne dla zweryfikowanych profili po zalogowaniu na konto właściciela.

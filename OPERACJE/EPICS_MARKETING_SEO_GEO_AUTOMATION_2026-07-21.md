@@ -10,6 +10,8 @@ Główna ścieżka AquaDiagnostyki = B2C i mikrobiologiczne badanie wody dla pry
 
 ## EPIC 01 — Incognito content pack i publikacja V1
 
+**Status 21.07.2026:** P0 przygotowane. Istnieje pełny content pack `CONTENT_PACK_INCOGNITO_B2C_2026-07-21.md` oraz wykonawcza kolejka `GBP_FB_PUBLISH_QUEUE_2026-07-21.md`. Treści są gotowe do publikacji jako `Zespół AquaDiagnostyka`, bez nazwiska Adriana, bez fikcyjnych opinii/promocji i bez starego frontu B2B. Publikacja zewnętrzna ma status `READY_NOT_PUBLISHED_ACCESS_REQUIRED`, bo brak aktywnego dostępu/OAuth do Google Business Profile i Facebook Page w tej sesji.
+
 **Cel:** mieć gotowe treści do publikacji jako marka `Zespół AquaDiagnostyka`, bez ekspozycji Adriana.
 
 **Zakres:**
@@ -30,6 +32,8 @@ Główna ścieżka AquaDiagnostyki = B2C i mikrobiologiczne badanie wody dla pry
 - Ręczne sprawdzenie 3 losowych postów pod kątem tonu i zgodności B2C.
 
 ## EPIC 02 — Google Business Profile manual sprint
+
+**Status 21.07.2026:** P0 lokalnie przygotowane. `WIZYTOWKA_GOOGLE_PAKIET.md` został przepisany pod B2C mikrobiologię: opis, usługi, Q&A, posty, prośby o opinie i tracking UTM. Usunięto stare claimy frontowe: `od 150 zł`, `Dojazd GRATIS`, basen jako główny segment, przemysł/ścieki/aquaparki/B2B oraz Sanepid jako główną obietnicę. Publikacja/edycja profilu pozostaje zablokowana do czasu aktywnej sesji właściciela GBP albo OAuth.
 
 **Cel:** uzupełnić istniejącą wizytówkę i zacząć zbierać ruch z intencji lokalnej.
 
@@ -273,9 +277,9 @@ Główna ścieżka AquaDiagnostyki = B2C i mikrobiologiczne badanie wody dla pry
 1. EPIC 06 — DONE: QA/deploy formularza i dropdownów B2C mikrobiologia.
 2. EPIC 04 — DONE P0: lokalne podstrony miast + sitemap pod mikrobiologię B2C.
 3. EPIC 05 — DONE P0: sekcja AI/GEO answers + dodatkowe FAQ schema.
-4. EPIC 02 — GBP manual sprint pod mikrobiologię prywatnych studni.
-5. EPIC 01 — publikacja pierwszych postów, po aktualizacji treści pod mikrobiologię.
-6. EPIC 08 — katalogi z opisem mikrobiologia/studnia/dom.
+4. EPIC 02 — READY/BLOCKED: pakiet GBP gotowy, publikacja czeka na dostęp właściciela.
+5. EPIC 01 — READY/BLOCKED: kolejka GBP/FB gotowa, publikacja czeka na dostęp kanałów.
+6. EPIC 08 — NEXT: katalogi z opisem mikrobiologia/studnia/dom.
 7. EPIC 09 — raport leadów.
 8. EPIC 03 — automatyzacja po ustaleniu dostępu do kont.
 9. EPIC 10 — Google Ads mini-test tylko na frazy mikrobiologiczne/studnia.

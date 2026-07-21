@@ -2143,10 +2143,23 @@
         .contact-form input,
         .contact-form textarea,
         .contact-form select,
+        .calc-group select,
         .leadmagnet-form input {
             background: #ffffff;
             border-color: rgba(16, 37, 50, 0.12);
             color: var(--text-white);
+        }
+
+        .contact-form select,
+        .contact-form select option,
+        .calc-group select,
+        .calc-group select option {
+            background-color: #ffffff;
+            color: #102532;
+        }
+
+        .contact-form select:invalid {
+            color: rgba(82, 102, 117, 0.78);
         }
 
         .contact-form input::placeholder,
@@ -2324,9 +2337,6 @@
                         <li>Ogólna liczba mikroorganizmów</li>
                         <li>Wynik zwykle po 48 godzinach</li>
                     </ul>
-                    <div style="background:rgba(20,127,168,0.08);border:1px solid var(--primary);border-radius:8px;padding:8px 12px;margin-top:15px;text-align:center;">
-                        <span style="color:var(--primary);font-weight:600;font-size:0.85rem;">NAJWAŻNIEJSZA ŚCIEŻKA B2C</span>
-                    </div>
                 </div>
                 <div class="card reveal">
                     <div class="card-icon">
