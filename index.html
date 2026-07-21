@@ -132,7 +132,7 @@
                 "areaServed": {"@type": "City", "name": "Nowy Sącz"},
                 "offers": {
                     "@type": "Offer",
-                    "price": "180.00",
+                    "price": "325.00",
                     "priceCurrency": "PLN",
                     "availability": "https://schema.org/InStock",
                     "url": "https://aquadiagnostyka.pl/#oferta"
@@ -146,7 +146,7 @@
                 "areaServed": {"@type": "City", "name": "Nowy Sącz"},
                 "offers": {
                     "@type": "Offer",
-                    "price": "150.00",
+                    "price": "415.13",
                     "priceCurrency": "PLN",
                     "availability": "https://schema.org/InStock",
                     "url": "https://aquadiagnostyka.pl/#oferta"
@@ -160,7 +160,7 @@
                 "areaServed": {"@type": "City", "name": "Nowy Sącz"},
                 "offers": {
                     "@type": "Offer",
-                    "price": "420.00",
+                    "price": "740.13",
                     "priceCurrency": "PLN",
                     "availability": "https://schema.org/InStock",
                     "url": "https://aquadiagnostyka.pl/#oferta",
@@ -181,7 +181,7 @@
             {"@type": "Question", "name": "Jak prawidlowo pobrac probke wody?", "acceptedAnswer": {"@type": "Answer", "text": "Najwazniejsze to uzyc sterylnego pojemnika. Przed pobraniem nalezy przeplukai kran przez ok. 3 minuty. Probke nalezy dostarczyc do laboratorium w ciagu 6 godzin od pobrania."}},
             {"@type": "Question", "name": "Ile czasu trwa oczekiwanie na wyniki?", "acceptedAnswer": {"@type": "Answer", "text": "Badanie mikrobiologiczne wymaga hodowli bakterii, dlatego wynik jest standardowo dostepny po 48 godzinach. Przy rozszerzeniu fizykochemicznym termin potwierdzamy przy zleceniu."}},
             {"@type": "Question", "name": "Czy wyniki badan sa uznawane urzedowo?", "acceptedAnswer": {"@type": "Answer", "text": "Tak. Nasze sprawozdania z badan sa pelnowarosciowymi dokumentami uznawanymi w urzedach. Stosujemy akredytowane metody badawcze zgodne z normami PN-EN ISO."}},
-            {"@type": "Question", "name": "Ile kosztuje badanie wody?", "acceptedAnswer": {"@type": "Answer", "text": "Badanie mikrobiologiczne zaczyna sie od ok. 180 zl. Ostateczna cena zalezy od zakresu, pobrania i tego, czy potrzebne jest rozszerzenie fizykochemiczne."}},
+            {"@type": "Question", "name": "Ile kosztuje badanie wody?", "acceptedAnswer": {"@type": "Answer", "text": "Pakiet mikrobiologiczny prywatnej studni w konfiguratorze kosztuje 325 zl brutto. Ostateczna cena zalezy od wybranych parametrow i jest liczona automatycznie w cenniku na stronie."}},
             {"@type": "Question", "name": "Co zrobic jesli wyniki wykazuja przekroczenia norm?", "acceptedAnswer": {"@type": "Answer", "text": "Nasz ekspert omowi sytuacje i doradzi odpowiednie dzialania - dezynfekcje studni, instalacje filtra lub kontakt ze sluzba sanitarna."}},
             {"@type": "Question", "name": "Czy przyjezydzacie do klienta?", "acceptedAnswer": {"@type": "Answer", "text": "Tak, oferujemy usługę dojazdu i profesjonalnego pobrania próbek na terenie Nowego Sącza i okolic (do ok. 40 km). Dojazd i pobranie próbki w cenie badania."}},
             {"@type": "Question", "name": "Jakie normy obowiazuja dla wody pitnej w Polsce?", "acceptedAnswer": {"@type": "Answer", "text": "Jakosc wody pitnej reguluje Rozporzadzenie Ministra Zdrowia z dnia 7 grudnia 2017 r. w sprawie jakosci wody przeznaczonej do spozycia przez ludzi."}},
@@ -987,6 +987,163 @@
             font-size: 0.9rem;
         }
 
+        .price-builder {
+            background: #ffffff;
+            border: 1px solid rgba(16, 37, 50, 0.09);
+            border-radius: 18px;
+            padding: 34px;
+            box-shadow: 0 14px 38px rgba(16, 37, 50, 0.07);
+        }
+
+        .package-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 26px;
+        }
+
+        .package-preset {
+            border: 1px solid rgba(16, 37, 50, 0.12);
+            background: #f5fafc;
+            color: #102532;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .package-preset:hover,
+        .package-preset.is-active {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(20, 127, 168, 0.08);
+        }
+
+        .price-category {
+            margin-top: 28px;
+        }
+
+        .price-category:first-of-type {
+            margin-top: 0;
+        }
+
+        .price-category h3 {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            color: #102532;
+        }
+
+        .parameter-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .parameter-card {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 12px;
+            align-items: start;
+            padding: 14px;
+            border: 1px solid rgba(16, 37, 50, 0.10);
+            border-radius: 12px;
+            background: #f8fcfd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .parameter-card:hover,
+        .parameter-card.is-selected {
+            border-color: var(--primary);
+            background: rgba(20, 127, 168, 0.07);
+        }
+
+        .parameter-card input {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            accent-color: var(--primary);
+        }
+
+        .parameter-name {
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: #102532;
+            line-height: 1.35;
+        }
+
+        .parameter-desc {
+            display: block;
+            margin-top: 4px;
+            color: #4b6475;
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+
+        .parameter-info {
+            display: inline-block;
+            margin-top: 6px;
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .parameter-price {
+            white-space: nowrap;
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .package-summary {
+            position: sticky;
+            bottom: 86px;
+            z-index: 5;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 18px;
+            align-items: center;
+            margin-top: 30px;
+            padding: 18px;
+            background: #102532;
+            color: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 16px 40px rgba(16, 37, 50, 0.2);
+        }
+
+        .package-summary small {
+            display: block;
+            color: rgba(255, 255, 255, 0.72);
+            margin-top: 4px;
+        }
+
+        .package-total {
+            text-align: right;
+            font-size: 1.8rem;
+            line-height: 1;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .package-total span {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .package-note {
+            margin-top: 14px;
+            color: #4b6475;
+            font-size: 0.86rem;
+            text-align: center;
+        }
+
         /* ===== LEAD MAGNET ===== */
         .leadmagnet {
             background: linear-gradient(135deg, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0.02) 100%);
@@ -1601,6 +1758,40 @@
                 grid-template-columns: 1fr;
             }
 
+            .price-builder {
+                padding: 24px 18px;
+            }
+
+            .package-actions {
+                justify-content: stretch;
+            }
+
+            .package-preset {
+                flex: 1 1 100%;
+            }
+
+            .parameter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .parameter-card {
+                grid-template-columns: auto 1fr;
+            }
+
+            .parameter-price {
+                grid-column: 2;
+                justify-self: start;
+            }
+
+            .package-summary {
+                position: static;
+                grid-template-columns: 1fr;
+            }
+
+            .package-total {
+                text-align: left;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
             }
@@ -2144,6 +2335,7 @@
         .contact-form textarea,
         .contact-form select,
         .calc-group select,
+        .price-builder input,
         .leadmagnet-form input {
             background: #ffffff;
             border-color: rgba(16, 37, 50, 0.12);
@@ -2557,63 +2749,42 @@
         </div>
     </section>
 
-    <!-- ==================== KALKULATOR ==================== -->
+    <!-- ==================== KONFIGURATOR CENNIKA ==================== -->
     <section id="kalkulator" style="background: rgba(0,0,0,0.3);">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <span class="section-label">Kalkulator</span>
-                <h2 class="section-title section-title-center">Sprawdz orientacyjna <span class="accent">cene mikrobiologii</span></h2>
-                <p class="section-subtitle section-subtitle-center">To szybka orientacja dla prywatnej studni lub instalacji domowej. Dokladny zakres potwierdzamy po opisie sytuacji.</p>
+                <span class="section-label">Cennik</span>
+                <h2 class="section-title section-title-center">Stworz wlasny <span class="accent">pakiet badania wody</span></h2>
+                <p class="section-subtitle section-subtitle-center">Ceny ponizej sa kwotami brutto dla klienta: cena z cennika laboratoryjnego pomnozona x2.5. Zaznacz parametry, a zestaw i suma automatycznie trafia do formularza.</p>
             </div>
-            <div class="calc-section reveal">
-                <div class="calc-group">
-                    <label>Sytuacja</label>
-                    <select id="calcSource">
-                        <option value="1">Wlasna studnia przy domu</option>
-                        <option value="1">Nowa studnia / dzialka</option>
-                        <option value="1">Zakup domu lub dzialki</option>
-                        <option value="1">Po ulewach, awarii albo przerwie</option>
-                        <option value="1">Po dezynfekcji studni</option>
-                        <option value="1">Nie wiem - chce doradztwa</option>
-                    </select>
+            <div class="price-builder reveal">
+                <div class="package-actions" aria-label="Gotowe pakiety">
+                    <button class="package-preset is-active" type="button" data-preset="micro">Pakiet mikrobiologiczny studni</button>
+                    <button class="package-preset" type="button" data-preset="microPlusControl">Mikrobiologia + kontrolny fizyko</button>
+                    <button class="package-preset" type="button" data-preset="iron">Zelazo + mangan + twardosc</button>
+                    <button class="package-preset" type="button" data-preset="clear">Wyczysc wybor</button>
                 </div>
-                <div class="calc-group">
-                    <label>Zakres badania</label>
-                    <select id="calcScope">
-                        <option value="180">Mikrobiologiczny (E.coli, enterokoki, OLM)</option>
-                        <option value="420">Mikrobiologia + fizykochemia studni</option>
-                        <option value="180">Kontrola po dezynfekcji</option>
-                        <option value="180">Nie wiem - dobierzcie zakres</option>
-                    </select>
+
+                <div id="priceCategoryMicro" class="price-category">
+                    <h3>Mikrobiologia wody</h3>
+                    <div class="parameter-grid" id="priceGridMicro"></div>
                 </div>
-                <div class="calc-group">
-                    <label>Opcjonalne rozszerzenia</label>
-                    <div class="calc-checkboxes">
-                        <label class="calc-checkbox">
-                            <input type="checkbox" value="0" id="calcPobranie">
-                            <span>Pobranie probki u klienta - potwierdzamy w zleceniu</span>
-                        </label>
-                        <label class="calc-checkbox">
-                            <input type="checkbox" value="80" id="calcLegionella">
-                            <span>Legionella - jesli sytuacja tego wymaga (+80 zl)</span>
-                        </label>
-                        <label class="calc-checkbox">
-                            <input type="checkbox" value="240" id="calcFizyko">
-                            <span>Rozszerzenie fizykochemiczne (+240 zl)</span>
-                        </label>
-                        <label class="calc-checkbox">
-                            <input type="checkbox" value="0" id="calcFormalne">
-                            <span>Wynik do sprawy formalnej - opisz wymagania w formularzu</span>
-                        </label>
+
+                <div id="priceCategoryPhys" class="price-category">
+                    <h3>Fizykochemia wody</h3>
+                    <div class="parameter-grid" id="priceGridPhys"></div>
+                </div>
+
+                <div class="package-summary">
+                    <div>
+                        <strong id="packageSummaryText">Pakiet mikrobiologiczny wody (prywatni)</strong>
+                        <small id="packageSummaryMeta">1 pozycja w zestawie</small>
                     </div>
+                    <div class="package-total" id="packageTotal">325,00 zl<span>brutto dla klienta</span></div>
                 </div>
-                <div class="calc-result">
-                    <div class="calc-price" id="calcPrice">180 zl</div>
-                    <div class="calc-range" id="calcRange">Zakres: 153 - 207 zl</div>
-                    <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 12px;">Cena orientacyjna. Zakres i termin potwierdzamy po formularzu.</p>
-                </div>
-                <div style="text-align:center; margin-top:25px;">
-                    <a href="#kontakt" class="cta-primary">Zamow mikrobiologie</a>
+                <p class="package-note">Nie wiesz, co wybrac? Kliknij „Co oznacza?” przy parametrze albo wybierz pakiet mikrobiologiczny i opisz sytuacje w formularzu.</p>
+                <div style="text-align:center; margin-top:20px;">
+                    <a href="#kontakt" class="cta-primary" id="usePackageCta">Przenies pakiet do formularza</a>
                 </div>
             </div>
         </div>
@@ -2756,7 +2927,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Badanie mikrobiologiczne zaczyna sie od ok. 180 zl. Cena moze sie zmienic, jesli potrzebne jest rozszerzenie fizykochemiczne, Legionella, szczegolny tryb pobrania albo wymagania formalne. Ostateczna cene potwierdzamy przed pobraniem probki.</p>
+                        <p>Pakiet mikrobiologiczny prywatnej studni w konfiguratorze kosztuje 325 zl brutto. Jesli potrzebujesz dodatkowych parametrow, zaznaczasz je w cenniku, a formularz automatycznie dolicza sume brutto dla klienta.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
@@ -2875,6 +3046,10 @@
                         <input type="hidden" name="first_utm_medium" class="tracking-first-utm-medium" value="">
                         <input type="hidden" name="first_utm_campaign" class="tracking-first-utm-campaign" value="">
                         <input type="hidden" name="session_id" class="tracking-session-id" value="">
+                        <input type="hidden" name="pakiet_parametry" id="packageSelectedField" value="">
+                        <input type="hidden" name="pakiet_cena_brutto" id="packageTotalField" value="">
+                        <input type="hidden" name="pakiet_liczba_parametrow" id="packageCountField" value="">
+                        <input type="hidden" name="pakiet_json" id="packageJsonField" value="">
                         <button type="submit">Zamow badanie - zloz zlecenie</button>
                     </form>
                     <script>
@@ -3220,33 +3395,310 @@
         window.addEventListener('scroll', syncMobileCtaVisibility, { passive: true });
         window.addEventListener('load', syncMobileCtaVisibility);
 
-        // ===== CALCULATOR =====
-        function calculatePrice() {
-            const sourceMultiplier = parseFloat(document.getElementById('calcSource').value) || 1;
-            const basePrice = parseInt(document.getElementById('calcScope').value) || 150;
+        // ===== PRICE BUILDER =====
+        const priceItems = [
+            {
+                id: 'micro_private',
+                category: 'micro',
+                name: 'Badanie mikrobiologiczne wody (prywatni)',
+                desc: 'Podstawowy pakiet dla prywatnej studni i domu.',
+                price: 325.00,
+                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
+            },
+            {
+                id: 'coli_group',
+                category: 'micro',
+                name: 'Bakterie grupy coli',
+                desc: 'Wskaznik mozliwego zanieczyszczenia instalacji albo ujecia.',
+                price: 107.63,
+                href: '/poradnik-bakterie-coli-w-wodzie.html'
+            },
+            {
+                id: 'ecoli',
+                category: 'micro',
+                name: 'E. coli',
+                desc: 'Najwazniejszy sygnal ryzyka zanieczyszczenia fekalnego.',
+                price: 107.63,
+                href: '/poradnik-bakterie-coli-w-wodzie.html'
+            },
+            {
+                id: 'enterococci',
+                category: 'micro',
+                name: 'Enterokoki kalowe',
+                desc: 'Parametr potwierdzajacy ryzyko zanieczyszczenia sanitarnego.',
+                price: 107.63,
+                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
+            },
+            {
+                id: 'micro_business',
+                category: 'micro',
+                name: 'Badanie mikrobiologiczne wody (zaklady)',
+                desc: 'Pozycja z cennika dla zakresow firmowych - potwierdzamy indywidualnie.',
+                price: 400.00,
+                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
+            },
+            {
+                id: 'legionella',
+                category: 'micro',
+                name: 'Legionella',
+                desc: 'Gdy sytuacja tego wymaga, np. instalacja cieplej wody, jacuzzi albo obiekt.',
+                price: 615.00,
+                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
+            },
+            {
+                id: 'total_bacteria',
+                category: 'micro',
+                name: 'Ogolna liczba bakterii',
+                desc: 'Parametr kontrolny pokazujacy ogolny stan mikrobiologiczny probki.',
+                price: 98.43,
+                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
+            },
+            {
+                id: 'mineral_water',
+                category: 'micro',
+                name: 'Badanie wod mineralnych',
+                desc: 'Specjalny zakres z cennika - przed realizacja potwierdzamy sens badania.',
+                price: 615.00,
+                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
+            },
+            {
+                id: 'monitoring_control',
+                category: 'phys',
+                name: 'Monitoring kontrolny',
+                desc: 'Barwa, zapach, smak, metnosc, jon amonowy i pH.',
+                price: 415.13,
+                href: '/poradnik-woda-metna-przyczyny.html'
+            },
+            {
+                id: 'monitoring_review',
+                category: 'phys',
+                name: 'Monitoring przegladowy',
+                desc: 'Szeroki zakres przegladowy - do potwierdzenia przed zleceniem.',
+                price: 4150.13,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'ammonium',
+                category: 'phys',
+                name: 'Jon amonowy',
+                desc: 'Pomaga ocenic swiezosc zanieczyszczenia i stan ujecia.',
+                price: 184.50,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'turbidity',
+                category: 'phys',
+                name: 'Metnosc',
+                desc: 'Dla wody mlecznej, z osadem albo po opadach.',
+                price: 169.13,
+                href: '/poradnik-woda-metna-przyczyny.html'
+            },
+            {
+                id: 'ph',
+                category: 'phys',
+                name: 'pH',
+                desc: 'Kwasowosc lub zasadowosc wody, wazna dla instalacji i filtracji.',
+                price: 79.95,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'conductivity',
+                category: 'phys',
+                name: 'Przewodnosc',
+                desc: 'Szybki wskaznik ogolnej mineralizacji wody.',
+                price: 79.95,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'hardness',
+                category: 'phys',
+                name: 'Twardosc',
+                desc: 'Wazne przy kamieniu, czajniku, armaturze i doborze zmiekczacza.',
+                price: 123.00,
+                href: '/poradnik-twarda-woda-co-zrobic.html'
+            },
+            {
+                id: 'smell',
+                category: 'phys',
+                name: 'Zapach',
+                desc: 'Gdy woda ma zapach chloru, stechlizny, siarki albo metaliczny.',
+                price: 55.35,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'color',
+                category: 'phys',
+                name: 'Barwa',
+                desc: 'Dla zoltej, brunatnej albo wyraznie zabarwionej wody.',
+                price: 61.50,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'iron',
+                category: 'phys',
+                name: 'Zelazo',
+                desc: 'Dla rudego osadu, metalicznego smaku i przebarwien armatury.',
+                price: 132.50,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'manganese',
+                category: 'phys',
+                name: 'Mangan',
+                desc: 'Dla ciemnych osadow, zaciekow i problemow z instalacja.',
+                price: 225.00,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'iron_manganese',
+                category: 'phys',
+                name: 'Zelazo + mangan',
+                desc: 'Pakiet liczony z aktualnych stawek netto: zelazo 53 zl i mangan 90 zl, razem x2.5.',
+                price: 357.50,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'nitrites',
+                category: 'phys',
+                name: 'Azotyny',
+                desc: 'Parametr zwiazany z ryzykiem zanieczyszczen biologicznych i nawozowych.',
+                price: 169.13,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'nitrates',
+                category: 'phys',
+                name: 'Azotany',
+                desc: 'Wazne przy studniach blisko pol, szamb i miejsc splywu zanieczyszczen.',
+                price: 169.13,
+                href: '/poradnik.html'
+            }
+        ];
 
-            let total = basePrice * sourceMultiplier;
+        const presets = {
+            micro: ['micro_private'],
+            microPlusControl: ['micro_private', 'monitoring_control'],
+            iron: ['iron', 'manganese', 'hardness'],
+            clear: []
+        };
 
-            document.querySelectorAll('.calc-checkboxes input[type="checkbox"]:checked').forEach(cb => {
-                total += parseFloat(cb.value);
-            });
-
-            total = Math.round(total);
-            const minPrice = Math.floor(total * 0.85);
-            const maxPrice = Math.ceil(total * 1.15);
-
-            document.getElementById('calcPrice').textContent = total.toLocaleString('pl-PL') + ' zl';
-            document.getElementById('calcRange').textContent =
-                'Zakres: ' + minPrice.toLocaleString('pl-PL') + ' - ' + maxPrice.toLocaleString('pl-PL') + ' zl';
+        function formatPLN(value) {
+            return value.toLocaleString('pl-PL', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }) + ' zl';
         }
 
-        document.getElementById('calcSource').addEventListener('change', calculatePrice);
-        document.getElementById('calcScope').addEventListener('change', calculatePrice);
-        document.querySelectorAll('.calc-checkboxes input[type="checkbox"]').forEach(cb => {
-            cb.addEventListener('change', calculatePrice);
+        function renderPriceItems() {
+            const grids = {
+                micro: document.getElementById('priceGridMicro'),
+                phys: document.getElementById('priceGridPhys')
+            };
+
+            priceItems.forEach(item => {
+                const grid = grids[item.category];
+                if (!grid) return;
+
+                const card = document.createElement('div');
+                card.className = 'parameter-card';
+                card.dataset.itemId = item.id;
+                card.innerHTML = `
+                    <input class="package-param" type="checkbox" id="param-${item.id}" value="${item.id}" data-price="${item.price}">
+                    <div>
+                        <label class="parameter-name" for="param-${item.id}">${item.name}</label>
+                        <span class="parameter-desc">${item.desc}</span>
+                        <a class="parameter-info" href="${item.href}">Co oznacza?</a>
+                    </div>
+                    <strong class="parameter-price">${formatPLN(item.price)}</strong>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function getSelectedPackageItems() {
+            const selectedIds = Array.from(document.querySelectorAll('.package-param:checked')).map(input => input.value);
+            return priceItems.filter(item => selectedIds.includes(item.id));
+        }
+
+        function updatePackageSummary() {
+            const selected = getSelectedPackageItems();
+            const total = selected.reduce((sum, item) => sum + item.price, 0);
+            const summaryText = document.getElementById('packageSummaryText');
+            const summaryMeta = document.getElementById('packageSummaryMeta');
+            const totalEl = document.getElementById('packageTotal');
+            const selectedField = document.getElementById('packageSelectedField');
+            const totalField = document.getElementById('packageTotalField');
+            const countField = document.getElementById('packageCountField');
+            const jsonField = document.getElementById('packageJsonField');
+
+            document.querySelectorAll('.parameter-card').forEach(card => {
+                const checkbox = card.querySelector('.package-param');
+                card.classList.toggle('is-selected', Boolean(checkbox && checkbox.checked));
+            });
+
+            if (summaryText) {
+                summaryText.textContent = selected.length
+                    ? selected.map(item => item.name).join(' + ')
+                    : 'Nie wybrano parametrow';
+            }
+
+            if (summaryMeta) {
+                summaryMeta.textContent = selected.length
+                    ? selected.length + (selected.length === 1 ? ' pozycja w zestawie' : ' pozycji w zestawie')
+                    : 'Zaznacz parametry albo wybierz gotowy pakiet';
+            }
+
+            if (totalEl) {
+                totalEl.innerHTML = formatPLN(total) + '<span>brutto dla klienta</span>';
+            }
+
+            if (selectedField) selectedField.value = selected.map(item => item.name + ' - ' + formatPLN(item.price)).join('; ');
+            if (totalField) totalField.value = formatPLN(total);
+            if (countField) countField.value = String(selected.length);
+            if (jsonField) {
+                jsonField.value = JSON.stringify(selected.map(item => ({
+                    id: item.id,
+                    nazwa: item.name,
+                    cena_brutto: formatPLN(item.price)
+                })));
+            }
+
+            return { selected, total };
+        }
+
+        function applyPackagePreset(presetName) {
+            const selectedIds = presets[presetName] || [];
+
+            document.querySelectorAll('.package-param').forEach(input => {
+                input.checked = selectedIds.includes(input.value);
+            });
+
+            document.querySelectorAll('.package-preset').forEach(button => {
+                button.classList.toggle('is-active', button.dataset.preset === presetName);
+            });
+
+            updatePackageSummary();
+        }
+
+        renderPriceItems();
+
+        document.querySelectorAll('.package-param').forEach(input => {
+            input.addEventListener('change', () => {
+                document.querySelectorAll('.package-preset').forEach(button => button.classList.remove('is-active'));
+                updatePackageSummary();
+            });
         });
 
-        calculatePrice();
+        document.querySelectorAll('.package-preset').forEach(button => {
+            button.addEventListener('click', () => applyPackagePreset(button.dataset.preset));
+        });
+
+        const usePackageCta = document.getElementById('usePackageCta');
+        if (usePackageCta) {
+            usePackageCta.addEventListener('click', () => updatePackageSummary());
+        }
+
+        applyPackagePreset('micro');
 
         // ===== FORM HANDLING WITH LOADING STATE =====
         function handleFormSubmit(form, statusDivId) {
@@ -3260,6 +3712,10 @@
 
                 if (typeof window.populateAquaAttributionFields === 'function') {
                     window.populateAquaAttributionFields();
+                }
+
+                if (typeof updatePackageSummary === 'function') {
+                    updatePackageSummary();
                 }
 
                 const formData = new FormData(this);
@@ -3296,6 +3752,9 @@
                             });
                         }
                         this.reset();
+                        if (typeof updatePackageSummary === 'function') {
+                            updatePackageSummary();
+                        }
                     } else {
                         throw new Error('Form error');
                     }
