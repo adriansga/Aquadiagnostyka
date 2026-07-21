@@ -14,6 +14,7 @@ TOPICS = os.path.join(ROOT, "seo", "topics.md")
 BODY_TMP = os.path.join(ROOT, "seo", "_body_tmp.html")
 MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")
 FALLBACK_MODELS = [m.strip() for m in os.getenv("ANTHROPIC_FALLBACK_MODELS", "claude-haiku-4-5").split(",") if m.strip()]
+MAX_TOKENS = int(os.getenv("ANTHROPIC_MAX_TOKENS", "8000"))
 
 SYSTEM = (
     "Jesteś ekspertem SEO i copywriterem laboratorium badania wody AquaDiagnostyka "
@@ -28,7 +29,7 @@ Temat: {title}
 Główna fraza SEO: {kw}
 
 Wymagania:
-- 800-1100 słów, język polski, ton ekspercki i pomocny.
+- 650-900 słów, język polski, ton ekspercki i pomocny.
 - Treść jako czysty HTML: akapity <p>, nagłówki <h2>/<h3>, listy <ul>/<li>/<ol>, <strong>. BEZ <html>, <head>, <h1>, <style>.
 - Zacznij od krótkiej, konkretnej odpowiedzi na pytanie z tytułu w pierwszym akapicie.
 - Naturalnie wpleć główną frazę oraz lokalność: Nowy Sącz i okolice, prywatne studnie, domy, działki.
@@ -40,8 +41,10 @@ Wymagania:
 - NIE frontuj: przemysłu, ścieków, aquaparków, gastronomii, obiektów publicznych, basenów. Jeśli temat formalny wymaga Sanepidu, potraktuj go jako wyjątek formalny, nie główną ofertę.
 - Zakończ akapitem podsumowującym z zachętą do zamówienia badania przez formularz.
 
-Zwróć JSON o polach:
-{{"desc": "<meta description 150-160 znaków>", "keywords": "<5-7 fraz po przecinku>", "body": "<HTML treści>"}}"""
+Zwróć wyłącznie MINIFIKOWANY JSON w jednej linii, bez Markdown i bez komentarzy.
+W stringach JSON nie wolno używać surowych nowych linii; jeśli potrzeba, użyj spacji.
+Schema:
+{{"desc":"<meta description 150-160 znaków>","keywords":"<5-7 fraz po przecinku>","body":"<HTML treści>"}}"""
 
 BANNED_GENERATED = [
     "od 150",
@@ -99,7 +102,7 @@ def call_api(title, kw):
     for model in model_candidates():
         payload = {
             "model": model,
-            "max_tokens": 4000,
+            "max_tokens": MAX_TOKENS,
             "system": SYSTEM,
             "messages": [{"role": "user", "content": PROMPT.format(title=title, kw=kw)}],
         }
@@ -114,7 +117,11 @@ def call_api(title, kw):
                 resp = json.loads(r.read().decode())
             text = "".join(b.get("text", "") for b in resp["content"])
             print("Model:", model)
-            return parse_model_json(text)
+            try:
+                return parse_model_json(text)
+            except json.JSONDecodeError as e:
+                errors.append("%s -> JSON parse error: %s" % (model, e))
+                continue
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", errors="replace")[:500]
             errors.append("%s -> HTTP %s: %s" % (model, e.code, body))
