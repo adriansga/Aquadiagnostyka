@@ -1227,6 +1227,171 @@
             line-height: 1.45;
         }
 
+        .price-context {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 0 0 22px;
+        }
+
+        .price-context-item {
+            background: #f5fafc;
+            border: 1px solid rgba(16, 37, 50, 0.10);
+            border-radius: 14px;
+            padding: 16px;
+            color: #102532;
+        }
+
+        .price-context-item span {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .price-context-item strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .price-context-item small {
+            color: #4b6475;
+            line-height: 1.45;
+        }
+
+        .package-discount {
+            display: none;
+            grid-column: 1 / -1;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.86rem;
+        }
+
+        .package-summary.has-discount .package-discount {
+            display: block;
+        }
+
+        .package-total-original {
+            display: block;
+            margin-bottom: 4px;
+            color: rgba(255, 255, 255, 0.62);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: line-through;
+        }
+
+        .form-discount-note {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: rgba(20, 127, 168, 0.08);
+            color: #102532;
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        .form-discount-note.is-visible {
+            display: block;
+        }
+
+        .diy-section {
+            background: #eef7fa;
+            color: #102532;
+        }
+
+        .diy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 34px;
+        }
+
+        .diy-card {
+            background: #ffffff;
+            border: 1px solid rgba(16, 37, 50, 0.10);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 12px 32px rgba(16, 37, 50, 0.07);
+        }
+
+        .diy-card h3 {
+            color: #102532;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .diy-card p {
+            color: #4b6475;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .diy-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin: 16px 0;
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .diy-price span {
+            color: #4b6475;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .diy-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .diy-qty {
+            width: 88px;
+            min-height: 44px;
+            border: 1px solid rgba(16, 37, 50, 0.16);
+            border-radius: 10px;
+            padding: 0 12px;
+            color: #102532;
+            font: inherit;
+            font-weight: 700;
+            background: #ffffff;
+        }
+
+        .diy-button {
+            min-height: 44px;
+            border: none;
+            border-radius: 999px;
+            padding: 0 18px;
+            background: var(--primary);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .diy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(20, 127, 168, 0.22);
+        }
+
+        .diy-footnote {
+            margin-top: 18px;
+            color: #4b6475;
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+
         /* ===== LEAD MAGNET ===== */
         .leadmagnet {
             background: linear-gradient(135deg, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0.02) 100%);
@@ -1843,6 +2008,21 @@
 
             .price-builder {
                 padding: 24px 18px;
+            }
+
+            .price-context,
+            .diy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diy-controls {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .diy-qty,
+            .diy-button {
+                width: 100%;
             }
 
             .package-actions {
@@ -2520,7 +2700,7 @@
                 <a href="#kalkulator" class="cta-primary">Zamów mikrobiologię wody</a>
                 <a href="#kalkulator" class="cta-secondary">Sprawdź orientacyjną cenę</a>
             </div>
-            <p style="color:#9ca3af;font-size:13px;margin-top:14px;">Mikrobiologia od ok. 180 zł &nbsp;·&nbsp; Pobranie próbki u klienta &nbsp;·&nbsp; Formularz online</p>
+            <p style="color:#9ca3af;font-size:13px;margin-top:14px;">Pakiet mikrobiologiczny 350 zł brutto &nbsp;·&nbsp; Pobranie próbki u klienta &nbsp;·&nbsp; Formularz online</p>
         </div>
     </section>
 
@@ -2532,8 +2712,8 @@
                 <div class="trust-label">Miejscowości w obsłudze</div>
             </div>
             <div class="trust-badge">
-                <div class="trust-number" data-count="180" data-suffix=" zł">0</div>
-                <div class="trust-label">Mikrobiologia od</div>
+                <div class="trust-number" data-count="350" data-suffix=" zł">0</div>
+                <div class="trust-label">Pakiet mikrobiologiczny</div>
             </div>
             <div class="trust-badge">
                 <div class="trust-number" data-count="48" data-suffix="h">0</div>
@@ -2838,9 +3018,26 @@
             <div class="reveal" style="text-align:center;">
                 <span class="section-label">Cennik</span>
                 <h2 class="section-title section-title-center">Stworz wlasny <span class="accent">pakiet badania wody</span></h2>
-                <p class="section-subtitle section-subtitle-center">Ceny ponizej sa kwotami brutto dla klienta: cena z cennika laboratoryjnego pomnozona x2.5. Zaznacz parametry, a zestaw i suma automatycznie trafia do formularza.</p>
+                <p class="section-subtitle section-subtitle-center">Najpierw widzisz orientacyjna cene brutto, potem dopiero skladasz zgloszenie. Nie placisz na stronie - zakres, termin i sposob pobrania potwierdzamy po otrzymaniu formularza.</p>
             </div>
             <div class="price-builder reveal">
+                <div class="price-context" aria-label="Kontekst cennika">
+                    <div class="price-context-item">
+                        <span>Najczesciej</span>
+                        <strong>350 zl brutto</strong>
+                        <small>Pakiet mikrobiologiczny prywatnej studni jako punkt startowy.</small>
+                    </div>
+                    <div class="price-context-item">
+                        <span>Rozszerzenia</span>
+                        <strong>Tylko gdy maja sens</strong>
+                        <small>Fizykochemie dobierasz przy zapachu, osadzie, metnosci lub filtracji.</small>
+                    </div>
+                    <div class="price-context-item">
+                        <span>Bez zaskoczenia</span>
+                        <strong>Kwota idzie w zgloszeniu</strong>
+                        <small>Wybrany zestaw i suma zapisza sie automatycznie w formularzu.</small>
+                    </div>
+                </div>
                 <div class="package-actions" aria-label="Gotowe pakiety">
                     <button class="package-preset is-active" type="button" data-preset="micro">Pelny pakiet mikrobiologiczny studni</button>
                     <button class="package-preset" type="button" data-preset="microPlusControl">Mikrobiologia + kontrolny fizyko</button>
@@ -2864,6 +3061,7 @@
                         <small id="packageSummaryMeta">1 pozycja w zestawie</small>
                     </div>
                     <div class="package-total" id="packageTotal">350,00 zl<span>brutto dla klienta</span></div>
+                    <div class="package-discount" id="packageDiscountLine"></div>
                 </div>
                 <p class="package-note">Nie wiesz, co wybrac? Kliknij „Co oznacza?” przy parametrze albo zostaw pakiet mikrobiologiczny jako punkt startowy.</p>
                 <div style="text-align:center; margin-top:20px;">
@@ -2879,6 +3077,38 @@
                     <div id="packageOrderMount"></div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ==================== ZESTAW DIY TEST ==================== -->
+    <section id="zestaw-diy" class="diy-section">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <span class="section-label">Opcja testowa</span>
+                <h2 class="section-title section-title-center">Zestaw do pobrania probki <span class="accent">we wlasnym zakresie</span></h2>
+                <p class="section-subtitle section-subtitle-center">Testujemy wariant wysylkowy dla osob, ktore chca pobrac probke samodzielnie. Przed platnoscia potwierdzimy dostepnosc zestawu, instrukcje i termin dostarczenia probki do badania.</p>
+            </div>
+            <div class="diy-grid">
+                <div class="diy-card reveal" data-diy-card="micro">
+                    <h3>Zestaw DIY mikrobiologia</h3>
+                    <p>Sterylne opakowanie, instrukcja pobrania i dalsze kroki dla podstawowego badania mikrobiologicznego wody ze studni.</p>
+                    <div class="diy-price">190,00 zl <span>175,00 zl zestaw + 15,00 zl dostawa</span></div>
+                    <div class="diy-controls">
+                        <input class="diy-qty" id="diyQtyMicro" type="number" min="1" max="10" value="1" aria-label="Ilosc zestawow DIY mikrobiologia">
+                        <button class="diy-button" type="button" data-diy="micro">Wstepnie zamow zestaw</button>
+                    </div>
+                </div>
+                <div class="diy-card reveal" data-diy-card="micro_control">
+                    <h3>Zestaw DIY mikrobiologia + kontrolny fizyko</h3>
+                    <p>Opcja dla osob, ktore poza bakteriami chca sprawdzic podstawowe cechy wody, np. metnosc, zapach, pH i jon amonowy.</p>
+                    <div class="diy-price">397,57 zl <span>382,57 zl zestaw + 15,00 zl dostawa</span></div>
+                    <div class="diy-controls">
+                        <input class="diy-qty" id="diyQtyMicroControl" type="number" min="1" max="10" value="1" aria-label="Ilosc zestawow DIY mikrobiologia i fizykochemia">
+                        <button class="diy-button" type="button" data-diy="micro_control">Wstepnie zamow zestaw</button>
+                    </div>
+                </div>
+            </div>
+            <p class="diy-footnote reveal">Na tym etapie to test zainteresowania, nie automatyczna platnosc. Jezeli wybierzesz zestaw DIY, formularz zapisze wariant, ilosc i kwote, a my potwierdzimy, czy w Twojej sytuacji pobranie we wlasnym zakresie ma sens.</p>
         </div>
     </section>
 
@@ -3100,6 +3330,7 @@
                             <span>Wybrany pakiet</span>
                             <strong id="formPackagePreviewText">Pakiet podstawowy badania mikrobiologicznego wody ze studni</strong>
                             <small id="formPackagePreviewMeta">Suma: 350,00 zl brutto dla klienta</small>
+                            <div class="form-discount-note" id="formDiscountNote"></div>
                         </div>
                         <input type="text" name="imie_nazwisko" placeholder="Imie i nazwisko *" required aria-label="Imie i nazwisko">
                         <input type="tel" name="telefon" placeholder="Numer telefonu *" required aria-label="Numer telefonu">
@@ -3131,8 +3362,18 @@
                         <input type="hidden" name="session_id" class="tracking-session-id" value="">
                         <input type="hidden" name="pakiet_parametry" id="packageSelectedField" value="">
                         <input type="hidden" name="pakiet_cena_brutto" id="packageTotalField" value="">
+                        <input type="hidden" name="pakiet_cena_przed_rabatem" id="packageOriginalTotalField" value="">
+                        <input type="hidden" name="pakiet_rabat_procent" id="packageDiscountPercentField" value="">
+                        <input type="hidden" name="pakiet_rabat_kwota" id="packageDiscountAmountField" value="">
+                        <input type="hidden" name="pakiet_kod_rabatu" id="packageDiscountCodeField" value="">
                         <input type="hidden" name="pakiet_liczba_parametrow" id="packageCountField" value="">
                         <input type="hidden" name="pakiet_json" id="packageJsonField" value="">
+                        <input type="hidden" name="diy_zainteresowanie" id="diyInterestField" value="">
+                        <input type="hidden" name="diy_wariant" id="diyVariantField" value="">
+                        <input type="hidden" name="diy_ilosc" id="diyQtyField" value="">
+                        <input type="hidden" name="diy_cena_brutto" id="diyPriceField" value="">
+                        <input type="hidden" name="diy_dostawa_brutto" id="diyShippingField" value="">
+                        <input type="hidden" name="diy_suma_brutto" id="diyTotalField" value="">
                         <button type="submit">Wyslij zgloszenie badania</button>
                     </form>
                     <script>
@@ -3467,11 +3708,14 @@
         function syncMobileCtaVisibility() {
             const mobileCta = document.getElementById('mobileCta');
             const contactSection = document.getElementById('kalkulator');
+            const diySection = document.getElementById('zestaw-diy');
             if (!mobileCta || !contactSection) return;
 
             const rect = contactSection.getBoundingClientRect();
+            const diyRect = diySection ? diySection.getBoundingClientRect() : null;
             const inContact = rect.top < window.innerHeight * 0.85 && rect.bottom > 120;
-            mobileCta.classList.toggle('is-hidden', inContact);
+            const inDiy = diyRect ? diyRect.top < window.innerHeight * 0.85 && diyRect.bottom > 120 : false;
+            mobileCta.classList.toggle('is-hidden', inContact || inDiy);
         }
 
         window.addEventListener('scroll', syncMobileCtaVisibility, { passive: true });
@@ -3615,6 +3859,43 @@
             }) + ' zl';
         }
 
+        const EXIT_DISCOUNT_RATE = 0.10;
+        const EXIT_DISCOUNT_CODE = 'PIERWSZE_BADANIE_MINUS_10';
+        let packageDiscountApplied = false;
+
+        const diyOptions = {
+            micro: {
+                label: 'Zestaw DIY mikrobiologia',
+                unitPrice: 175.00,
+                shipping: 15.00,
+                qtySelector: '#diyQtyMicro',
+                preset: 'micro'
+            },
+            micro_control: {
+                label: 'Zestaw DIY mikrobiologia + kontrolny fizyko',
+                unitPrice: 382.57,
+                shipping: 15.00,
+                qtySelector: '#diyQtyMicroControl',
+                preset: 'microPlusControl'
+            }
+        };
+        let diySelection = null;
+
+        function roundMoney(value) {
+            return Math.round((value + Number.EPSILON) * 100) / 100;
+        }
+
+        function getPackagePricing(total) {
+            const discountAmount = packageDiscountApplied && total > 0
+                ? roundMoney(total * EXIT_DISCOUNT_RATE)
+                : 0;
+            return {
+                originalTotal: roundMoney(total),
+                discountAmount,
+                finalTotal: roundMoney(total - discountAmount)
+            };
+        }
+
         function renderPriceItems() {
             const grids = {
                 micro: document.getElementById('priceGridMicro'),
@@ -3649,15 +3930,23 @@
         function updatePackageSummary() {
             const selected = getSelectedPackageItems();
             const total = selected.reduce((sum, item) => sum + item.price, 0);
+            const pricing = getPackagePricing(total);
+            const summaryBox = document.querySelector('.package-summary');
             const summaryText = document.getElementById('packageSummaryText');
             const summaryMeta = document.getElementById('packageSummaryMeta');
             const totalEl = document.getElementById('packageTotal');
+            const discountLine = document.getElementById('packageDiscountLine');
             const selectedField = document.getElementById('packageSelectedField');
             const totalField = document.getElementById('packageTotalField');
+            const originalTotalField = document.getElementById('packageOriginalTotalField');
+            const discountPercentField = document.getElementById('packageDiscountPercentField');
+            const discountAmountField = document.getElementById('packageDiscountAmountField');
+            const discountCodeField = document.getElementById('packageDiscountCodeField');
             const countField = document.getElementById('packageCountField');
             const jsonField = document.getElementById('packageJsonField');
             const formPreviewText = document.getElementById('formPackagePreviewText');
             const formPreviewMeta = document.getElementById('formPackagePreviewMeta');
+            const formDiscountNote = document.getElementById('formDiscountNote');
             const selectedText = selected.length
                 ? selected.map(item => item.name).join(' + ')
                 : 'Nie wybrano parametrow';
@@ -3679,7 +3968,19 @@
             }
 
             if (totalEl) {
-                totalEl.innerHTML = formatPLN(total) + '<span>brutto dla klienta</span>';
+                totalEl.innerHTML = pricing.discountAmount > 0
+                    ? '<span class="package-total-original">' + formatPLN(pricing.originalTotal) + '</span>' + formatPLN(pricing.finalTotal) + '<span>brutto po rabacie -10%</span>'
+                    : formatPLN(pricing.finalTotal) + '<span>brutto dla klienta</span>';
+            }
+
+            if (summaryBox) {
+                summaryBox.classList.toggle('has-discount', pricing.discountAmount > 0);
+            }
+
+            if (discountLine) {
+                discountLine.textContent = pricing.discountAmount > 0
+                    ? 'Rabat na pierwsze badanie: -' + formatPLN(pricing.discountAmount) + '. Kod: ' + EXIT_DISCOUNT_CODE + '.'
+                    : '';
             }
 
             if (formPreviewText) {
@@ -3688,12 +3989,28 @@
 
             if (formPreviewMeta) {
                 formPreviewMeta.textContent = selected.length
-                    ? selected.length + (selected.length === 1 ? ' pozycja' : ' pozycji') + ' | Suma: ' + formatPLN(total) + ' brutto dla klienta'
+                    ? selected.length + (selected.length === 1 ? ' pozycja' : ' pozycji') + ' | Suma: ' + formatPLN(pricing.finalTotal) + ' brutto dla klienta'
                     : 'Zaznacz przynajmniej jeden parametr w konfiguratorze.';
             }
 
+            if (formDiscountNote) {
+                const notes = [];
+                if (pricing.discountAmount > 0) {
+                    notes.push('Rabat -10% na pierwsze badanie: oszczedzasz ' + formatPLN(pricing.discountAmount) + '. Przed rabatem: ' + formatPLN(pricing.originalTotal) + '.');
+                }
+                if (diySelection) {
+                    notes.push('DIY: ' + diySelection.label + ', ilosc: ' + diySelection.qty + ', suma z dostawa: ' + formatPLN(diySelection.total) + '.');
+                }
+                formDiscountNote.textContent = notes.join(' ');
+                formDiscountNote.classList.toggle('is-visible', notes.length > 0);
+            }
+
             if (selectedField) selectedField.value = selectedDetails;
-            if (totalField) totalField.value = formatPLN(total);
+            if (totalField) totalField.value = formatPLN(pricing.finalTotal);
+            if (originalTotalField) originalTotalField.value = formatPLN(pricing.originalTotal);
+            if (discountPercentField) discountPercentField.value = pricing.discountAmount > 0 ? '10%' : '0%';
+            if (discountAmountField) discountAmountField.value = formatPLN(pricing.discountAmount);
+            if (discountCodeField) discountCodeField.value = pricing.discountAmount > 0 ? EXIT_DISCOUNT_CODE : '';
             if (countField) countField.value = String(selected.length);
             if (jsonField) {
                 jsonField.value = JSON.stringify(selected.map(item => ({
@@ -3703,7 +4020,9 @@
                 })));
             }
 
-            return { selected, total };
+            updateExitPopupOffer(selected, pricing);
+
+            return { selected, total: pricing.finalTotal, originalTotal: pricing.originalTotal, discountAmount: pricing.discountAmount };
         }
 
         function applyPackagePreset(presetName) {
@@ -3720,6 +4039,55 @@
             updatePackageSummary();
         }
 
+        function updateDiyFields() {
+            const interestField = document.getElementById('diyInterestField');
+            const variantField = document.getElementById('diyVariantField');
+            const qtyField = document.getElementById('diyQtyField');
+            const priceField = document.getElementById('diyPriceField');
+            const shippingField = document.getElementById('diyShippingField');
+            const totalField = document.getElementById('diyTotalField');
+
+            if (!diySelection) {
+                if (interestField) interestField.value = '';
+                if (variantField) variantField.value = '';
+                if (qtyField) qtyField.value = '';
+                if (priceField) priceField.value = '';
+                if (shippingField) shippingField.value = '';
+                if (totalField) totalField.value = '';
+                return;
+            }
+
+            if (interestField) interestField.value = 'TAK - test zestawu DIY';
+            if (variantField) variantField.value = diySelection.label;
+            if (qtyField) qtyField.value = String(diySelection.qty);
+            if (priceField) priceField.value = formatPLN(diySelection.unitTotal);
+            if (shippingField) shippingField.value = formatPLN(diySelection.shipping);
+            if (totalField) totalField.value = formatPLN(diySelection.total);
+        }
+
+        function chooseDiyOption(optionKey) {
+            const option = diyOptions[optionKey];
+            if (!option) return;
+
+            const qtyInput = document.querySelector(option.qtySelector);
+            const qty = Math.max(1, Math.min(10, parseInt(qtyInput && qtyInput.value ? qtyInput.value : '1', 10) || 1));
+            if (qtyInput) qtyInput.value = String(qty);
+
+            diySelection = {
+                key: optionKey,
+                label: option.label,
+                qty,
+                unitPrice: option.unitPrice,
+                unitTotal: roundMoney(option.unitPrice * qty),
+                shipping: option.shipping,
+                total: roundMoney(option.unitPrice * qty + option.shipping)
+            };
+
+            applyPackagePreset(option.preset);
+            updateDiyFields();
+            openPackageOrderPanel();
+        }
+
         renderPriceItems();
 
         document.querySelectorAll('.package-param').forEach(input => {
@@ -3731,6 +4099,25 @@
 
         document.querySelectorAll('.package-preset').forEach(button => {
             button.addEventListener('click', () => applyPackagePreset(button.dataset.preset));
+        });
+
+        document.querySelectorAll('[data-diy]').forEach(button => {
+            button.addEventListener('click', () => chooseDiyOption(button.dataset.diy));
+        });
+
+        document.querySelectorAll('.diy-qty').forEach(input => {
+            input.addEventListener('change', () => {
+                if (!diySelection) return;
+                const option = diyOptions[diySelection.key];
+                if (!option || option.qtySelector !== '#' + input.id) return;
+                const qty = Math.max(1, Math.min(10, parseInt(input.value || '1', 10) || 1));
+                input.value = String(qty);
+                diySelection.qty = qty;
+                diySelection.unitTotal = roundMoney(option.unitPrice * qty);
+                diySelection.total = roundMoney(option.unitPrice * qty + option.shipping);
+                updateDiyFields();
+                updatePackageSummary();
+            });
         });
 
         function setupInlineOrderForm() {
@@ -3759,6 +4146,8 @@
             const builder = document.querySelector('.price-builder');
             if (builder) builder.classList.add('is-order-open');
             if (cta) cta.textContent = 'Uzupelnij dane ponizej';
+            const firstFieldNow = document.querySelector('#contactForm input[name="imie_nazwisko"]');
+            if (firstFieldNow) firstFieldNow.focus({ preventScroll: true });
 
             setTimeout(() => {
                 panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -3805,6 +4194,7 @@
                     window.populateAquaAttributionFields();
                 }
 
+                updateDiyFields();
                 const formData = new FormData(this);
                 const customerEmail = String(formData.get('email') || '').trim();
                 if (customerEmail) {
@@ -3902,47 +4292,121 @@
 
         // ===== EXIT INTENT POPUP =====
         let exitPopupShown = false;
-        const exitPopup = document.getElementById('exitPopup');
-        
+
+        function updateExitPopupOffer(selectedOverride, pricingOverride) {
+            const selected = selectedOverride || getSelectedPackageItems();
+            const total = selected.reduce((sum, item) => sum + item.price, 0);
+            const baseTotal = selected.length ? total : 350;
+            const offerPricing = {
+                originalTotal: roundMoney(baseTotal),
+                discountAmount: roundMoney(baseTotal * EXIT_DISCOUNT_RATE),
+                finalTotal: roundMoney(baseTotal - baseTotal * EXIT_DISCOUNT_RATE)
+            };
+            const nameEl = document.getElementById('exitOfferPackage');
+            const priceEl = document.getElementById('exitOfferPrice');
+            const saveEl = document.getElementById('exitOfferSave');
+            const diyEl = document.getElementById('exitDiyPrice');
+
+            if (nameEl) {
+                nameEl.textContent = selected.length
+                    ? selected.map(item => item.name).join(' + ')
+                    : 'Pakiet mikrobiologiczny wody ze studni';
+            }
+            if (priceEl) {
+                priceEl.innerHTML = '<span>' + formatPLN(offerPricing.originalTotal) + '</span> ' + formatPLN(offerPricing.finalTotal);
+            }
+            if (saveEl) {
+                saveEl.textContent = 'Oszczedzasz ' + formatPLN(offerPricing.discountAmount) + ' na pierwszym badaniu.';
+            }
+            if (diyEl) {
+                diyEl.textContent = 'Zestaw DIY mikrobiologia: 190,00 zl z dostawa.';
+            }
+        }
+
+        function showExitPopup(trigger) {
+            const exitPopup = document.getElementById('exitPopup');
+            if (!exitPopup || exitPopupShown) return;
+            updateExitPopupOffer();
+            exitPopup.dataset.trigger = trigger || 'exit';
+            exitPopup.classList.add('active');
+            exitPopupShown = true;
+            document.body.style.overflow = 'hidden';
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'exit_offer_view', {
+                    event_category: 'cennik',
+                    event_label: trigger || 'exit'
+                });
+            }
+        }
+
         document.addEventListener('mouseleave', function(e) {
-            if (e.clientY < 10 && !exitPopupShown && exitPopup) {
-                exitPopup.classList.add('active');
-                exitPopupShown = true;
-                document.body.style.overflow = 'hidden';
+            if (e.clientY < 10) {
+                showExitPopup('desktop_exit');
             }
         });
 
         function closeExitPopup() {
+            const exitPopup = document.getElementById('exitPopup');
             if (exitPopup) {
                 exitPopup.classList.remove('active');
                 document.body.style.overflow = '';
             }
         }
 
-        function submitExitPopup() {
-            const email = document.getElementById('exitPopupEmail');
-            const errorEl = document.getElementById('exitPopupError');
-            
-            if (!email || !email.value.trim() || !email.value.includes('@')) {
-                if (errorEl) errorEl.style.display = 'block';
-                return;
+        function applyExitDiscount() {
+            if (!getSelectedPackageItems().length) {
+                applyPackagePreset('micro');
             }
-            
-            if (errorEl) errorEl.style.display = 'none';
-            
-            const content = document.querySelector('.exit-popup-content');
-            if (content) {
-                content.innerHTML = `
-                    <h2 style="font-size: 2rem; margin-bottom: 20px;">Dziekujemy</h2>
-                    <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 30px;">
-                        Zapis z popupu jest tymczasowo wylaczony. Zamow badanie przez formularz kontaktowy, a w odpowiedzi potwierdzimy zakres i termin.
-                    </p>
-                    <button class="cta-primary" onclick="closeExitPopup()" style="background: var(--primary); color: white; padding: 15px 40px; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; font-size: 1rem;">
-                        ZAMKNIJ
-                    </button>
-                `;
+            packageDiscountApplied = true;
+            updatePackageSummary();
+            closeExitPopup();
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'exit_offer_accept', {
+                    event_category: 'cennik',
+                    event_label: EXIT_DISCOUNT_CODE,
+                    value: getPackagePricing(getSelectedPackageItems().reduce((sum, item) => sum + item.price, 0)).discountAmount
+                });
+            }
+
+            openPackageOrderPanel();
+        }
+
+        function showDiyFromExitPopup() {
+            closeExitPopup();
+            scrollToHashTarget('#zestaw-diy', 'smooth');
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'diy_offer_click', {
+                    event_category: 'cennik',
+                    event_label: 'exit_popup'
+                });
             }
         }
+
+        function setupMobileExitIntent() {
+            if (!window.matchMedia || !window.matchMedia('(max-width: 768px)').matches) return;
+            if (!history.pushState) return;
+
+            try {
+                history.replaceState(Object.assign({}, history.state || {}, { aquaPage: true }), '', location.href);
+                history.pushState({ aquaExitGuard: true }, '', location.href);
+            } catch (error) {
+                return;
+            }
+
+            window.addEventListener('popstate', function() {
+                if (!exitPopupShown) {
+                    showExitPopup('mobile_back');
+                    try {
+                        history.pushState({ aquaExitGuard: true }, '', location.href);
+                    } catch (error) {}
+                }
+            });
+        }
+
+        window.addEventListener('load', setupMobileExitIntent);
 
         // ===== FLOATING CTA BUTTON =====
         // floatCtaBtn renderowany ponizej skryptu -> inicjalizacja po DOMContentLoaded.
@@ -4033,18 +4497,23 @@
     <div id="exitPopup" class="exit-popup">
         <div class="exit-popup-content">
             <button class="exit-popup-close" onclick="closeExitPopup()">✕</button>
-            <div style="margin-bottom: 20px;">
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin: 0 auto;"><path d="M12 2.69l5.74 5.88a8 8 0 1 1-11.48 0l5.74-5.88z"/><path d="M12 22a6 6 0 0 0 6-6c0-3.31-6-10-6-10S6 12.69 6 16a6 6 0 0 0 6 6z"/></svg>
+            <div class="exit-popup-kicker">Oferta na pierwsze badanie</div>
+            <h2>Pierwsze badanie <span>-10%</span></h2>
+            <p>
+                Jezeli chcesz jeszcze pomyslec, zostawiamy rabat na aktualny koszyk. Kwota zapisze sie automatycznie w zgloszeniu.
+            </p>
+            <div class="exit-offer-box">
+                <small>Wybrany zakres</small>
+                <strong id="exitOfferPackage">Pakiet mikrobiologiczny wody ze studni</strong>
+                <div class="exit-offer-price" id="exitOfferPrice"><span>350,00 zl</span> 315,00 zl</div>
+                <em id="exitOfferSave">Oszczedzasz 35,00 zl na pierwszym badaniu.</em>
             </div>
-            <h2 style="font-size: 2rem; margin-bottom: 15px; line-height: 1.2;">Masz watpliwosci co zbadac?</h2>
-            <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 30px; line-height: 1.6;">
-                Najpewniejsza sciezka to krotki formularz. Opisz zrodlo wody i problem, a dobierzemy zakres badania przed pobraniem probki.
-            </p>
-            <a href="#kalkulator" class="cta-primary" onclick="closeExitPopup()" style="background: var(--primary); color: white; padding: 15px 40px; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; font-size: 1rem; transition: var(--transition); display: inline-block;">PRZEJDZ DO ZGLOSZENIA</a>
-            <p id="exitPopupError" style="color: #ff4444; font-size: 0.85rem; margin-top: 10px; display: none;">Podaj poprawny email</p>
-            <p style="color: rgba(255,255,255,0.4); font-size: 0.75rem; margin-top: 20px; text-align: center;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; vertical-align: middle; margin-right: 4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Szanujemy prywatność. Zero spamu.
-            </p>
+            <div class="exit-popup-actions">
+                <button class="cta-primary" type="button" onclick="applyExitDiscount()">Zostaw rabat i zloz zgloszenie</button>
+                <button class="exit-popup-secondary" type="button" onclick="showDiyFromExitPopup()">Sprawdz zestaw DIY</button>
+            </div>
+            <p class="exit-popup-diy" id="exitDiyPrice">Zestaw DIY mikrobiologia: 190,00 zl z dostawa.</p>
+            <p class="exit-popup-privacy">Rabat nie oznacza platnosci na stronie. Potwierdzimy zakres i termin po wyslaniu formularza.</p>
         </div>
     </div>
 
@@ -4079,15 +4548,16 @@
         }
 
         .exit-popup-content {
-            background: var(--card-bg);
+            background: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 550px;
+            border-radius: 18px;
+            padding: 34px;
+            max-width: 590px;
             width: 90%;
             position: relative;
             text-align: center;
             animation: slideUp 0.4s ease;
+            color: #102532;
         }
 
         .exit-popup-close {
@@ -4096,7 +4566,7 @@
             right: 20px;
             background: transparent;
             border: none;
-            color: var(--text-gray);
+            color: #4b6475;
             font-size: 1.5rem;
             cursor: pointer;
             width: 40px;
@@ -4106,8 +4576,129 @@
         }
 
         .exit-popup-close:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+            background: rgba(16, 37, 50, 0.08);
+            color: #102532;
+        }
+
+        .exit-popup-kicker {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .exit-popup-content h2 {
+            color: #102532;
+            font-size: clamp(1.75rem, 4vw, 2.4rem);
+            line-height: 1.08;
+            margin-bottom: 12px;
+        }
+
+        .exit-popup-content h2 span {
+            color: var(--primary);
+        }
+
+        .exit-popup-content p {
+            color: #4b6475;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .exit-offer-box {
+            margin: 20px 0;
+            padding: 18px;
+            border: 1px solid rgba(16, 37, 50, 0.10);
+            border-radius: 14px;
+            background: #f5fafc;
+            text-align: left;
+        }
+
+        .exit-offer-box small {
+            display: block;
+            color: #4b6475;
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 5px;
+        }
+
+        .exit-offer-box strong {
+            display: block;
+            color: #102532;
+            font-size: 0.96rem;
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .exit-offer-price {
+            color: var(--primary);
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .exit-offer-price span {
+            color: #7b8b96;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: line-through;
+        }
+
+        .exit-offer-box em {
+            display: block;
+            margin-top: 8px;
+            color: #102532;
+            font-style: normal;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .exit-popup-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .exit-popup-actions .cta-primary,
+        .exit-popup-secondary {
+            min-height: 48px;
+            border: none;
+            border-radius: 999px;
+            padding: 0 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .exit-popup-actions .cta-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .exit-popup-secondary {
+            background: #eaf3f7;
+            color: #102532;
+        }
+
+        .exit-popup-diy {
+            margin-top: 14px !important;
+            margin-bottom: 6px !important;
+            color: #102532 !important;
+            font-size: 0.86rem !important;
+            font-weight: 800;
+        }
+
+        .exit-popup-privacy {
+            margin: 0 !important;
+            color: #6f808b !important;
+            font-size: 0.76rem !important;
         }
 
         @keyframes slideUp {
@@ -4136,8 +4727,14 @@
         /* Mobile adjustments */
         @media (max-width: 768px) {
             .exit-popup-content {
-                padding: 30px 20px;
+                padding: 30px 18px 22px;
                 width: 95%;
+                max-height: 92vh;
+                overflow-y: auto;
+            }
+
+            .exit-popup-actions {
+                grid-template-columns: 1fr;
             }
 
             .floating-cta {
