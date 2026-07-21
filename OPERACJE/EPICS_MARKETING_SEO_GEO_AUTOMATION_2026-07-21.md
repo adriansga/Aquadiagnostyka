@@ -115,6 +115,8 @@ Główna ścieżka AquaDiagnostyki = B2C i mikrobiologiczne badanie wody dla pry
 
 ## EPIC 05 — GEO/content pod AI answers
 
+**Status 21.07.2026:** P0 wdrożone na stronie głównej. Dodano sekcję `#odpowiedzi` z 6 krótkimi odpowiedziami dla prywatnego właściciela studni: co wykrywa mikrobiologia, kiedy badać, czy filtr wystarczy, co oznacza E. coli, kiedy rozszerzyć o fizykochemię i jak zamówić. Rozszerzono `FAQPage` JSON-LD o 4 dodatkowe pytania pod AI/Google answers.
+
 **Cel:** zwiększyć szansę, że Google/AI odpowiadający na pytania lokalne rozumie, że Aqua robi badanie wody w Nowym Sączu i okolicach.
 
 **Zakres:**
@@ -270,7 +272,7 @@ Główna ścieżka AquaDiagnostyki = B2C i mikrobiologiczne badanie wody dla pry
 
 1. EPIC 06 — DONE: QA/deploy formularza i dropdownów B2C mikrobiologia.
 2. EPIC 04 — DONE P0: lokalne podstrony miast + sitemap pod mikrobiologię B2C.
-3. EPIC 05 — Q&A/GEO pod pytania o bakterie w wodzie ze studni.
+3. EPIC 05 — DONE P0: sekcja AI/GEO answers + dodatkowe FAQ schema.
 4. EPIC 02 — GBP manual sprint pod mikrobiologię prywatnych studni.
 5. EPIC 01 — publikacja pierwszych postów, po aktualizacji treści pod mikrobiologię.
 6. EPIC 08 — katalogi z opisem mikrobiologia/studnia/dom.
