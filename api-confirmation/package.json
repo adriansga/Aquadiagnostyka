@@ -1,0 +1,9 @@
+{
+  "name": "aquadiagnostyka-confirmation-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "check": "node -c api/confirm.js"
+  }
+}

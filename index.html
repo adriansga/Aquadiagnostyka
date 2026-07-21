@@ -3861,6 +3861,7 @@
 
         const EXIT_DISCOUNT_RATE = 0.10;
         const EXIT_DISCOUNT_CODE = 'PIERWSZE_BADANIE_MINUS_10';
+        const CUSTOMER_CONFIRMATION_ENDPOINT = 'https://api-confirmation.vercel.app/api/confirm';
         let packageDiscountApplied = false;
 
         const diyOptions = {
@@ -4166,6 +4167,33 @@
         applyPackagePreset('micro');
 
         // ===== FORM HANDLING WITH LOADING STATE =====
+        function buildCustomerConfirmationPayload(formData) {
+            const payload = {};
+            formData.forEach((value, key) => {
+                payload[key] = String(value || '');
+            });
+            return payload;
+        }
+
+        async function sendCustomerConfirmation(formData) {
+            const email = String(formData.get('email') || '').trim();
+            if (!email || !email.includes('@')) {
+                return { ok: false, skipped: true };
+            }
+
+            const response = await fetch(CUSTOMER_CONFIRMATION_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(buildCustomerConfirmationPayload(formData))
+            });
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok || !data.ok) {
+                throw new Error(data.error || 'confirmation_failed');
+            }
+            return data;
+        }
+
         function handleFormSubmit(form, statusDivId) {
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
@@ -4200,7 +4228,10 @@
                 if (customerEmail) {
                     formData.set('_replyto', customerEmail);
                 }
-                formData.set('potwierdzenie_email_status', 'Adres klienta przekazany w polu email. Potwierdzenie automatyczne wymaga wlaczonego Workflow/Autoresponse w Formspree.');
+                formData.set('potwierdzenie_email_status', this.id === 'contactForm'
+                    ? 'Potwierdzenie klienta wysylane przez Aqua Confirmation API / Resend po sukcesie Formspree.'
+                    : 'Formularz pomocniczy - bez potwierdzenia klienta.');
+                formData.set('potwierdzenie_email_endpoint', this.id === 'contactForm' ? CUSTOMER_CONFIRMATION_ENDPOINT : '');
 
                 try {
                     const response = await fetch(this.action, {
@@ -4210,10 +4241,25 @@
                     });
 
                     if (response.ok) {
+                        let confirmationSent = false;
+                        let confirmationId = '';
+
+                        if (this.id === 'contactForm') {
+                            try {
+                                const confirmation = await sendCustomerConfirmation(formData);
+                                confirmationSent = Boolean(confirmation && confirmation.ok);
+                                confirmationId = confirmation && confirmation.id ? confirmation.id : '';
+                            } catch (confirmationError) {
+                                console.error('Customer confirmation failed', confirmationError);
+                            }
+                        }
+
                         if (statusDiv) {
                             statusDiv.style.display = 'block';
                             statusDiv.className = 'form-status success';
-                            statusDiv.textContent = 'Zgloszenie wyslane. Potwierdzimy zakres, kwote i termin pobrania probki na podany email lub telefon.';
+                            statusDiv.textContent = confirmationSent
+                                ? 'Zgloszenie wyslane. Potwierdzenie trafilo na podany email. Potwierdzimy jeszcze zakres i termin pobrania probki.'
+                                : 'Zgloszenie wyslane. Potwierdzimy zakres, kwote i termin pobrania probki na podany email lub telefon.';
                         }
                         // Konwersja w GA4 - lead zapisuje sie w Analytics
                         if (typeof gtag === 'function') {
@@ -4232,6 +4278,12 @@
                                 utm_campaign: attribution.utm_campaign || attribution.utmCampaign || '',
                                 referrer: attribution.referrer || document.referrer || ''
                             });
+                            if (confirmationSent) {
+                                gtag('event', 'customer_confirmation_email_sent', {
+                                    event_category: 'formularz',
+                                    event_label: confirmationId || this.id || 'contactForm'
+                                });
+                            }
                         }
                         this.reset();
                         if (typeof updatePackageSummary === 'function') {
