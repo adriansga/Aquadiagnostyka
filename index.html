@@ -132,7 +132,7 @@
                 "areaServed": {"@type": "City", "name": "Nowy Sącz"},
                 "offers": {
                     "@type": "Offer",
-                    "price": "325.00",
+                    "price": "350.00",
                     "priceCurrency": "PLN",
                     "availability": "https://schema.org/InStock",
                     "url": "https://aquadiagnostyka.pl/#oferta"
@@ -160,7 +160,7 @@
                 "areaServed": {"@type": "City", "name": "Nowy Sącz"},
                 "offers": {
                     "@type": "Offer",
-                    "price": "740.13",
+                    "price": "765.13",
                     "priceCurrency": "PLN",
                     "availability": "https://schema.org/InStock",
                     "url": "https://aquadiagnostyka.pl/#oferta",
@@ -181,7 +181,7 @@
             {"@type": "Question", "name": "Jak prawidlowo pobrac probke wody?", "acceptedAnswer": {"@type": "Answer", "text": "Najwazniejsze to uzyc sterylnego pojemnika. Przed pobraniem nalezy przeplukai kran przez ok. 3 minuty. Probke nalezy dostarczyc do laboratorium w ciagu 6 godzin od pobrania."}},
             {"@type": "Question", "name": "Ile czasu trwa oczekiwanie na wyniki?", "acceptedAnswer": {"@type": "Answer", "text": "Badanie mikrobiologiczne wymaga hodowli bakterii, dlatego wynik jest standardowo dostepny po 48 godzinach. Przy rozszerzeniu fizykochemicznym termin potwierdzamy przy zleceniu."}},
             {"@type": "Question", "name": "Czy wyniki badan sa uznawane urzedowo?", "acceptedAnswer": {"@type": "Answer", "text": "Tak. Nasze sprawozdania z badan sa pelnowarosciowymi dokumentami uznawanymi w urzedach. Stosujemy akredytowane metody badawcze zgodne z normami PN-EN ISO."}},
-            {"@type": "Question", "name": "Ile kosztuje badanie wody?", "acceptedAnswer": {"@type": "Answer", "text": "Pakiet mikrobiologiczny prywatnej studni w konfiguratorze kosztuje 325 zl brutto. Ostateczna cena zalezy od wybranych parametrow i jest liczona automatycznie w cenniku na stronie."}},
+            {"@type": "Question", "name": "Ile kosztuje badanie wody?", "acceptedAnswer": {"@type": "Answer", "text": "Pelny podstawowy pakiet mikrobiologiczny prywatnej studni w konfiguratorze kosztuje 350 zl brutto. Ostateczna cena zalezy od wybranych parametrow i jest liczona automatycznie w cenniku na stronie."}},
             {"@type": "Question", "name": "Co zrobic jesli wyniki wykazuja przekroczenia norm?", "acceptedAnswer": {"@type": "Answer", "text": "Nasz ekspert omowi sytuacje i doradzi odpowiednie dzialania - dezynfekcje studni, instalacje filtra lub kontakt ze sluzba sanitarna."}},
             {"@type": "Question", "name": "Czy przyjezydzacie do klienta?", "acceptedAnswer": {"@type": "Answer", "text": "Tak, oferujemy usługę dojazdu i profesjonalnego pobrania próbek na terenie Nowego Sącza i okolic (do ok. 40 km). Dojazd i pobranie próbki w cenie badania."}},
             {"@type": "Question", "name": "Jakie normy obowiazuja dla wody pitnej w Polsce?", "acceptedAnswer": {"@type": "Answer", "text": "Jakosc wody pitnej reguluje Rozporzadzenie Ministra Zdrowia z dnia 7 grudnia 2017 r. w sprawie jakosci wody przeznaczonej do spozycia przez ludzi."}},
@@ -1142,6 +1142,38 @@
             color: #4b6475;
             font-size: 0.86rem;
             text-align: center;
+        }
+
+        .form-package-preview {
+            background: #f5fafc;
+            border: 1px solid rgba(16, 37, 50, 0.12);
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 18px;
+            color: #102532;
+        }
+
+        .form-package-preview span {
+            display: block;
+            color: #4b6475;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+        }
+
+        .form-package-preview strong {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.45;
+            margin-bottom: 8px;
+        }
+
+        .form-package-preview small {
+            display: block;
+            color: #4b6475;
+            line-height: 1.45;
         }
 
         /* ===== LEAD MAGNET ===== */
@@ -2780,11 +2812,11 @@
                         <strong id="packageSummaryText">Pakiet mikrobiologiczny wody (prywatni)</strong>
                         <small id="packageSummaryMeta">1 pozycja w zestawie</small>
                     </div>
-                    <div class="package-total" id="packageTotal">325,00 zl<span>brutto dla klienta</span></div>
+                    <div class="package-total" id="packageTotal">350,00 zl<span>brutto dla klienta</span></div>
                 </div>
-                <p class="package-note">Nie wiesz, co wybrac? Kliknij „Co oznacza?” przy parametrze albo wybierz pakiet mikrobiologiczny i opisz sytuacje w formularzu.</p>
+                <p class="package-note">Nie wiesz, co wybrac? Kliknij „Co oznacza?” przy parametrze albo zostaw pakiet mikrobiologiczny jako punkt startowy.</p>
                 <div style="text-align:center; margin-top:20px;">
-                    <a href="#kontakt" class="cta-primary" id="usePackageCta">Przenies pakiet do formularza</a>
+                    <a href="#kontakt" class="cta-primary" id="usePackageCta">Wyslij zgloszenie z tym pakietem</a>
                 </div>
             </div>
         </div>
@@ -2870,7 +2902,7 @@
                 </div>
                 <div class="card reveal">
                     <h3>Jak zamówić?</h3>
-                    <p>W formularzu wybierasz sytuację, opisujesz źródło wody i cel badania. Potwierdzamy zakres, cenę i termin pobrania próbki.</p>
+                    <p>Najpierw zaznaczasz parametry w konfiguratorze, a potem wpisujesz dane kontaktowe i adres pobrania próbki. Wybrany zakres i suma trafiają do zgłoszenia automatycznie.</p>
                 </div>
             </div>
         </div>
@@ -2927,7 +2959,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Pakiet mikrobiologiczny prywatnej studni w konfiguratorze kosztuje 325 zl brutto. Jesli potrzebujesz dodatkowych parametrow, zaznaczasz je w cenniku, a formularz automatycznie dolicza sume brutto dla klienta.</p>
+                        <p>Pelny podstawowy pakiet mikrobiologiczny prywatnej studni w konfiguratorze kosztuje 350 zl brutto. Jesli potrzebujesz dodatkowych parametrow, zaznaczasz je w cenniku, a formularz automatycznie dolicza sume brutto dla klienta.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
@@ -2963,7 +2995,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Nie. W formularzu wybierz najblizsza sytuacje i opisz problem zwyklym jezykiem. Domyslnie dla prywatnej studni zaczynamy od mikrobiologii, a fizykochemie proponujemy jako rozszerzenie, jesli ma to sens.</p>
+                        <p>Nie. Mozesz zostawic pelny podstawowy pakiet mikrobiologiczny albo zaznaczyc dodatkowe parametry, jesli wiesz czego potrzebujesz. Wybor i suma automatycznie trafiaja do zgloszenia.</p>
                     </div>
                 </div>
             </div>
@@ -2998,32 +3030,22 @@
         <div class="container">
             <div class="reveal" style="text-align:center;">
                 <span class="section-label">Zamow badanie</span>
-                <h2 class="section-title section-title-center">Zamow <span class="accent">mikrobiologie wody</span> online</h2>
-                <p class="section-subtitle section-subtitle-center">Wypelnij krotki formularz. Opisz skad jest woda i po co robisz badanie, a my potwierdzimy zakres, cene i termin pobrania probki.</p>
+                <h2 class="section-title section-title-center">Wyslij <span class="accent">zgloszenie badania</span></h2>
+                <p class="section-subtitle section-subtitle-center">Pakiet i kwota z konfiguratora sa juz wczytane. Wpisz tylko dane do kontaktu i adres pobrania probki.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-form reveal">
                     <form id="contactForm" action="https://formspree.io/f/mdawepne" method="POST">
+                        <div class="form-package-preview" id="formPackagePreview">
+                            <span>Wybrany pakiet</span>
+                            <strong id="formPackagePreviewText">Pakiet mikrobiologiczny wody (prywatni)</strong>
+                            <small id="formPackagePreviewMeta">Suma: 350,00 zl brutto dla klienta</small>
+                        </div>
                         <input type="text" name="imie_nazwisko" placeholder="Imie i nazwisko *" required aria-label="Imie i nazwisko">
                         <input type="tel" name="telefon" placeholder="Numer telefonu *" required aria-label="Numer telefonu">
+                        <input type="email" name="email" placeholder="Email *" required aria-label="Email">
                         <input type="text" name="adres" placeholder="Adres pobrania probki - miejscowosc, ulica *" required aria-label="Adres pobrania probki">
-                        <select name="sytuacja_klienta" required aria-label="Sytuacja klienta">
-                            <option value="">Co najlepiej opisuje sytuacje? *</option>
-                            <option value="studnia_dom">Wlasna studnia przy domu</option>
-                            <option value="zakup_domu_dzialki">Kupuje dom lub dzialke ze studnia</option>
-                            <option value="po_ulewach_awarii">Po ulewach, awarii albo dluzszej przerwie</option>
-                            <option value="po_dezynfekcji">Kontrola po dezynfekcji studni</option>
-                            <option value="woda_domowa_instalacja">Woda z instalacji domowej / kranu</option>
-                            <option value="nie_wiem_doradztwo">Nie wiem - prosze dobrac zakres</option>
-                        </select>
-                        <select name="zakres_badan" required aria-label="Zakres badan">
-                            <option value="">Jaki zakres? *</option>
-                            <option value="mikrobiologia">Mikrobiologia wody</option>
-                            <option value="mikrobiologia_plus_fizykochemia">Mikrobiologia + fizykochemia studni</option>
-                            <option value="kontrola_po_dezynfekcji">Kontrola mikrobiologiczna po dezynfekcji</option>
-                            <option value="nie_wiem_dobierzcie">Nie wiem - dobierzcie po opisie</option>
-                        </select>
-                        <textarea name="uwagi" placeholder="Opisz problem: studnia/kran, zapach, metnosc, po ulewach, dzieci w domu, wynik formalny, preferowany termin..." rows="4" aria-label="Opis sytuacji"></textarea>
+                        <textarea name="uwagi" placeholder="Uwagi opcjonalnie: preferowany termin, dojazd, szczegolna sytuacja przy studni..." rows="3" aria-label="Uwagi opcjonalne"></textarea>
                         <label class="rodo-consent">
                             <input type="checkbox" required>
                             <span>Wyrazam zgode na przetwarzanie moich danych osobowych w celu realizacji zlecenia, zgodnie z <a href="#polityka-prywatnosci">Polityka Prywatnosci</a>. Administratorem danych jest AquaDiagnostyka.</span>
@@ -3050,7 +3072,7 @@
                         <input type="hidden" name="pakiet_cena_brutto" id="packageTotalField" value="">
                         <input type="hidden" name="pakiet_liczba_parametrow" id="packageCountField" value="">
                         <input type="hidden" name="pakiet_json" id="packageJsonField" value="">
-                        <button type="submit">Zamow badanie - zloz zlecenie</button>
+                        <button type="submit">Wyslij zgloszenie badania</button>
                     </form>
                     <script>
                     (function(){
@@ -3402,7 +3424,7 @@
                 category: 'micro',
                 name: 'Badanie mikrobiologiczne wody (prywatni)',
                 desc: 'Podstawowy pakiet dla prywatnej studni i domu.',
-                price: 325.00,
+                price: 350.00,
                 href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
             },
             {
@@ -3630,6 +3652,12 @@
             const totalField = document.getElementById('packageTotalField');
             const countField = document.getElementById('packageCountField');
             const jsonField = document.getElementById('packageJsonField');
+            const formPreviewText = document.getElementById('formPackagePreviewText');
+            const formPreviewMeta = document.getElementById('formPackagePreviewMeta');
+            const selectedText = selected.length
+                ? selected.map(item => item.name).join(' + ')
+                : 'Nie wybrano parametrow';
+            const selectedDetails = selected.map(item => item.name + ' - ' + formatPLN(item.price)).join('; ');
 
             document.querySelectorAll('.parameter-card').forEach(card => {
                 const checkbox = card.querySelector('.package-param');
@@ -3637,9 +3665,7 @@
             });
 
             if (summaryText) {
-                summaryText.textContent = selected.length
-                    ? selected.map(item => item.name).join(' + ')
-                    : 'Nie wybrano parametrow';
+                summaryText.textContent = selectedText;
             }
 
             if (summaryMeta) {
@@ -3652,7 +3678,17 @@
                 totalEl.innerHTML = formatPLN(total) + '<span>brutto dla klienta</span>';
             }
 
-            if (selectedField) selectedField.value = selected.map(item => item.name + ' - ' + formatPLN(item.price)).join('; ');
+            if (formPreviewText) {
+                formPreviewText.textContent = selectedText;
+            }
+
+            if (formPreviewMeta) {
+                formPreviewMeta.textContent = selected.length
+                    ? selected.length + (selected.length === 1 ? ' pozycja' : ' pozycji') + ' | Suma: ' + formatPLN(total) + ' brutto dla klienta'
+                    : 'Zaznacz przynajmniej jeden parametr w konfiguratorze.';
+            }
+
+            if (selectedField) selectedField.value = selectedDetails;
             if (totalField) totalField.value = formatPLN(total);
             if (countField) countField.value = String(selected.length);
             if (jsonField) {
@@ -3695,7 +3731,13 @@
 
         const usePackageCta = document.getElementById('usePackageCta');
         if (usePackageCta) {
-            usePackageCta.addEventListener('click', () => updatePackageSummary());
+            usePackageCta.addEventListener('click', () => {
+                updatePackageSummary();
+                setTimeout(() => {
+                    const firstField = document.querySelector('#contactForm input[name="imie_nazwisko"]');
+                    if (firstField) firstField.focus({ preventScroll: true });
+                }, 450);
+            });
         }
 
         applyPackagePreset('micro');
@@ -3704,6 +3746,21 @@
         function handleFormSubmit(form, statusDivId) {
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
+
+                const statusDiv = statusDivId ? document.getElementById(statusDivId) : null;
+                const packageState = typeof updatePackageSummary === 'function'
+                    ? updatePackageSummary()
+                    : { selected: [] };
+
+                if (!packageState.selected.length) {
+                    if (statusDiv) {
+                        statusDiv.style.display = 'block';
+                        statusDiv.className = 'form-status error';
+                        statusDiv.textContent = 'Zaznacz przynajmniej jeden parametr badania w konfiguratorze.';
+                    }
+                    scrollToHashTarget('#kalkulator', 'smooth');
+                    return;
+                }
 
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalText = submitBtn.textContent;
@@ -3714,12 +3771,7 @@
                     window.populateAquaAttributionFields();
                 }
 
-                if (typeof updatePackageSummary === 'function') {
-                    updatePackageSummary();
-                }
-
                 const formData = new FormData(this);
-                const statusDiv = statusDivId ? document.getElementById(statusDivId) : null;
 
                 try {
                     const response = await fetch(this.action, {
@@ -3730,6 +3782,7 @@
 
                     if (response.ok) {
                         if (statusDiv) {
+                            statusDiv.style.display = 'block';
                             statusDiv.className = 'form-status success';
                             statusDiv.textContent = 'Zlecenie przyjete! Oddzwonimy do Ciebie w ciagu kilku godzin, zeby potwierdzic zakres i umowic termin pobrania probki.';
                         }
@@ -3760,6 +3813,7 @@
                     }
                 } catch (error) {
                     if (statusDiv) {
+                        statusDiv.style.display = 'block';
                         statusDiv.className = 'form-status error';
                         statusDiv.textContent = 'Wystapil blad. Sprobuj ponownie lub napisz: kontakt@aquadiagnostyka.pl.';
                     }

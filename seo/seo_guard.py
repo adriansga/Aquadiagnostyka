@@ -44,7 +44,9 @@ HARD_BANNED = [
 REQUIRED_MAIN_MARKERS = [
     "Mikrobiologiczne badanie wody",
     "prywatnych studni",
-    "sytuacja_klienta",
+    "priceGridMicro",
+    "pakiet_cena_brutto",
+    "formPackagePreview",
     "utm_campaign",
 ]
 
