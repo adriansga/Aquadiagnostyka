@@ -79,6 +79,20 @@ def model_candidates():
             yield model
 
 
+def parse_model_json(text):
+    text = text.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```(json)?\s*|\s*```$", "", text)
+    try:
+        return json.loads(text, strict=False)
+    except json.JSONDecodeError:
+        start = text.find("{")
+        end = text.rfind("}")
+        if start != -1 and end != -1 and end > start:
+            return json.loads(text[start:end + 1], strict=False)
+        raise
+
+
 def call_api(title, kw):
     key = os.environ["ANTHROPIC_API_KEY"]
     errors = []
@@ -99,11 +113,8 @@ def call_api(title, kw):
             with urllib.request.urlopen(req, timeout=120) as r:
                 resp = json.loads(r.read().decode())
             text = "".join(b.get("text", "") for b in resp["content"])
-            text = text.strip()
-            if text.startswith("```"):
-                text = re.sub(r"^```(json)?\s*|\s*```$", "", text)
             print("Model:", model)
-            return json.loads(text)
+            return parse_model_json(text)
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", errors="replace")[:500]
             errors.append("%s -> HTTP %s: %s" % (model, e.code, body))
