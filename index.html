@@ -2791,7 +2791,7 @@
             </div>
             <div class="price-builder reveal">
                 <div class="package-actions" aria-label="Gotowe pakiety">
-                    <button class="package-preset is-active" type="button" data-preset="micro">Pakiet mikrobiologiczny studni</button>
+                    <button class="package-preset is-active" type="button" data-preset="micro">Pelny pakiet mikrobiologiczny studni</button>
                     <button class="package-preset" type="button" data-preset="microPlusControl">Mikrobiologia + kontrolny fizyko</button>
                     <button class="package-preset" type="button" data-preset="iron">Zelazo + mangan + twardosc</button>
                     <button class="package-preset" type="button" data-preset="clear">Wyczysc wybor</button>
@@ -2809,7 +2809,7 @@
 
                 <div class="package-summary">
                     <div>
-                        <strong id="packageSummaryText">Pakiet mikrobiologiczny wody (prywatni)</strong>
+                        <strong id="packageSummaryText">Pakiet podstawowy badania mikrobiologicznego wody ze studni</strong>
                         <small id="packageSummaryMeta">1 pozycja w zestawie</small>
                     </div>
                     <div class="package-total" id="packageTotal">350,00 zl<span>brutto dla klienta</span></div>
@@ -3038,7 +3038,7 @@
                     <form id="contactForm" action="https://formspree.io/f/mdawepne" method="POST">
                         <div class="form-package-preview" id="formPackagePreview">
                             <span>Wybrany pakiet</span>
-                            <strong id="formPackagePreviewText">Pakiet mikrobiologiczny wody (prywatni)</strong>
+                            <strong id="formPackagePreviewText">Pakiet podstawowy badania mikrobiologicznego wody ze studni</strong>
                             <small id="formPackagePreviewMeta">Suma: 350,00 zl brutto dla klienta</small>
                         </div>
                         <input type="text" name="imie_nazwisko" placeholder="Imie i nazwisko *" required aria-label="Imie i nazwisko">
@@ -3422,65 +3422,9 @@
             {
                 id: 'micro_private',
                 category: 'micro',
-                name: 'Badanie mikrobiologiczne wody (prywatni)',
-                desc: 'Podstawowy pakiet dla prywatnej studni i domu.',
+                name: 'Pakiet podstawowy badania mikrobiologicznego wody ze studni',
+                desc: 'Bakterie grupy coli, E. coli, enterokoki kalowe i ogolna liczba bakterii.',
                 price: 350.00,
-                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
-            },
-            {
-                id: 'coli_group',
-                category: 'micro',
-                name: 'Bakterie grupy coli',
-                desc: 'Wskaznik mozliwego zanieczyszczenia instalacji albo ujecia.',
-                price: 107.63,
-                href: '/poradnik-bakterie-coli-w-wodzie.html'
-            },
-            {
-                id: 'ecoli',
-                category: 'micro',
-                name: 'E. coli',
-                desc: 'Najwazniejszy sygnal ryzyka zanieczyszczenia fekalnego.',
-                price: 107.63,
-                href: '/poradnik-bakterie-coli-w-wodzie.html'
-            },
-            {
-                id: 'enterococci',
-                category: 'micro',
-                name: 'Enterokoki kalowe',
-                desc: 'Parametr potwierdzajacy ryzyko zanieczyszczenia sanitarnego.',
-                price: 107.63,
-                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
-            },
-            {
-                id: 'micro_business',
-                category: 'micro',
-                name: 'Badanie mikrobiologiczne wody (zaklady)',
-                desc: 'Pozycja z cennika dla zakresow firmowych - potwierdzamy indywidualnie.',
-                price: 400.00,
-                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
-            },
-            {
-                id: 'legionella',
-                category: 'micro',
-                name: 'Legionella',
-                desc: 'Gdy sytuacja tego wymaga, np. instalacja cieplej wody, jacuzzi albo obiekt.',
-                price: 615.00,
-                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
-            },
-            {
-                id: 'total_bacteria',
-                category: 'micro',
-                name: 'Ogolna liczba bakterii',
-                desc: 'Parametr kontrolny pokazujacy ogolny stan mikrobiologiczny probki.',
-                price: 98.43,
-                href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
-            },
-            {
-                id: 'mineral_water',
-                category: 'micro',
-                name: 'Badanie wod mineralnych',
-                desc: 'Specjalny zakres z cennika - przed realizacja potwierdzamy sens badania.',
-                price: 615.00,
                 href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
             },
             {
@@ -3560,7 +3504,7 @@
                 category: 'phys',
                 name: 'Zelazo',
                 desc: 'Dla rudego osadu, metalicznego smaku i przebarwien armatury.',
-                price: 132.50,
+                price: 246.00,
                 href: '/poradnik.html'
             },
             {
@@ -3568,15 +3512,15 @@
                 category: 'phys',
                 name: 'Mangan',
                 desc: 'Dla ciemnych osadow, zaciekow i problemow z instalacja.',
-                price: 225.00,
+                price: 369.00,
                 href: '/poradnik.html'
             },
             {
                 id: 'iron_manganese',
                 category: 'phys',
                 name: 'Zelazo + mangan',
-                desc: 'Pakiet liczony z aktualnych stawek netto: zelazo 53 zl i mangan 90 zl, razem x2.5.',
-                price: 357.50,
+                desc: 'Pakietowa pozycja z aktualnego cennika DOCX.',
+                price: 399.75,
                 href: '/poradnik.html'
             },
             {
@@ -3600,7 +3544,7 @@
         const presets = {
             micro: ['micro_private'],
             microPlusControl: ['micro_private', 'monitoring_control'],
-            iron: ['iron', 'manganese', 'hardness'],
+            iron: ['iron_manganese', 'hardness'],
             clear: []
         };
 
