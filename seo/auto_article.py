@@ -18,6 +18,7 @@ FALLBACK_MODELS = [m.strip() for m in os.getenv("ANTHROPIC_FALLBACK_MODELS", "cl
 SYSTEM = (
     "Jesteś ekspertem SEO i copywriterem laboratorium badania wody AquaDiagnostyka "
     "(Nowy Sącz i okolice). Piszesz po polsku, rzeczowo, bez lania wody, z realną wiedzą. "
+    "Aktualna strategia: B2C, prywatne studnie, domy i działki; główna usługa to mikrobiologia wody. "
     "Zwracasz WYŁĄCZNIE poprawny JSON."
 )
 
@@ -27,15 +28,37 @@ Temat: {title}
 Główna fraza SEO: {kw}
 
 Wymagania:
-- 700-1000 słów, język polski, ton ekspercki i pomocny.
+- 800-1100 słów, język polski, ton ekspercki i pomocny.
 - Treść jako czysty HTML: akapity <p>, nagłówki <h2>/<h3>, listy <ul>/<li>/<ol>, <strong>. BEZ <html>, <head>, <h1>, <style>.
-- Naturalnie wpleć główną frazę oraz lokalność (Nowy Sącz i okolice, studnie, Sanepid) — bez przesady.
-- Konkretna wiedza (normy, liczby, przyczyny, rozwiązania), nie ogólniki.
+- Zacznij od krótkiej, konkretnej odpowiedzi na pytanie z tytułu w pierwszym akapicie.
+- Naturalnie wpleć główną frazę oraz lokalność: Nowy Sącz i okolice, prywatne studnie, domy, działki.
+- Główna ścieżka: mikrobiologia wody ze studni. Fizykochemia tylko jako rozszerzenie, gdy objawy tego wymagają.
+- Konkretna wiedza: kiedy badać, co może oznaczać wynik/objaw, co zrobić dalej, czego nie da się stwierdzić bez badania.
+- Dodaj sekcję FAQ z 3 pytaniami i krótkimi odpowiedziami.
 - NIE podawaj numeru telefonu. CTA: zamówienie przez formularz online.
+- NIE pisz: "od 150 zł", "dojazd gratis", "promocja", "najlepsze", "gwarancja bezpieczeństwa", fikcyjne opinie, liczby klientów.
+- NIE frontuj: przemysłu, ścieków, aquaparków, gastronomii, obiektów publicznych, basenów. Jeśli temat formalny wymaga Sanepidu, potraktuj go jako wyjątek formalny, nie główną ofertę.
 - Zakończ akapitem podsumowującym z zachętą do zamówienia badania przez formularz.
 
 Zwróć JSON o polach:
 {{"desc": "<meta description 150-160 znaków>", "keywords": "<5-7 fraz po przecinku>", "body": "<HTML treści>"}}"""
+
+BANNED_GENERATED = [
+    "od 150",
+    "dojazd gratis",
+    "dojazd i pobranie próbki gratis",
+    "promocja",
+    "127 opinii",
+    "aggregateRating",
+    "aquapark",
+    "ścieki",
+    "scieki",
+    "przemysł",
+    "przemysl",
+    "gastronomia",
+    "hotel",
+    "basen publiczny",
+]
 
 
 def next_topic():
@@ -91,6 +114,21 @@ def call_api(title, kw):
     raise RuntimeError("Anthropic API failed for all model candidates:\n" + "\n".join(errors))
 
 
+def validate_payload(slug, data):
+    if not re.match(r"^[a-z0-9-]+$", slug):
+        raise ValueError("Slug musi byc ASCII i zawierac tylko a-z, 0-9 oraz '-': %s" % slug)
+    required = ["desc", "keywords", "body"]
+    missing = [k for k in required if not data.get(k)]
+    if missing:
+        raise ValueError("Brak pol w odpowiedzi modelu: %s" % ", ".join(missing))
+    joined = "\n".join(str(data[k]) for k in required).lower()
+    hits = [term for term in BANNED_GENERATED if term.lower() in joined]
+    if hits:
+        raise ValueError("Wygenerowana tresc zawiera zakazane/stare claimy: %s" % ", ".join(hits))
+    if "<h1" in data["body"].lower() or "<html" in data["body"].lower() or "<style" in data["body"].lower():
+        raise ValueError("Body ma zawierac tylko fragment HTML, bez h1/html/style.")
+
+
 def main():
     idx, lines, slug, title, kw = next_topic()
     if slug is None:
@@ -98,6 +136,7 @@ def main():
         return 0
     print("Temat:", slug, "|", title)
     data = call_api(title, kw)
+    validate_payload(slug, data)
     with open(BODY_TMP, "w", encoding="utf-8") as f:
         f.write(data["body"].strip())
 
@@ -112,6 +151,7 @@ def main():
     lines[idx] = lines[idx].replace("- [ ]", "- [x]", 1)
     with open(TOPICS, "w", encoding="utf-8") as f:
         f.writelines(lines)
+    subprocess.run([sys.executable, os.path.join(ROOT, "seo", "seo_guard.py")], check=True)
     print("Gotowe:", slug)
     return 0
 

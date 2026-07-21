@@ -133,8 +133,8 @@ PAGE = """<!DOCTYPE html>
             {body}
             <div class="cta-band">
                 <h2>Chcesz zbadać swoją wodę?</h2>
-                <p>Akredytowane badanie od 150 zł, dojazd i pobranie próbki gratis, wyniki w 48h. Zamów online — bez dzwonienia.</p>
-                <a href="{domain}/#kontakt" class="btn-primary">Zamów badanie wody</a>
+                <p>Mikrobiologiczne badanie wody ze studni zaczyna się od ok. 180 zł. Zakres, pobranie próbki i termin potwierdzamy po opisie sytuacji w formularzu.</p>
+                <a href="{domain}/#kontakt" class="btn-primary">Zamów badanie przez formularz</a>
             </div>
         </article>
     </main>

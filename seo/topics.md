@@ -1,27 +1,40 @@
-# Kolejka tematów poradnika (SEO)
+# Kolejka tematow poradnika SEO/GEO
 
-Silnik treści bierze pierwszy niezaznaczony temat, pisze artykuł (600-1000 słów, język polski,
-realna wartość, frazy lokalne naturalnie), generuje stronę i oznacza temat jako `[x]`.
+Silnik bierze pierwszy niezaznaczony temat, generuje artykul B2C, aktualizuje poradnik i sitemap,
+a potem przechodzi przez `seo/seo_guard.py`.
 
-Format: `- [ ] slug | Tytuł | główna fraza`
+Zasada 21.07.2026:
+- front = prywatne studnie, domy, dzialki, Nowy Sacz i okolice,
+- glowna usluga = mikrobiologiczne badanie wody,
+- fizykochemia tylko jako rozszerzenie,
+- bez przemyslu, sciekow, aquaparkow, fikcyjnych opinii, promocji i starej ceny 150 zl.
 
-- [x] jak-zbadac-wode-ze-studni | Jak zbadać wodę ze studni? Poradnik krok po kroku | badanie wody ze studni
-- [x] normy-wody-pitnej | Normy wody pitnej w Polsce — co musisz wiedzieć | normy wody pitnej
-- [x] azotany-w-wodzie | Azotany w wodzie ze studni — dlaczego są groźne | azotany w wodzie
-- [x] bakterie-coli-w-wodzie | Bakterie coli i E. coli w wodzie — co oznacza wynik | bakterie coli w wodzie
-- [x] badanie-wody-do-sanepidu | Badanie wody do Sanepidu — kiedy i jak | badanie wody do sanepidu
-- [x] jak-czesto-badac-wode | Jak często badać wodę ze studni? | jak często badać wodę
-- [x] twarda-woda-co-zrobic | Twarda woda — przyczyny, skutki i jak ją zmiękczyć | twarda woda
-- [x] zelazo-i-mangan-w-wodzie | Żelazo i mangan w wodzie — rdzawa woda z kranu | żelazo w wodzie
-- [x] woda-mętna-przyczyny | Mętna woda ze studni — przyczyny i co zrobić | mętna woda ze studni
-- [x] badanie-wody-przed-zakupem-domu | Badanie wody przed zakupem domu z ujęciem | badanie wody zakup domu
-- [x] woda-basenowa-badanie | Badanie wody basenowej — parametry i normy | badanie wody basenowej
-- [x] jak-pobrac-probke-wody | Jak prawidłowo pobrać próbkę wody do badania | pobranie próbki wody
-- [ ] interpretacja-wynikow-badania-wody | Jak czytać wyniki badania wody | interpretacja wyników badania wody
-- [ ] woda-studnia-czy-zdatna-do-picia | Czy woda z mojej studni nadaje się do picia? | woda ze studni do picia
-- [ ] badanie-wody-dla-firmy | Badanie wody dla firmy i gastronomii | badanie wody dla firmy
-- [ ] filtr-do-wody-jaki-wybrac | Jaki filtr do wody wybrać po badaniu | filtr do wody
-- [ ] woda-zanieczyszczona-objawy | 5 oznak, że Twoja woda jest zanieczyszczona | woda zanieczyszczona objawy
-- [ ] ph-wody-co-oznacza | pH wody — co oznacza i jakie powinno być | pH wody
-- [ ] badanie-wody-zima | Badanie wody zimą — czy ma sens? | badanie wody zimą
-- [ ] studnia-kopana-a-wiercona | Studnia kopana a wiercona — jakość wody | studnia kopana a wiercona
+Format: `- [ ] slug | Tytul | glowna fraza`
+
+## Istniejace artykuly
+
+- [x] jak-zbadac-wode-ze-studni | Jak zbadac wode ze studni? Poradnik krok po kroku | badanie wody ze studni
+- [x] normy-wody-pitnej | Normy wody pitnej w Polsce - co musi wiedziec wlasciciel studni | normy wody pitnej
+- [x] azotany-w-wodzie | Azotany w wodzie ze studni - dlaczego sa grozne | azotany w wodzie
+- [x] bakterie-coli-w-wodzie | Bakterie coli i E. coli w wodzie - co oznacza wynik | bakterie coli w wodzie
+- [x] badanie-wody-do-sanepidu | Badanie wody do Sanepidu - kiedy i jak | badanie wody do sanepidu
+- [x] jak-czesto-badac-wode | Jak czesto badac wode ze studni? | jak czesto badac wode
+- [x] twarda-woda-co-zrobic | Twarda woda - przyczyny, skutki i co zrobic | twarda woda
+- [x] zelazo-i-mangan-w-wodzie | Zelazo i mangan w wodzie - rdzawa woda z kranu | zelazo w wodzie
+- [x] woda-metna-przyczyny | Metna woda ze studni - przyczyny i co zrobic | metna woda ze studni
+- [x] badanie-wody-przed-zakupem-domu | Badanie wody przed zakupem domu z ujeciem | badanie wody zakup domu
+- [x] woda-basenowa-badanie | Badanie wody basenowej - temat historyczny, nie front | badanie wody basenowej
+- [x] jak-pobrac-probke-wody | Jak prawidlowo pobrac probke wody do badania | pobranie probki wody
+
+## Kolejka B2C mikrobiologia
+
+- [ ] interpretacja-wynikow-mikrobiologii-wody | Jak czytac wynik mikrobiologii wody ze studni | interpretacja wyniku mikrobiologii wody
+- [ ] e-coli-w-wodzie-ze-studni-co-robic | E. coli w wodzie ze studni - co zrobic krok po kroku | E coli w wodzie ze studni
+- [ ] enterokoki-w-wodzie-ze-studni | Enterokoki w wodzie ze studni - co oznaczaja | enterokoki w wodzie ze studni
+- [ ] bakterie-grupy-coli-w-wodzie | Bakterie grupy coli w wodzie - czy mozna pic wode | bakterie grupy coli w wodzie
+- [ ] badanie-wody-po-dezynfekcji-studni | Badanie wody po dezynfekcji studni - kiedy zrobic kontrole | badanie wody po dezynfekcji studni
+- [ ] badanie-wody-po-ulewach | Badanie wody po ulewach i podtopieniach - kiedy jest konieczne | badanie wody po ulewach
+- [ ] woda-ze-studni-dla-dzieci | Woda ze studni w domu z dziecmi - kiedy zrobic mikrobiologie | woda ze studni dla dzieci
+- [ ] filtr-a-bakterie-w-wodzie | Czy filtr usuwa bakterie z wody ze studni | filtr bakterie woda ze studni
+- [ ] studnia-nieuzywana-przerwa-badanie | Studnia po dlugiej przerwie - jakie badanie wody zrobic | studnia po przerwie badanie wody
+- [ ] objawy-skazenia-wody-ze-studni | Objawy skazenia wody ze studni, ktorych nie warto ignorowac | skazona woda ze studni objawy

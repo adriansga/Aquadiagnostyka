@@ -9,11 +9,17 @@ import os, glob, re, html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAX_LINKS = 5
+EXCLUDED_FROM_RELATED = {
+    "poradnik-woda-basenowa-badanie.html",
+    "poradnik-badanie-wody-do-sanepidu.html",
+}
 
 
 def articles():
     out = []
     for p in glob.glob(os.path.join(ROOT, "poradnik-*.html")):
+        if os.path.basename(p) in EXCLUDED_FROM_RELATED:
+            continue
         t = open(p, encoding="utf-8").read()
         m = re.search(r"<h1>(.*?)</h1>", t, re.S)
         title = re.sub(r"<[^>]+>", "", m.group(1)).strip() if m else os.path.basename(p)
