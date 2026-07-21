@@ -87,6 +87,8 @@ Główna ścieżka AquaDiagnostyki = B2C i mikrobiologiczne badanie wody dla pry
 
 ## EPIC 04 — SEO/GEO audit techniczny
 
+**Status 21.07.2026:** P0 wykonane dla lokalnych podstron miast i sitemap. Generator `seo/generate_city_pages.py` przepisany z szerokiego/starego przekazu (`150 zł`, `Dojazd GRATIS`, Sanepid, basen, B2B) na B2C mikrobiologię prywatnych studni/domów/działek. Wygenerowano 9 podstron miast i `sitemap.xml` z 23 URL. Naprawiono techniczny slug poradnika `poradnik-woda-mętna-przyczyny.html` → `poradnik-woda-metna-przyczyny.html`, wraz z linkami wewnętrznymi i canonical/OG/schema. QA lokalne: HTML parse + JSON-LD OK dla 16 plików, sitemap bez nie-ASCII w URL, lokalne HTTP 200, screenshot desktop/mobile strony miasta OK.
+
 **Cel:** sprawdzić, czy strona jest czytelna dla Google i modeli AI jako lokalna usługa badania wody.
 
 **Zakres:**
@@ -266,16 +268,15 @@ Główna ścieżka AquaDiagnostyki = B2C i mikrobiologiczne badanie wody dla pry
 
 ## Kolejność autonomiczna
 
-1. EPIC 06 — dokończyć QA/deploy formularza i dropdownów B2C mikrobiologia.
-2. EPIC 07 — uprościć stronę, jeśli test live pokaże zagmatwanie lub tarcie.
-3. EPIC 04 — SEO/GEO audit po zmianie pozycjonowania na mikrobiologię.
-4. EPIC 05 — Q&A/GEO pod pytania o bakterie w wodzie ze studni.
-5. EPIC 02 — GBP manual sprint pod mikrobiologię prywatnych studni.
-6. EPIC 01 — publikacja pierwszych postów, po aktualizacji treści pod mikrobiologię.
-7. EPIC 08 — katalogi z opisem mikrobiologia/studnia/dom.
-8. EPIC 09 — raport leadów.
-9. EPIC 03 — automatyzacja po ustaleniu dostępu do kont.
-10. EPIC 10 — Google Ads mini-test tylko na frazy mikrobiologiczne/studnia.
+1. EPIC 06 — DONE: QA/deploy formularza i dropdownów B2C mikrobiologia.
+2. EPIC 04 — DONE P0: lokalne podstrony miast + sitemap pod mikrobiologię B2C.
+3. EPIC 05 — Q&A/GEO pod pytania o bakterie w wodzie ze studni.
+4. EPIC 02 — GBP manual sprint pod mikrobiologię prywatnych studni.
+5. EPIC 01 — publikacja pierwszych postów, po aktualizacji treści pod mikrobiologię.
+6. EPIC 08 — katalogi z opisem mikrobiologia/studnia/dom.
+7. EPIC 09 — raport leadów.
+8. EPIC 03 — automatyzacja po ustaleniu dostępu do kont.
+9. EPIC 10 — Google Ads mini-test tylko na frazy mikrobiologiczne/studnia.
 
 ## Źródła techniczne do automatyzacji
 

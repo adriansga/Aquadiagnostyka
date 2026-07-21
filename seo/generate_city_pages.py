@@ -18,65 +18,65 @@ CITIES = [
     {
         "slug": "stary-sacz", "name": "Stary Sącz", "loc": "Starym Sączu",
         "lat": "49.5618", "lon": "20.6347",
-        "intro": "Masz studnię, własne ujęcie albo chcesz mieć pewność, że woda z kranu jest bezpieczna dla rodziny? Przyjeżdżamy do Ciebie w Starym Sączu, pobieramy próbkę zgodnie z procedurą i dostarczamy wyniki z czytelną interpretacją.",
-        "why": "Stary Sącz i okoliczne sołectwa to w dużej mierze zabudowa korzystająca z własnych studni i ujęć. Woda studzienna bywa narażona na zanieczyszczenia bakteriologiczne (bakterie grupy coli, <em>E. coli</em> z nieszczelnych szamb i pól) oraz przekroczenia azotanów, żelaza, manganu czy twardości.",
-        "note": "Tych zagrożeń nie widać i nie czuć, a mają realny wpływ na zdrowie — szczególnie dzieci i osób starszych.",
+        "intro": "Masz prywatną studnię, własne ujęcie albo instalację domową i chcesz sprawdzić, czy w wodzie nie ma bakterii? Przyjeżdżamy do klienta w Starym Sączu, pobieramy próbkę i dostarczamy wynik z prostym omówieniem.",
+        "why": "Stary Sącz i okoliczne sołectwa to w dużej mierze zabudowa korzystająca z własnych studni i ujęć. Woda studzienna bywa narażona na zanieczyszczenia mikrobiologiczne, m.in. bakterie grupy coli, <em>E. coli</em> i enterokoki.",
+        "note": "Tych zagrożeń często nie widać i nie czuć, a mają realny wpływ na bezpieczeństwo wody w domu.",
     },
     {
         "slug": "gorlice", "name": "Gorlice", "loc": "Gorlicach",
         "lat": "49.6553", "lon": "21.1601",
-        "intro": "Mieszkasz w Gorlicach lub okolicznych wsiach i chcesz wiedzieć, co naprawdę pijesz? Dojeżdżamy pod wskazany adres, pobieramy próbkę i dostarczamy wynik z interpretacją — bez dzwonienia, wszystko zamawiasz online.",
-        "why": "Część Gorlic korzysta z wodociągu, ale obrzeża miasta i okoliczne miejscowości w dużej mierze opierają się na własnych studniach. W regionie z historią przemysłu naftowego warto kontrolować nie tylko bakteriologię, ale też parametry fizykochemiczne — żelazo, mangan i ogólny stan wody gruntowej.",
-        "note": "Badanie to jedyny sposób, by obiektywnie ocenić, czy woda nadaje się do spożycia — szczególnie po remoncie studni lub w nowym domu.",
+        "intro": "Mieszkasz w Gorlicach lub okolicznych wsiach i chcesz wiedzieć, czy w wodzie z prywatnej studni nie ma bakterii? Dojeżdżamy pod wskazany adres, pobieramy próbkę i dostarczamy wynik z omówieniem.",
+        "why": "Część Gorlic korzysta z wodociągu, ale obrzeża miasta i okoliczne miejscowości często opierają się na własnych studniach. W takich ujęciach mikrobiologia jest pierwszym sensownym sprawdzeniem bezpieczeństwa wody.",
+        "note": "Badanie jest szczególnie ważne po remoncie studni, dłuższej przerwie w używaniu albo przed rozpoczęciem korzystania z wody w nowym domu.",
     },
     {
         "slug": "limanowa", "name": "Limanowa", "loc": "Limanowej",
         "lat": "49.7058", "lon": "20.4231",
-        "intro": "W Limanowej i okolicy duża część gospodarstw stoi na własnych ujęciach w górzystym, rozproszonym terenie. Przyjeżdżamy do Ciebie, pobieramy próbkę zgodnie z procedurą i przekazujemy czytelny wynik.",
+        "intro": "W Limanowej i okolicy duża część gospodarstw korzysta z własnych ujęć w górzystym, rozproszonym terenie. Przyjeżdżamy do klienta, pobieramy próbkę i przekazujemy czytelny wynik mikrobiologii wody.",
         "why": "Górzysty teren i studnie kopane sprzyjają sezonowym wahaniom jakości wody — po roztopach i intensywnych opadach rośnie ryzyko zanieczyszczeń mikrobiologicznych spływających z powierzchni.",
         "note": "Jeśli woda zmienia smak, barwę lub mętność po deszczu, to wyraźny sygnał, żeby ją przebadać.",
     },
     {
         "slug": "krynica-zdroj", "name": "Krynica-Zdrój", "loc": "Krynicy-Zdroju",
         "lat": "49.4220", "lon": "20.9590",
-        "intro": "Krynica-Zdrój słynie z wód mineralnych, ale woda użytkowa w domach, pensjonatach i kwaterach to zupełnie inna sprawa. Badamy wodę pod kątem bezpieczeństwa zdrowotnego i wymogów formalnych — z dojazdem na miejsce.",
-        "why": "W miejscowości uzdrowiskowej działa wiele pensjonatów, kwater i obiektów agroturystycznych, które potrzebują badań wody honorowanych przez Sanepid. Niezależnie od słynnych źródeł, woda z sieci czy własnego ujęcia w obiekcie powinna być regularnie kontrolowana.",
-        "note": "Prowadzisz wynajem lub gastronomię? Aktualne badanie wody to podstawa przy kontroli sanitarnej.",
+        "intro": "Krynica-Zdrój słynie z wód mineralnych, ale woda użytkowa w prywatnym domu albo studni to osobna sprawa. Sprawdzamy mikrobiologię wody z dojazdem i pobraniem próbki u klienta.",
+        "why": "W górskim terenie i rozproszonej zabudowie jakość wody z własnego ujęcia może zmieniać się sezonowo. Po roztopach, ulewach albo dłuższej przerwie w używaniu warto sprawdzić, czy w wodzie nie pojawiły się bakterie.",
+        "note": "Wynik mikrobiologii daje jasną odpowiedź, czy trzeba wykonać dezynfekcję, badanie kontrolne albo rozszerzyć diagnostykę.",
     },
     {
         "slug": "muszyna", "name": "Muszyna", "loc": "Muszynie",
         "lat": "49.3536", "lon": "20.8908",
-        "intro": "Muszyna to uzdrowisko pełne pensjonatów i kwater — a każdy obiekt świadczący usługi noclegowe czy gastronomiczne potrzebuje pewności co do jakości wody. Badamy z dojazdem i czytelnym sprawozdaniem.",
-        "why": "Obok słynnych wód mineralnych, woda użytkowa w obiektach i prywatnych domach w Muszynie wymaga osobnej kontroli — szczególnie tam, gdzie korzysta się z własnych ujęć obok sieci wodociągowej.",
-        "note": "Dla kwater i pensjonatów wykonujemy pełny pakiet wymagany przy kontrolach Sanepidu.",
+        "intro": "W Muszynie i okolicach wiele domów korzysta z własnych ujęć albo instalacji, których stan warto okresowo kontrolować. Badamy mikrobiologię wody z dojazdem i czytelnym sprawozdaniem.",
+        "why": "Obok znanych wód mineralnych, prywatna woda użytkowa wymaga osobnej kontroli. Dotyczy to szczególnie studni, instalacji domowych i ujęć używanych sezonowo.",
+        "note": "Jeśli woda wraca do użycia po przerwie, po czyszczeniu studni albo po intensywnych opadach, badanie mikrobiologiczne jest pierwszym krokiem.",
     },
     {
         "slug": "piwniczna-zdroj", "name": "Piwniczna-Zdrój", "loc": "Piwnicznej-Zdroju",
         "lat": "49.4186", "lon": "20.7136",
         "intro": "W Piwnicznej-Zdroju i dolinie Popradu zabudowa jest rozproszona, a wiele domów korzysta z własnych studni. Przyjeżdżamy, pobieramy próbkę i dostarczamy wynik z interpretacją — zamawiasz online.",
-        "why": "Rozproszona, górska zabudowa i własne ujęcia oznaczają, że jakość wody potrafi się różnić dom w dom. Bez badania nie da się stwierdzić, czy woda spełnia normy mikrobiologiczne i fizykochemiczne.",
-        "note": "Pensjonaty i kwatery w Piwnicznej obsługujemy w zakresie wymaganym przez Sanepid.",
+        "why": "Rozproszona, górska zabudowa i własne ujęcia oznaczają, że jakość wody potrafi się różnić dom w dom. Bez badania nie da się stwierdzić, czy w wodzie są bakterie wskaźnikowe.",
+        "note": "Dla prywatnej studni zwykle zaczynamy od mikrobiologii, a fizykochemię proponujemy jako rozszerzenie, gdy problem dotyczy smaku, zapachu, osadu albo koloru.",
     },
     {
         "slug": "grybow", "name": "Grybów", "loc": "Grybowie",
         "lat": "49.6147", "lon": "20.9483",
-        "intro": "Grybów i okoliczne wsie to w dużej mierze tereny rolnicze, gdzie woda pochodzi z własnych studni. Badamy ją pod kątem bezpieczeństwa zdrowotnego — z dojazdem na miejsce i wynikiem w 48h.",
-        "why": "Na terenach rolniczych z hodowlą i nawożeniem rośnie ryzyko zanieczyszczeń bakteriologicznych oraz podwyższonych azotanów w wodzie ze studni. To parametry, które realnie wpływają na zdrowie, a zwłaszcza na niemowlęta.",
-        "note": "Jeśli w gospodarstwie jest mała dzieci lub przygotowujesz wodę do picia ze studni — badanie jest szczególnie zalecane.",
+        "intro": "Grybów i okoliczne wsie to tereny, gdzie wiele domów korzysta z własnych studni. Badamy mikrobiologię wody pod kątem bezpieczeństwa domowego użycia — z dojazdem i wynikiem zwykle po 48h.",
+        "why": "Na terenach rolniczych i w rozproszonej zabudowie rośnie ryzyko zanieczyszczeń mikrobiologicznych w wodzie ze studni, zwłaszcza po ulewach, roztopach albo pracach ziemnych.",
+        "note": "Jeśli w domu są dzieci, osoby starsze albo woda ma być używana do picia, mikrobiologia jest najważniejszym pierwszym sprawdzeniem.",
     },
     {
         "slug": "lacko", "name": "Łącko", "loc": "Łącku",
         "lat": "49.5556", "lon": "20.4344",
-        "intro": "Łącko to region sadowniczy z intensywnym rolnictwem — a to bezpośrednio przekłada się na jakość wody gruntowej. Badamy wodę ze studni i ujęć z dojazdem pod wskazany adres.",
-        "why": "Intensywne uprawy i nawożenie zwiększają ryzyko przedostawania się azotanów oraz pozostałości środków ochrony roślin do wód gruntowych. Studnie w rejonie sadowniczym warto kontrolować regularnie, nie tylko jednorazowo.",
-        "note": "Podwyższone azotany są szczególnie groźne dla niemowląt — dlatego w rejonach rolniczych badanie wody to konieczność, nie formalność.",
+        "intro": "Łącko i okolice to wiele prywatnych domów, działek i studni. Pobieramy próbkę u klienta i sprawdzamy, czy w wodzie nie ma bakterii wskaźnikowych.",
+        "why": "W rejonach rolniczych i sadowniczych warto kontrolować wodę regularnie. Mikroorganizmy w studni mogą pojawić się po ulewach, nieszczelnościach albo zmianach w otoczeniu ujęcia.",
+        "note": "Gdy problem dotyczy osadu, zapachu, twardości lub koloru, do mikrobiologii można dobrać rozszerzenie fizykochemiczne.",
     },
     {
         "slug": "podegrodzie", "name": "Podegrodzie", "loc": "Podegrodziu",
         "lat": "49.5800", "lon": "20.5500",
-        "intro": "Podegrodzie to gmina wiejska, gdzie większość gospodarstw korzysta z własnych studni. Przyjeżdżamy, pobieramy próbkę zgodnie z procedurą i dostarczamy wynik z jasną interpretacją.",
-        "why": "W zabudowie wiejskiej studnie często sąsiadują z szambami, oborami i polami uprawnymi, co zwiększa ryzyko zanieczyszczeń mikrobiologicznych i azotanowych. Tego nie wykryją zmysły — tylko badanie laboratoryjne.",
-        "note": "Po wykopaniu nowej studni lub jej remoncie badanie wody jest pierwszą rzeczą, którą warto zrobić przed użytkowaniem.",
+        "intro": "Podegrodzie to gmina, gdzie wiele gospodarstw korzysta z własnych studni. Przyjeżdżamy, pobieramy próbkę zgodnie z procedurą i dostarczamy wynik z jasnym omówieniem.",
+        "why": "W zabudowie wiejskiej studnie często sąsiadują z szambami, zabudowaniami gospodarczymi i polami, co zwiększa ryzyko zanieczyszczeń mikrobiologicznych. Tego nie wykryją zmysły — potrzebny jest wynik badania.",
+        "note": "Po wykopaniu nowej studni, remoncie, dezynfekcji albo zalaniu ujęcia mikrobiologia jest pierwszą rzeczą, którą warto zrobić przed używaniem wody.",
     },
 ]
 
@@ -110,9 +110,9 @@ TEMPLATE = r"""<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-    <title>Badanie Wody %%NAME%% od 150 zł | AquaDiagnostyka® | Dojazd GRATIS</title>
-    <meta name="description" content="Badanie wody w %%LOC%% — akredytowane laboratorium, dojazd i pobranie próbki GRATIS, wyniki w 48h. Studnia, woda pitna, basen, Sanepid. Zamów online od 150 zł.">
-    <meta name="keywords" content="badanie wody %%NAME%%, badanie wody ze studni %%NAME%%, laboratorium wody %%NAME%%, analiza wody %%NAME%%, badanie wody pitnej %%NAME%%, badanie wody do Sanepidu %%NAME%%">
+    <title>Mikrobiologiczne badanie wody %%NAME%% | Studnia i dom | AquaDiagnostyka</title>
+    <meta name="description" content="Mikrobiologiczne badanie wody ze studni w %%LOC%% i okolicach. Pobranie próbki u klienta, wynik zwykle po 48h i jasne omówienie. Zamów online.">
+    <meta name="keywords" content="mikrobiologiczne badanie wody %%NAME%%, badanie wody ze studni %%NAME%%, bakterie w wodzie %%NAME%%, E coli w wodzie %%NAME%%, enterokoki w wodzie, badanie wody z dojazdem %%NAME%%">
     <meta name="author" content="AquaDiagnostyka - Laboratorium Badania Wody">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="language" content="Polish">
@@ -125,16 +125,16 @@ TEMPLATE = r"""<!DOCTYPE html>
     <meta property="og:type" content="website">
     <meta property="og:url" content="%%DOMAIN%%/badanie-wody-%%SLUG%%.html">
     <meta property="og:site_name" content="AquaDiagnostyka">
-    <meta property="og:title" content="Badanie Wody %%NAME%% | AquaDiagnostyka® | Dojazd GRATIS">
-    <meta property="og:description" content="Akredytowane badanie wody w %%LOC%% od 150 zł. Dojazd GRATIS, wyniki w 48h. Zamów online.">
+    <meta property="og:title" content="Mikrobiologiczne badanie wody %%NAME%% | AquaDiagnostyka">
+    <meta property="og:description" content="Badanie mikrobiologiczne wody ze studni w %%LOC%%. Pobranie próbki u klienta, wynik zwykle po 48h i jasne omówienie.">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:image" content="%%DOMAIN%%/baner_gmb.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Badanie Wody %%NAME%% | AquaDiagnostyka®">
-    <meta name="twitter:description" content="Akredytowane badanie wody w %%LOC%% od 150 zł. Dojazd GRATIS, wyniki w 48h.">
+    <meta name="twitter:title" content="Mikrobiologiczne badanie wody %%NAME%% | AquaDiagnostyka">
+    <meta name="twitter:description" content="Badanie mikrobiologiczne wody ze studni w %%LOC%%. Pobranie próbki u klienta i wynik zwykle po 48h.">
     <meta name="twitter:image" content="%%DOMAIN%%/baner_gmb.png">
 
     <link rel="canonical" href="%%DOMAIN%%/badanie-wody-%%SLUG%%.html">
@@ -161,14 +161,14 @@ TEMPLATE = r"""<!DOCTYPE html>
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Badanie wody",
+        "serviceType": "Mikrobiologiczne badanie wody ze studni",
         "provider": {
             "@type": "LocalBusiness",
             "name": "AquaDiagnostyka",
             "email": "kontakt@aquadiagnostyka.pl",
             "url": "https://aquadiagnostyka.pl",
             "image": "https://aquadiagnostyka.pl/baner_gmb.png",
-            "priceRange": "od 150 zł",
+            "priceRange": "od 180 zł",
             "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Nowy Sącz",
@@ -178,8 +178,8 @@ TEMPLATE = r"""<!DOCTYPE html>
             }
         },
         "areaServed": { "@type": "City", "name": "%%NAME%%" },
-        "description": "Akredytowane badanie wody w %%LOC%%: woda ze studni, woda pitna, woda basenowa, badania do Sanepidu. Dojazd i pobranie próbki gratis, wyniki w 48h.",
-        "offers": { "@type": "Offer", "price": "150", "priceCurrency": "PLN", "url": "https://aquadiagnostyka.pl/#kontakt" }
+        "description": "Mikrobiologiczne badanie wody ze studni i instalacji domowej w %%LOC%%. Pobranie próbki u klienta, wynik zwykle po 48h i jasne omówienie parametrów.",
+        "offers": { "@type": "Offer", "price": "180", "priceCurrency": "PLN", "url": "https://aquadiagnostyka.pl/#kontakt" }
     }
     </script>
 
@@ -188,10 +188,10 @@ TEMPLATE = r"""<!DOCTYPE html>
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            { "@type": "Question", "name": "Ile kosztuje badanie wody w %%LOC%%?", "acceptedAnswer": { "@type": "Answer", "text": "Badanie wody w %%LOC%% zaczyna się od 150 zł. Cena zależy od zakresu — od podstawowego badania fizykochemicznego, przez mikrobiologiczne, po pełny pakiet wymagany m.in. przez Sanepid. Dojazd i pobranie próbki są gratis." } },
-            { "@type": "Question", "name": "Czy dojeżdżacie do %%GEN%% po próbkę wody?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Przyjeżdżamy pod wskazany adres w %%LOC%% i okolicach, sami pobieramy próbkę zgodnie z procedurą i dostarczamy ją do laboratorium. Dojazd jest bezpłatny." } },
-            { "@type": "Question", "name": "Jak szybko otrzymam wyniki badania wody?", "acceptedAnswer": { "@type": "Answer", "text": "Standardowo wyniki dostarczamy w ciągu 48 godzin wraz z czytelną interpretacją oraz zaleceniami, co zrobić, jeśli woda przekracza normy." } },
-            { "@type": "Question", "name": "Czy badanie wody nadaje się do Sanepidu?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Wykonujemy badania akredytowanymi metodami, honorowanymi przez Sanepid (odbiory budynków, agroturystyka, gastronomia, studnie do spożycia)." } }
+            { "@type": "Question", "name": "Ile kosztuje mikrobiologiczne badanie wody w %%LOC%%?", "acceptedAnswer": { "@type": "Answer", "text": "Badanie mikrobiologiczne zaczyna się od ok. 180 zł. Ostateczna cena zależy od zakresu, pobrania próbki i tego, czy potrzebne jest rozszerzenie fizykochemiczne." } },
+            { "@type": "Question", "name": "Czy dojeżdżacie do %%GEN%% po próbkę wody?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Przyjeżdżamy pod wskazany adres w %%LOC%% i okolicach, pobieramy próbkę zgodnie z procedurą i dostarczamy ją do laboratorium." } },
+            { "@type": "Question", "name": "Jak szybko otrzymam wynik mikrobiologii?", "acceptedAnswer": { "@type": "Answer", "text": "Badanie mikrobiologiczne wymaga hodowli bakterii, dlatego wynik jest zwykle dostępny po 48 godzinach. Przy rozszerzeniu zakresu termin potwierdzamy przed badaniem." } },
+            { "@type": "Question", "name": "Czy muszę wiedzieć, jaki zakres wybrać?", "acceptedAnswer": { "@type": "Answer", "text": "Nie. W formularzu wystarczy opisać źródło wody i sytuację. Dla prywatnej studni zwykle zaczynamy od mikrobiologii, a fizykochemię proponujemy jako rozszerzenie, gdy ma to sens." } }
         ]
     }
     </script>
@@ -202,7 +202,7 @@ TEMPLATE = r"""<!DOCTYPE html>
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://aquadiagnostyka.pl/"},
-            {"@type": "ListItem", "position": 2, "name": "Badanie wody %%NAME%%", "item": "%%DOMAIN%%/badanie-wody-%%SLUG%%.html"}
+            {"@type": "ListItem", "position": 2, "name": "Mikrobiologiczne badanie wody %%NAME%%", "item": "%%DOMAIN%%/badanie-wody-%%SLUG%%.html"}
         ]
     }
     </script>
@@ -273,38 +273,38 @@ TEMPLATE = r"""<!DOCTYPE html>
         <section class="hero" style="border-top:none;">
             <div class="container">
                 <div class="badges">
-                    <span class="badge">Akredytowane metody</span>
-                    <span class="badge">Wyniki w 48h</span>
-                    <span class="badge">Dojazd GRATIS</span>
+                    <span class="badge">Mikrobiologia wody</span>
+                    <span class="badge">Prywatne studnie</span>
+                    <span class="badge">Wynik zwykle w 48h</span>
                 </div>
-                <h1>Badanie wody w <span class="accent">%%LOC%%</span> — sprawdzamy to za Ciebie</h1>
+                <h1>Mikrobiologiczne badanie wody w <span class="accent">%%LOC%%</span></h1>
                 <p class="lead">%%INTRO%%</p>
                 <div class="cta-row">
-                    <a href="%%DOMAIN%%/#kontakt" class="btn-primary">Zamów badanie wody</a>
-                    <a href="#uslugi" class="btn-secondary">Zobacz zakres badań</a>
+                    <a href="%%DOMAIN%%/#kontakt" class="btn-primary">Zamów mikrobiologię wody</a>
+                    <a href="#uslugi" class="btn-secondary">Zobacz kiedy warto badać</a>
                 </div>
-                <p class="micro">Badanie od 150 zł &nbsp;·&nbsp; Dojazd i pobranie próbki GRATIS w %%LOC%% &nbsp;·&nbsp; Wyniki w 48h</p>
+                <p class="micro">Mikrobiologia od ok. 180 zł &nbsp;·&nbsp; Pobranie próbki u klienta w %%LOC%% &nbsp;·&nbsp; Formularz online</p>
             </div>
         </section>
 
         <section>
             <div class="container prose">
-                <h2>Dlaczego warto zbadać wodę w %%LOC%%?</h2>
+                <h2>Dlaczego warto zrobić mikrobiologię wody w %%LOC%%?</h2>
                 <p>%%WHY%%</p>
-                <p>%%NOTE%% Regularne badanie wody to jedyny sposób, żeby wiedzieć na pewno, co pijesz — a często jest też wymagane formalnie, m.in. przy odbiorze domu, agroturystyce czy gastronomii (badanie honorowane przez Sanepid).</p>
+                <p>%%NOTE%% Badanie mikrobiologiczne odpowiada na najważniejsze pytanie prywatnego właściciela studni: czy w wodzie nie ma bakterii wskazujących na zanieczyszczenie.</p>
             </div>
         </section>
 
         <section id="uslugi">
             <div class="container">
-                <h2>Zakres badań wody w <span class="accent">%%LOC%%</span></h2>
+                <h2>Kiedy warto zbadać wodę w <span class="accent">%%LOC%%</span></h2>
                 <div class="grid">
-                    <div class="card"><h3>Woda ze studni</h3><p>Najczęstszy wybór — sprawdzenie, czy woda z własnego ujęcia nadaje się do picia.</p><div class="price">od 150 zł</div></div>
-                    <div class="card"><h3>Badanie mikrobiologiczne</h3><p>Bakterie coli, <em>E. coli</em>, ogólna liczba mikroorganizmów — kluczowe dla bezpieczeństwa zdrowotnego.</p><div class="price">od 150 zł</div></div>
-                    <div class="card"><h3>Badanie fizykochemiczne</h3><p>Azotany, azotyny, żelazo, mangan, twardość, pH, mętność i inne parametry jakości wody.</p><div class="price">od 150 zł</div></div>
-                    <div class="card"><h3>Pełny pakiet (Sanepid)</h3><p>Mikrobiologia + fizykochemia w jednym — zakres wymagany m.in. przy odbiorach i działalności.</p><div class="price">pakiet</div></div>
-                    <div class="card"><h3>Woda basenowa</h3><p>Kontrola jakości wody w przydomowych basenach i obiektach rekreacyjnych.</p><div class="price">wycena</div></div>
-                    <div class="card"><h3>Doradztwo</h3><p>Nie wiesz, jaki zakres wybrać? Zaznacz „proszę o doradztwo" w formularzu — dobierzemy badanie do Twojej sytuacji.</p><div class="price">gratis</div></div>
+                    <div class="card"><h3>Studnia przy domu</h3><p>Podstawowe sprawdzenie prywatnego ujęcia: <em>E. coli</em>, bakterie grupy coli, enterokoki i ogólna liczba mikroorganizmów.</p><div class="price">od ok. 180 zł</div></div>
+                    <div class="card"><h3>Zakup domu lub działki</h3><p>Przed decyzją o nieruchomości z własną studnią warto wiedzieć, czy woda wymaga dezynfekcji albo dalszej diagnostyki.</p><div class="price">mikrobiologia</div></div>
+                    <div class="card"><h3>Po ulewach lub przerwie</h3><p>Roztopy, podtopienia, prace ziemne albo długie nieużywanie studni zwiększają ryzyko problemu mikrobiologicznego.</p><div class="price">kontrola</div></div>
+                    <div class="card"><h3>Po dezynfekcji studni</h3><p>Po czyszczeniu lub chlorowaniu warto potwierdzić wynikiem, czy problem bakteriologiczny faktycznie został opanowany.</p><div class="price">badanie kontrolne</div></div>
+                    <div class="card"><h3>Woda z instalacji domowej</h3><p>Jeśli problem dotyczy kranu, instalacji albo zbiornika, opisz sytuację w formularzu — dobierzemy sensowny tryb pobrania.</p><div class="price">dobór zakresu</div></div>
+                    <div class="card"><h3>Rozszerzenie fizykochemiczne</h3><p>Gdy dochodzi zapach, osad, mętność, kolor albo dobór filtra, mikrobiologię można rozszerzyć o parametry składu wody.</p><div class="price">jako dodatek</div></div>
                 </div>
             </div>
         </section>
@@ -313,27 +313,27 @@ TEMPLATE = r"""<!DOCTYPE html>
             <div class="container">
                 <h2>Jak to działa?</h2>
                 <div class="grid">
-                    <div class="card"><h3>1. Formularz</h3><p>Wypełniasz krótki formularz online — adres w %%LOC%%, zakres badań, dane kontaktowe. Zajmuje minutę.</p></div>
-                    <div class="card"><h3>2. Dojazd i pobranie</h3><p>Przyjeżdżamy pod wskazany adres i sami pobieramy próbkę zgodnie z procedurą. Dojazd gratis.</p></div>
-                    <div class="card"><h3>3. Wyniki w 48h</h3><p>Otrzymujesz sprawozdanie z czytelną interpretacją i zaleceniami, jeśli woda przekracza normy.</p></div>
+                    <div class="card"><h3>1. Formularz</h3><p>Wypełniasz krótki formularz online — adres w %%LOC%%, źródło wody, sytuacja i telefon. Zajmuje minutę.</p></div>
+                    <div class="card"><h3>2. Pobranie próbki</h3><p>Potwierdzamy zakres i umawiamy pobranie próbki. Przy mikrobiologii prawidłowe pobranie ma kluczowe znaczenie.</p></div>
+                    <div class="card"><h3>3. Wynik i omówienie</h3><p>Otrzymujesz sprawozdanie z jasnym omówieniem, czy potrzebna jest dezynfekcja, kontrola albo rozszerzenie diagnostyki.</p></div>
                 </div>
             </div>
         </section>
 
         <section>
             <div class="container">
-                <h2>Najczęstsze pytania — badanie wody %%NAME%%</h2>
-                <div class="faq-item"><h3>Ile kosztuje badanie wody w %%LOC%%?</h3><p>Od 150 zł. Cena zależy od zakresu — od fizykochemicznego, przez mikrobiologiczne, po pełny pakiet wymagany m.in. przez Sanepid. Dojazd i pobranie próbki są gratis.</p></div>
-                <div class="faq-item"><h3>Czy dojeżdżacie do %%GEN%% po próbkę?</h3><p>Tak. Przyjeżdżamy pod wskazany adres w %%LOC%% i okolicach, sami pobieramy próbkę zgodnie z procedurą i dostarczamy do laboratorium. Dojazd jest bezpłatny.</p></div>
-                <div class="faq-item"><h3>Jak szybko otrzymam wyniki?</h3><p>Standardowo w ciągu 48 godzin, wraz z interpretacją i zaleceniami.</p></div>
-                <div class="faq-item"><h3>Czy badanie nadaje się do Sanepidu?</h3><p>Tak — wykonujemy badania akredytowanymi metodami, honorowanymi przez Sanepid.</p></div>
+                <h2>Najczęstsze pytania — mikrobiologia wody %%NAME%%</h2>
+                <div class="faq-item"><h3>Ile kosztuje mikrobiologiczne badanie wody w %%LOC%%?</h3><p>Badanie mikrobiologiczne zaczyna się od ok. 180 zł. Ostateczną cenę potwierdzamy po opisie źródła wody, sytuacji i ewentualnych wymagań formalnych.</p></div>
+                <div class="faq-item"><h3>Czy dojeżdżacie do %%GEN%% po próbkę?</h3><p>Tak. Przyjeżdżamy pod wskazany adres w %%LOC%% i okolicach, pobieramy próbkę zgodnie z procedurą i dostarczamy do laboratorium.</p></div>
+                <div class="faq-item"><h3>Jak szybko otrzymam wynik?</h3><p>Badanie mikrobiologiczne wymaga hodowli bakterii, dlatego wynik jest zwykle dostępny po 48 godzinach.</p></div>
+                <div class="faq-item"><h3>Czy muszę wiedzieć, jaki zakres wybrać?</h3><p>Nie. W formularzu opisujesz źródło wody i problem. Dla prywatnej studni zwykle zaczynamy od mikrobiologii, a fizykochemię proponujemy jako rozszerzenie, jeśli ma to sens.</p></div>
             </div>
         </section>
 
         <section>
             <div class="container">
                 <div class="cta-band">
-                    <h2>Zamów badanie wody w <span class="accent">%%LOC%%</span></h2>
+                    <h2>Zamów mikrobiologiczne badanie wody w <span class="accent">%%LOC%%</span></h2>
                     <p>Wypełnij formularz online — oddzwaniamy, doradzamy zakres i umawiamy dogodny termin pobrania próbki.</p>
                     <a href="%%DOMAIN%%/#kontakt" class="btn-primary">Wypełnij formularz zlecenia</a>
                 </div>
@@ -352,7 +352,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 
     <footer>
         <div class="container">
-            <p>© 2026 AquaDiagnostyka — akredytowane laboratorium badania wody, Nowy Sącz i okolice.<br>
+            <p>© 2026 AquaDiagnostyka — mikrobiologiczne badanie wody ze studni, Nowy Sącz i okolice.<br>
             Kontakt: <a href="mailto:kontakt@aquadiagnostyka.pl">kontakt@aquadiagnostyka.pl</a> &nbsp;·&nbsp; <a href="%%DOMAIN%%/#kontakt">Zamów badanie online</a></p>
         </div>
     </footer>
