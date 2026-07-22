@@ -3089,11 +3089,6 @@
                     <div class="parameter-grid" id="priceGridMicro"></div>
                 </div>
 
-                <div id="priceCategoryMicroOther" class="price-category">
-                    <h3>Pozostale badania mikrobiologiczne</h3>
-                    <div class="parameter-grid" id="priceGridMicroOther"></div>
-                </div>
-
                 <details id="physAccordion" class="price-accordion">
                     <summary>
                         <span>Fizykochemia wody - dodatkowe parametry (opcjonalnie)</span>
@@ -3779,62 +3774,6 @@
                 href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
             },
             {
-                id: 'micro_stool_shoe',
-                category: 'microOther',
-                name: 'Badanie kalu i/lub podeszew',
-                desc: 'Badanie mikrobiologiczne kalu lub wymazu, np. do celow sanitarno-epidemiologicznych.',
-                price: 475.00,
-                href: '/poradnik.html'
-            },
-            {
-                id: 'milk_bacteriology',
-                category: 'microOther',
-                name: 'Mleko - bakteriologia (1 probka)',
-                desc: 'Badanie bakteriologiczne mleka w jednej probce.',
-                price: 75.00,
-                href: '/poradnik.html'
-            },
-            {
-                id: 'milk_antibiotics',
-                category: 'microOther',
-                name: 'Mleko - antybiotyki',
-                desc: 'Wykrywanie pozostalosci antybiotykow w mleku.',
-                price: 75.00,
-                href: '/poradnik.html'
-            },
-            {
-                id: 'milk_old',
-                category: 'microOther',
-                name: 'OLD mleko',
-                desc: 'Ogolna liczba drobnoustrojow w mleku.',
-                price: 98.43,
-                href: '/poradnik.html'
-            },
-            {
-                id: 'milk_old_lks',
-                category: 'microOther',
-                name: 'OLD + LKS',
-                desc: 'Ogolna liczba drobnoustrojow oraz liczba komorek somatycznych.',
-                price: 129.15,
-                href: '/poradnik.html'
-            },
-            {
-                id: 'milk_old_lks_ab',
-                category: 'microOther',
-                name: 'OLD + LKS + antybiotyki',
-                desc: 'OLD i LKS wraz z wykryciem pozostalosci antybiotykow.',
-                price: 144.53,
-                href: '/poradnik.html'
-            },
-            {
-                id: 'mammal_stool',
-                category: 'microOther',
-                name: 'Kal ssaka',
-                desc: 'Badanie mikrobiologiczne kalu zwierzecego (ssaki).',
-                price: 175.00,
-                href: '/poradnik.html'
-            },
-            {
                 id: 'monitoring_control',
                 category: 'phys',
                 name: 'Monitoring kontrolny',
@@ -4003,7 +3942,6 @@
         function renderPriceItems() {
             const grids = {
                 micro: document.getElementById('priceGridMicro'),
-                microOther: document.getElementById('priceGridMicroOther'),
                 phys: document.getElementById('priceGridPhys')
             };
 
