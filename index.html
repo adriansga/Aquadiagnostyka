@@ -1037,6 +1037,45 @@
             color: #102532;
         }
 
+        .price-accordion {
+            margin-top: 26px;
+            border-top: 1px solid rgba(16, 37, 50, 0.09);
+            padding-top: 22px;
+        }
+
+        .price-accordion > summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 18px;
+            background: #f5fafc;
+            border: 1px solid rgba(16, 37, 50, 0.12);
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #102532;
+        }
+
+        .price-accordion > summary::-webkit-details-marker { display: none; }
+
+        /* Autorska regula .parameter-grid{display:grid} nadpisuje domyslne ukrywanie tresci
+           zamknietego <details> - wymuszamy ukrycie tresci gdy pasek jest zwiniety. */
+        .price-accordion:not([open]) > .parameter-grid { display: none; }
+
+        .price-accordion > summary .accordion-hint {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        .price-accordion > summary .accordion-hint::before { content: '+ Rozwin'; }
+        .price-accordion[open] > summary .accordion-hint::before { content: '- Zwin'; }
+        .price-accordion[open] > summary { margin-bottom: 16px; }
+
         .parameter-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -3050,10 +3089,18 @@
                     <div class="parameter-grid" id="priceGridMicro"></div>
                 </div>
 
-                <div id="priceCategoryPhys" class="price-category">
-                    <h3>Fizykochemia wody</h3>
-                    <div class="parameter-grid" id="priceGridPhys"></div>
+                <div id="priceCategoryMicroOther" class="price-category">
+                    <h3>Pozostale badania mikrobiologiczne</h3>
+                    <div class="parameter-grid" id="priceGridMicroOther"></div>
                 </div>
+
+                <details id="physAccordion" class="price-accordion">
+                    <summary>
+                        <span>Fizykochemia wody - dodatkowe parametry (opcjonalnie)</span>
+                        <span class="accordion-hint"></span>
+                    </summary>
+                    <div class="parameter-grid" id="priceGridPhys"></div>
+                </details>
 
                 <div class="package-summary">
                     <div>
@@ -3732,6 +3779,62 @@
                 href: '/poradnik-interpretacja-wynikow-mikrobiologii-wody.html'
             },
             {
+                id: 'micro_stool_shoe',
+                category: 'microOther',
+                name: 'Badanie kalu i/lub podeszew',
+                desc: 'Badanie mikrobiologiczne kalu lub wymazu, np. do celow sanitarno-epidemiologicznych.',
+                price: 475.00,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'milk_bacteriology',
+                category: 'microOther',
+                name: 'Mleko - bakteriologia (1 probka)',
+                desc: 'Badanie bakteriologiczne mleka w jednej probce.',
+                price: 75.00,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'milk_antibiotics',
+                category: 'microOther',
+                name: 'Mleko - antybiotyki',
+                desc: 'Wykrywanie pozostalosci antybiotykow w mleku.',
+                price: 75.00,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'milk_old',
+                category: 'microOther',
+                name: 'OLD mleko',
+                desc: 'Ogolna liczba drobnoustrojow w mleku.',
+                price: 98.43,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'milk_old_lks',
+                category: 'microOther',
+                name: 'OLD + LKS',
+                desc: 'Ogolna liczba drobnoustrojow oraz liczba komorek somatycznych.',
+                price: 129.15,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'milk_old_lks_ab',
+                category: 'microOther',
+                name: 'OLD + LKS + antybiotyki',
+                desc: 'OLD i LKS wraz z wykryciem pozostalosci antybiotykow.',
+                price: 144.53,
+                href: '/poradnik.html'
+            },
+            {
+                id: 'mammal_stool',
+                category: 'microOther',
+                name: 'Kal ssaka',
+                desc: 'Badanie mikrobiologiczne kalu zwierzecego (ssaki).',
+                price: 175.00,
+                href: '/poradnik.html'
+            },
+            {
                 id: 'monitoring_control',
                 category: 'phys',
                 name: 'Monitoring kontrolny',
@@ -3900,6 +4003,7 @@
         function renderPriceItems() {
             const grids = {
                 micro: document.getElementById('priceGridMicro'),
+                microOther: document.getElementById('priceGridMicroOther'),
                 phys: document.getElementById('priceGridPhys')
             };
 
@@ -4036,6 +4140,12 @@
             document.querySelectorAll('.package-preset').forEach(button => {
                 button.classList.toggle('is-active', button.dataset.preset === presetName);
             });
+
+            // Jesli preset wybiera parametr fizykochemiczny (schowany w pasku) - rozwin pasek,
+            // zeby zaznaczenie bylo widoczne dla klienta.
+            const physSelected = priceItems.some(it => it.category === 'phys' && selectedIds.includes(it.id));
+            const physAccordion = document.getElementById('physAccordion');
+            if (physAccordion && physSelected) physAccordion.open = true;
 
             updatePackageSummary();
         }
