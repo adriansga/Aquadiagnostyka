@@ -4128,7 +4128,10 @@
             mount.appendChild(contactFormBox);
         }
 
-        function openPackageOrderPanel() {
+        function openPackageOrderPanel(opts) {
+            opts = opts || {};
+            const doScroll = opts.scroll !== false;
+            const doFocus = opts.focus !== false;
             const panel = document.getElementById('packageOrderPanel');
             const cta = document.getElementById('usePackageCta');
             if (!panel) return;
@@ -4146,25 +4149,45 @@
             panel.setAttribute('aria-hidden', 'false');
             const builder = document.querySelector('.price-builder');
             if (builder) builder.classList.add('is-order-open');
-            if (cta) cta.textContent = 'Uzupelnij dane ponizej';
-            const firstFieldNow = document.querySelector('#contactForm input[name="imie_nazwisko"]');
-            if (firstFieldNow) firstFieldNow.focus({ preventScroll: true });
+            if (cta && doFocus) cta.textContent = 'Uzupelnij dane ponizej';
 
-            setTimeout(() => {
-                panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                const firstField = document.querySelector('#contactForm input[name="imie_nazwisko"]');
-                if (firstField) firstField.focus({ preventScroll: true });
-            }, 80);
+            if (doFocus) {
+                const firstFieldNow = document.querySelector('#contactForm input[name="imie_nazwisko"]');
+                if (firstFieldNow) firstFieldNow.focus({ preventScroll: true });
+            }
+            if (doScroll) {
+                setTimeout(() => {
+                    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (doFocus) {
+                        const firstField = document.querySelector('#contactForm input[name="imie_nazwisko"]');
+                        if (firstField) firstField.focus({ preventScroll: true });
+                    }
+                }, 80);
+            }
         }
 
         setupInlineOrderForm();
 
         const usePackageCta = document.getElementById('usePackageCta');
         if (usePackageCta) {
-            usePackageCta.addEventListener('click', openPackageOrderPanel);
+            usePackageCta.addEventListener('click', () => openPackageOrderPanel());
         }
 
+        // FIX przecieku leada: wszystkie CTA "Zamow badanie" prowadza do #kalkulator,
+        // ale formularz zamowienia siedzi w ukrytym panelu. Otwieramy panel przy kazdym
+        // takim CTA, zeby klient od razu widzial formularz (bez szukania drugiego przycisku).
+        document.querySelectorAll('a[href="#kalkulator"], a[href="#kontakt"]').forEach(function (link) {
+            if (link.id === 'usePackageCta') return;
+            link.addEventListener('click', function () {
+                setTimeout(function () { openPackageOrderPanel({ focus: false }); }, 120);
+            });
+        });
+
         applyPackagePreset('micro');
+
+        // Odslon formularz zamowienia od razu (pakiet 'micro' jest juz wybrany powyzej), bez
+        // wymuszania scrolla/klawiatury - lead docierajacy do kalkulatora zawsze widzi formularz.
+        openPackageOrderPanel({ scroll: false, focus: false });
 
         // ===== FORM HANDLING WITH LOADING STATE =====
         function buildCustomerConfirmationPayload(formData) {
