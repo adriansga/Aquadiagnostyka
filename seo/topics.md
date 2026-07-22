@@ -29,7 +29,7 @@ Format: `- [ ] slug | Tytul | glowna fraza`
 ## Kolejka B2C mikrobiologia
 
 - [x] interpretacja-wynikow-mikrobiologii-wody | Jak czytac wynik mikrobiologii wody ze studni | interpretacja wyniku mikrobiologii wody
-- [ ] e-coli-w-wodzie-ze-studni-co-robic | E. coli w wodzie ze studni - co zrobic krok po kroku | E coli w wodzie ze studni
+- [x] e-coli-w-wodzie-ze-studni-co-robic | E. coli w wodzie ze studni - co zrobic krok po kroku | E coli w wodzie ze studni
 - [ ] enterokoki-w-wodzie-ze-studni | Enterokoki w wodzie ze studni - co oznaczaja | enterokoki w wodzie ze studni
 - [ ] bakterie-grupy-coli-w-wodzie | Bakterie grupy coli w wodzie - czy mozna pic wode | bakterie grupy coli w wodzie
 - [ ] badanie-wody-po-dezynfekcji-studni | Badanie wody po dezynfekcji studni - kiedy zrobic kontrole | badanie wody po dezynfekcji studni
