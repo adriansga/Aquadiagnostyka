@@ -1101,6 +1101,43 @@
             background: rgba(20, 127, 168, 0.07);
         }
 
+        .parameter-card.is-featured {
+            position: relative;
+            margin-top: 14px;
+            border-color: var(--primary);
+            background: linear-gradient(180deg, rgba(20, 127, 168, 0.10), #f4fbfe);
+            box-shadow: 0 0 0 2px rgba(20, 127, 168, 0.55), 0 12px 30px rgba(20, 127, 168, 0.20);
+            animation: featuredPulse 2.6s ease-in-out infinite;
+        }
+
+        .parameter-card.is-featured .parameter-price { color: var(--primary); }
+
+        .parameter-card.is-featured .featured-badge {
+            position: absolute;
+            top: -11px;
+            left: 14px;
+            background: var(--primary);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.64rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 4px 11px;
+            border-radius: 999px;
+            box-shadow: 0 4px 12px rgba(20, 127, 168, 0.35);
+            white-space: nowrap;
+        }
+
+        @keyframes featuredPulse {
+            0%, 100% { box-shadow: 0 0 0 2px rgba(20, 127, 168, 0.50), 0 12px 28px rgba(20, 127, 168, 0.18); }
+            50% { box-shadow: 0 0 0 2px rgba(20, 127, 168, 0.80), 0 16px 38px rgba(20, 127, 168, 0.34); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .parameter-card.is-featured { animation: none; }
+        }
+
         .parameter-card input {
             width: 18px;
             height: 18px;
@@ -1521,7 +1558,7 @@
             padding: 24px 28px;
             background: transparent;
             border: none;
-            color: white;
+            color: #102532;
             font-size: 1.05rem;
             font-weight: 600;
             cursor: pointer;
@@ -1562,7 +1599,7 @@
         }
 
         .faq-answer p {
-            color: var(--text-gray);
+            color: #4b6475;
             line-height: 1.8;
         }
 
@@ -3134,7 +3171,7 @@
                 <div class="diy-card reveal" data-diy-card="micro">
                     <h3>Zestaw DIY mikrobiologia</h3>
                     <p>Sterylne opakowanie, instrukcja pobrania i dalsze kroki dla podstawowego badania mikrobiologicznego wody ze studni.</p>
-                    <div class="diy-price">190,00 zl <span>175,00 zl zestaw + 15,00 zl dostawa</span></div>
+                    <div class="diy-price">190,00 zl <span>zestaw &middot; dostawa 15 zl, gratis od 200 zl</span></div>
                     <div class="diy-controls">
                         <input class="diy-qty" id="diyQtyMicro" type="number" min="1" max="10" value="1" aria-label="Ilosc zestawow DIY mikrobiologia">
                         <button class="diy-button" type="button" data-diy="micro">Wstepnie zamow zestaw</button>
@@ -3143,7 +3180,7 @@
                 <div class="diy-card reveal" data-diy-card="micro_control">
                     <h3>Zestaw DIY mikrobiologia + kontrolny fizyko</h3>
                     <p>Opcja dla osob, ktore poza bakteriami chca sprawdzic podstawowe cechy wody, np. metnosc, zapach, pH i jon amonowy.</p>
-                    <div class="diy-price">397,57 zl <span>382,57 zl zestaw + 15,00 zl dostawa</span></div>
+                    <div class="diy-price">400,00 zl <span>zestaw &middot; dostawa gratis (od 200 zl)</span></div>
                     <div class="diy-controls">
                         <input class="diy-qty" id="diyQtyMicroControl" type="number" min="1" max="10" value="1" aria-label="Ilosc zestawow DIY mikrobiologia i fizykochemia">
                         <button class="diy-button" type="button" data-diy="micro_control">Wstepnie zamow zestaw</button>
@@ -3768,6 +3805,7 @@
             {
                 id: 'micro_private',
                 category: 'micro',
+                featured: true,
                 name: 'Pakiet podstawowy badania mikrobiologicznego wody ze studni',
                 desc: 'Bakterie grupy coli, E. coli, enterokoki kalowe i ogolna liczba bakterii.',
                 price: 350.00,
@@ -3834,7 +3872,7 @@
                 category: 'phys',
                 name: 'Monitoring kontrolny',
                 desc: 'Barwa, zapach, smak, metnosc, jon amonowy i pH.',
-                price: 415.13,
+                price: 420.00,
                 href: '/poradnik-woda-metna-przyczyny.html'
             },
             {
@@ -3842,7 +3880,7 @@
                 category: 'phys',
                 name: 'Monitoring przegladowy',
                 desc: 'Szeroki zakres przegladowy - do potwierdzenia przed zleceniem.',
-                price: 4150.13,
+                price: 4150.00,
                 href: '/poradnik.html'
             },
             {
@@ -3850,7 +3888,7 @@
                 category: 'phys',
                 name: 'Jon amonowy',
                 desc: 'Pomaga ocenic swiezosc zanieczyszczenia i stan ujecia.',
-                price: 184.50,
+                price: 180.00,
                 href: '/poradnik.html'
             },
             {
@@ -3858,7 +3896,7 @@
                 category: 'phys',
                 name: 'Metnosc',
                 desc: 'Dla wody mlecznej, z osadem albo po opadach.',
-                price: 169.13,
+                price: 170.00,
                 href: '/poradnik-woda-metna-przyczyny.html'
             },
             {
@@ -3866,7 +3904,7 @@
                 category: 'phys',
                 name: 'pH',
                 desc: 'Kwasowosc lub zasadowosc wody, wazna dla instalacji i filtracji.',
-                price: 79.95,
+                price: 80.00,
                 href: '/poradnik.html'
             },
             {
@@ -3874,7 +3912,7 @@
                 category: 'phys',
                 name: 'Przewodnosc',
                 desc: 'Szybki wskaznik ogolnej mineralizacji wody.',
-                price: 79.95,
+                price: 80.00,
                 href: '/poradnik.html'
             },
             {
@@ -3882,7 +3920,7 @@
                 category: 'phys',
                 name: 'Twardosc',
                 desc: 'Wazne przy kamieniu, czajniku, armaturze i doborze zmiekczacza.',
-                price: 123.00,
+                price: 120.00,
                 href: '/poradnik-twarda-woda-co-zrobic.html'
             },
             {
@@ -3890,7 +3928,7 @@
                 category: 'phys',
                 name: 'Zapach',
                 desc: 'Gdy woda ma zapach chloru, stechlizny, siarki albo metaliczny.',
-                price: 55.35,
+                price: 60.00,
                 href: '/poradnik.html'
             },
             {
@@ -3898,7 +3936,7 @@
                 category: 'phys',
                 name: 'Barwa',
                 desc: 'Dla zoltej, brunatnej albo wyraznie zabarwionej wody.',
-                price: 61.50,
+                price: 60.00,
                 href: '/poradnik.html'
             },
             {
@@ -3906,7 +3944,7 @@
                 category: 'phys',
                 name: 'Zelazo',
                 desc: 'Dla rudego osadu, metalicznego smaku i przebarwien armatury.',
-                price: 246.00,
+                price: 250.00,
                 href: '/poradnik.html'
             },
             {
@@ -3914,7 +3952,7 @@
                 category: 'phys',
                 name: 'Mangan',
                 desc: 'Dla ciemnych osadow, zaciekow i problemow z instalacja.',
-                price: 369.00,
+                price: 370.00,
                 href: '/poradnik.html'
             },
             {
@@ -3922,7 +3960,7 @@
                 category: 'phys',
                 name: 'Zelazo + mangan',
                 desc: 'Pakietowa pozycja z aktualnego cennika DOCX.',
-                price: 399.75,
+                price: 400.00,
                 href: '/poradnik.html'
             },
             {
@@ -3930,7 +3968,7 @@
                 category: 'phys',
                 name: 'Azotyny',
                 desc: 'Parametr zwiazany z ryzykiem zanieczyszczen biologicznych i nawozowych.',
-                price: 169.13,
+                price: 170.00,
                 href: '/poradnik.html'
             },
             {
@@ -3938,7 +3976,7 @@
                 category: 'phys',
                 name: 'Azotany',
                 desc: 'Wazne przy studniach blisko pol, szamb i miejsc splywu zanieczyszczen.',
-                price: 169.13,
+                price: 170.00,
                 href: '/poradnik.html'
             }
         ];
@@ -3962,23 +4000,30 @@
         const CUSTOMER_CONFIRMATION_ENDPOINT = 'https://api-confirmation.vercel.app/api/confirm';
         let packageDiscountApplied = false;
 
+        const DIY_FREE_SHIPPING_FROM = 200;
+        const DIY_SHIPPING = 15.00;
         const diyOptions = {
             micro: {
                 label: 'Zestaw DIY mikrobiologia',
-                unitPrice: 175.00,
-                shipping: 15.00,
+                unitPrice: 190.00,
+                shipping: DIY_SHIPPING,
                 qtySelector: '#diyQtyMicro',
                 preset: 'micro'
             },
             micro_control: {
                 label: 'Zestaw DIY mikrobiologia + kontrolny fizyko',
-                unitPrice: 382.57,
-                shipping: 15.00,
+                unitPrice: 400.00,
+                shipping: DIY_SHIPPING,
                 qtySelector: '#diyQtyMicroControl',
                 preset: 'microPlusControl'
             }
         };
         let diySelection = null;
+
+        // Dostawa DIY liczona osobno od ceny zestawu; gratis od progu 200 zl.
+        function diyShippingFor(subtotal, baseShipping) {
+            return subtotal >= DIY_FREE_SHIPPING_FROM ? 0 : baseShipping;
+        }
 
         function roundMoney(value) {
             return Math.round((value + Number.EPSILON) * 100) / 100;
@@ -4006,9 +4051,10 @@
                 if (!grid) return;
 
                 const card = document.createElement('div');
-                card.className = 'parameter-card';
+                card.className = 'parameter-card' + (item.featured ? ' is-featured' : '');
                 card.dataset.itemId = item.id;
                 card.innerHTML = `
+                    ${item.featured ? '<span class="featured-badge">Najczęściej wybierany</span>' : ''}
                     <input class="package-param" type="checkbox" id="param-${item.id}" value="${item.id}" data-price="${item.price}">
                     <div>
                         <label class="parameter-name" for="param-${item.id}">${item.name}</label>
@@ -4178,14 +4224,16 @@
             const qty = Math.max(1, Math.min(10, parseInt(qtyInput && qtyInput.value ? qtyInput.value : '1', 10) || 1));
             if (qtyInput) qtyInput.value = String(qty);
 
+            const unitTotal = roundMoney(option.unitPrice * qty);
+            const shipping = diyShippingFor(unitTotal, option.shipping);
             diySelection = {
                 key: optionKey,
                 label: option.label,
                 qty,
                 unitPrice: option.unitPrice,
-                unitTotal: roundMoney(option.unitPrice * qty),
-                shipping: option.shipping,
-                total: roundMoney(option.unitPrice * qty + option.shipping)
+                unitTotal,
+                shipping,
+                total: roundMoney(unitTotal + shipping)
             };
 
             applyPackagePreset(option.preset);
@@ -4219,7 +4267,8 @@
                 input.value = String(qty);
                 diySelection.qty = qty;
                 diySelection.unitTotal = roundMoney(option.unitPrice * qty);
-                diySelection.total = roundMoney(option.unitPrice * qty + option.shipping);
+                diySelection.shipping = diyShippingFor(diySelection.unitTotal, option.shipping);
+                diySelection.total = roundMoney(diySelection.unitTotal + diySelection.shipping);
                 updateDiyFields();
                 updatePackageSummary();
             });
@@ -4498,7 +4547,7 @@
                 saveEl.textContent = 'Oszczedzasz ' + formatPLN(offerPricing.discountAmount) + ' na pierwszym badaniu.';
             }
             if (diyEl) {
-                diyEl.textContent = 'Zestaw DIY mikrobiologia: 190,00 zl z dostawa.';
+                diyEl.textContent = 'Zestaw DIY mikrobiologia: 190,00 zl + dostawa (gratis od 200 zl).';
             }
         }
 
@@ -4691,7 +4740,7 @@
                 <button class="cta-primary" type="button" onclick="applyExitDiscount()">Zostaw rabat i zloz zgloszenie</button>
                 <button class="exit-popup-secondary" type="button" onclick="showDiyFromExitPopup()">Sprawdz zestaw DIY</button>
             </div>
-            <p class="exit-popup-diy" id="exitDiyPrice">Zestaw DIY mikrobiologia: 190,00 zl z dostawa.</p>
+            <p class="exit-popup-diy" id="exitDiyPrice">Zestaw DIY mikrobiologia: 190,00 zl + dostawa (gratis od 200 zl).</p>
             <p class="exit-popup-privacy">Rabat nie oznacza platnosci na stronie. Potwierdzimy zakres i termin po wyslaniu formularza.</p>
         </div>
     </div>
