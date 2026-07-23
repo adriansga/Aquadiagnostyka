@@ -3159,35 +3159,35 @@
         </div>
     </section>
 
-    <!-- ==================== ZESTAW DIY TEST ==================== -->
+    <!-- ==================== ZESTAW ZROB TO SAM ==================== -->
     <section id="zestaw-diy" class="diy-section">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <span class="section-label">Opcja testowa</span>
+                <span class="section-label">Zrób to sam</span>
                 <h2 class="section-title section-title-center">Zestaw do pobrania probki <span class="accent">we wlasnym zakresie</span></h2>
                 <p class="section-subtitle section-subtitle-center">Testujemy wariant wysylkowy dla osob, ktore chca pobrac probke samodzielnie. Przed platnoscia potwierdzimy dostepnosc zestawu, instrukcje i termin dostarczenia probki do badania.</p>
             </div>
             <div class="diy-grid">
                 <div class="diy-card reveal" data-diy-card="micro">
-                    <h3>Zestaw DIY mikrobiologia</h3>
+                    <h3>Zestaw ZRÓB TO SAM - mikrobiologia</h3>
                     <p>Sterylne opakowanie, instrukcja pobrania i dalsze kroki dla podstawowego badania mikrobiologicznego wody ze studni.</p>
                     <div class="diy-price">190,00 zl <span>zestaw &middot; dostawa 15 zl, gratis od 200 zl</span></div>
                     <div class="diy-controls">
-                        <input class="diy-qty" id="diyQtyMicro" type="number" min="1" max="10" value="1" aria-label="Ilosc zestawow DIY mikrobiologia">
+                        <input class="diy-qty" id="diyQtyMicro" type="number" min="1" max="10" value="1" aria-label="Ilosc zestawow ZRÓB TO SAM mikrobiologia">
                         <button class="diy-button" type="button" data-diy="micro">Wstepnie zamow zestaw</button>
                     </div>
                 </div>
                 <div class="diy-card reveal" data-diy-card="micro_control">
-                    <h3>Zestaw DIY mikrobiologia + kontrolny fizyko</h3>
+                    <h3>Zestaw ZRÓB TO SAM - mikrobiologia + kontrolny fizyko</h3>
                     <p>Opcja dla osob, ktore poza bakteriami chca sprawdzic podstawowe cechy wody, np. metnosc, zapach, pH i jon amonowy.</p>
                     <div class="diy-price">400,00 zl <span>zestaw &middot; dostawa gratis (od 200 zl)</span></div>
                     <div class="diy-controls">
-                        <input class="diy-qty" id="diyQtyMicroControl" type="number" min="1" max="10" value="1" aria-label="Ilosc zestawow DIY mikrobiologia i fizykochemia">
+                        <input class="diy-qty" id="diyQtyMicroControl" type="number" min="1" max="10" value="1" aria-label="Ilosc zestawow ZRÓB TO SAM mikrobiologia i fizykochemia">
                         <button class="diy-button" type="button" data-diy="micro_control">Wstepnie zamow zestaw</button>
                     </div>
                 </div>
             </div>
-            <p class="diy-footnote reveal">Na tym etapie to test zainteresowania, nie automatyczna platnosc. Jezeli wybierzesz zestaw DIY, formularz zapisze wariant, ilosc i kwote, a my potwierdzimy, czy w Twojej sytuacji pobranie we wlasnym zakresie ma sens.</p>
+            <p class="diy-footnote reveal">Na tym etapie to test zainteresowania, nie automatyczna platnosc. Jezeli wybierzesz zestaw ZRÓB TO SAM, formularz zapisze wariant, ilosc i kwote, a my potwierdzimy, czy w Twojej sytuacji pobranie we wlasnym zakresie ma sens.</p>
         </div>
     </section>
 
@@ -4004,14 +4004,14 @@
         const DIY_SHIPPING = 15.00;
         const diyOptions = {
             micro: {
-                label: 'Zestaw DIY mikrobiologia',
+                label: 'Zestaw ZRÓB TO SAM - mikrobiologia',
                 unitPrice: 190.00,
                 shipping: DIY_SHIPPING,
                 qtySelector: '#diyQtyMicro',
                 preset: 'micro'
             },
             micro_control: {
-                label: 'Zestaw DIY mikrobiologia + kontrolny fizyko',
+                label: 'Zestaw ZRÓB TO SAM - mikrobiologia + kontrolny fizyko',
                 unitPrice: 400.00,
                 shipping: DIY_SHIPPING,
                 qtySelector: '#diyQtyMicroControl',
@@ -4144,7 +4144,7 @@
                     notes.push('Rabat -10% na pierwsze badanie: oszczedzasz ' + formatPLN(pricing.discountAmount) + '. Przed rabatem: ' + formatPLN(pricing.originalTotal) + '.');
                 }
                 if (diySelection) {
-                    notes.push('DIY: ' + diySelection.label + ', ilosc: ' + diySelection.qty + ', suma z dostawa: ' + formatPLN(diySelection.total) + '.');
+                    notes.push('ZRÓB TO SAM: ' + diySelection.label + ', ilosc: ' + diySelection.qty + ', suma z dostawa: ' + formatPLN(diySelection.total) + '.');
                 }
                 formDiscountNote.textContent = notes.join(' ');
                 formDiscountNote.classList.toggle('is-visible', notes.length > 0);
@@ -4208,7 +4208,7 @@
                 return;
             }
 
-            if (interestField) interestField.value = 'TAK - test zestawu DIY';
+            if (interestField) interestField.value = 'TAK - test zestawu ZRÓB TO SAM';
             if (variantField) variantField.value = diySelection.label;
             if (qtyField) qtyField.value = String(diySelection.qty);
             if (priceField) priceField.value = formatPLN(diySelection.unitTotal);
@@ -4547,7 +4547,7 @@
                 saveEl.textContent = 'Oszczedzasz ' + formatPLN(offerPricing.discountAmount) + ' na pierwszym badaniu.';
             }
             if (diyEl) {
-                diyEl.textContent = 'Zestaw DIY mikrobiologia: 190,00 zl + dostawa (gratis od 200 zl).';
+                diyEl.textContent = 'Zestaw ZRÓB TO SAM - mikrobiologia: 190,00 zl + dostawa (gratis od 200 zl).';
             }
         }
 
@@ -4738,9 +4738,9 @@
             </div>
             <div class="exit-popup-actions">
                 <button class="cta-primary" type="button" onclick="applyExitDiscount()">Zostaw rabat i zloz zgloszenie</button>
-                <button class="exit-popup-secondary" type="button" onclick="showDiyFromExitPopup()">Sprawdz zestaw DIY</button>
+                <button class="exit-popup-secondary" type="button" onclick="showDiyFromExitPopup()">Sprawdz zestaw ZRÓB TO SAM</button>
             </div>
-            <p class="exit-popup-diy" id="exitDiyPrice">Zestaw DIY mikrobiologia: 190,00 zl + dostawa (gratis od 200 zl).</p>
+            <p class="exit-popup-diy" id="exitDiyPrice">Zestaw ZRÓB TO SAM - mikrobiologia: 190,00 zl + dostawa (gratis od 200 zl).</p>
             <p class="exit-popup-privacy">Rabat nie oznacza platnosci na stronie. Potwierdzimy zakres i termin po wyslaniu formularza.</p>
         </div>
     </div>
