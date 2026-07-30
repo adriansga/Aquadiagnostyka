@@ -13,8 +13,18 @@
 <link rel="canonical" href="https://aquadiagnostyka.pl/zestaw-domowy">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="dns-prefetch" href="https://formspree.io">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HN31380S5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7HN31380S5');
+</script>
+<script defer src="/aqua-tracking.js"></script>
 <style>
 :root{
   --primary:#147fa8; --primary-strong:#0d6486; --accent:#0099ff;
@@ -131,7 +141,7 @@ footer a{color:#bcd4e0}
     </div>
     <div class="price-badge"><span class="big">190 zł</span><span class="sm">wysyłka pod dom · gratis od 200 zł</span></div>
     <div><a class="btn btn-lg" href="#zamow">Zamów zestaw</a></div>
-    <p class="hero-note">Test orientacyjny do samodzielnej kontroli wody. Nie zastępuje badania w laboratorium akredytowanym.</p>
+    <p class="hero-note">Zestaw do pierwszej kontroli wody w domu. Formalna ścieżka laboratoryjna jest osobną usługą.</p>
   </div>
 </section>
 
@@ -219,7 +229,7 @@ footer a{color:#bcd4e0}
     <div class="mt24">
       <details><summary>Czy zrobienie testu jest trudne?</summary><div class="fa">Nie. Do zestawu dołączamy prostą, ilustrowaną instrukcję po polsku. Pobranie próbki i wykonanie testu zajmuje kilka minut.</div></details>
       <details><summary>Ile czekam na wynik?</summary><div class="fa">Wynik jest zwykle gotowy w 24-48 h od wykonania testu, zgodnie z instrukcją w zestawie.</div></details>
-      <details><summary>Czy wynik jest uznawany urzędowo?</summary><div class="fa">To test orientacyjny (wskaźnikowy) do samodzielnej kontroli wody. Nie zastępuje badania w laboratorium akredytowanym. Przy wyniku dodatnim warto zlecić badanie w laboratorium lub zgłosić sprawę do stacji Sanepid.</div></details>
+      <details><summary>Czy wynik jest uznawany urzędowo?</summary><div class="fa">To domowy test do pierwszej kontroli wody, a nie dokument urzędowy do Sanepidu. Jeśli potrzebujesz formalnej ścieżki laboratoryjnej, potraktujemy to jako osobną usługę.</div></details>
       <details><summary>Co zrobić, jeśli wynik wyjdzie zły?</summary><div class="fa">Podpowiemy kolejne kroki: dezynfekcja studni, badanie kontrolne albo badanie w laboratorium akredytowanym. Napisz do nas, pomożemy.</div></details>
       <details><summary>Ile kosztuje zestaw i wysyłka?</summary><div class="fa">Zestaw kosztuje 190 zł. Wysyłkę pod dom doliczamy osobno, a przy zamówieniu powyżej 200 zł dostawa jest gratis.</div></details>
     </div>
@@ -248,10 +258,22 @@ footer a{color:#bcd4e0}
       <input type="hidden" name="_subject" value="NOWE ZAMOWIENIE - zestaw domowy DIY (landing)">
       <input type="hidden" name="produkt" value="Zestaw domowy do badania wody - mikrobiologia (190 zl)">
       <input type="hidden" name="zrodlo" value="Landing zestaw-domowy">
-      <input type="hidden" name="landing_url" id="fLandingUrl" value="">
-      <input type="hidden" name="utm_source" id="fUtmSource" value="">
-      <input type="hidden" name="utm_medium" id="fUtmMedium" value="">
-      <input type="hidden" name="utm_campaign" id="fUtmCampaign" value="">
+      <input type="hidden" name="landing_url" id="fLandingUrl" class="tracking-landing-url" value="">
+      <input type="hidden" name="landing_path" class="tracking-landing-path" value="">
+      <input type="hidden" name="query_string" class="tracking-query-string" value="">
+      <input type="hidden" name="referrer" class="tracking-referrer" value="">
+      <input type="hidden" name="utm_source" id="fUtmSource" class="tracking-utm-source" value="">
+      <input type="hidden" name="utm_medium" id="fUtmMedium" class="tracking-utm-medium" value="">
+      <input type="hidden" name="utm_campaign" id="fUtmCampaign" class="tracking-utm-campaign" value="">
+      <input type="hidden" name="gclid" class="tracking-gclid" value="">
+      <input type="hidden" name="source_kind" class="tracking-source-kind" value="">
+      <input type="hidden" name="first_landing_url" class="tracking-first-landing-url" value="">
+      <input type="hidden" name="first_landing_path" class="tracking-first-landing-path" value="">
+      <input type="hidden" name="first_source_kind" class="tracking-first-source-kind" value="">
+      <input type="hidden" name="first_utm_source" class="tracking-first-utm-source" value="">
+      <input type="hidden" name="first_utm_medium" class="tracking-first-utm-medium" value="">
+      <input type="hidden" name="first_utm_campaign" class="tracking-first-utm-campaign" value="">
+      <input type="hidden" name="session_id" class="tracking-session-id" value="">
       <button class="btn btn-lg" type="submit" style="width:100%;max-width:none">Zamów zestaw</button>
       <div class="status" id="orderStatus"></div>
     </form>
@@ -267,7 +289,7 @@ footer a{color:#bcd4e0}
 </footer>
 <div class="legal">
   <div class="wrap center">
-    Zestaw domowy to test orientacyjny (wskaźnikowy) do samodzielnej kontroli wody i nie zastępuje badania w laboratorium akredytowanym. Wynik dodatni zaleca się potwierdzić badaniem laboratoryjnym lub zgłosić do stacji Sanepid. &copy; AquaDiagnostyka
+    Zestaw domowy sluzy do pierwszej kontroli wody w domu. Wynik dodatni warto skonsultowac i w razie potrzeby potwierdzic formalna sciezka laboratoryjna. &copy; AquaDiagnostyka
   </div>
 </div>
 
@@ -279,11 +301,17 @@ footer a{color:#bcd4e0}
   set('fUtmSource',p.get('utm_source')||'');
   set('fUtmMedium',p.get('utm_medium')||'');
   set('fUtmCampaign',p.get('utm_campaign')||'');
+  if (typeof window.populateAquaAttributionFields === 'function') {
+    window.populateAquaAttributionFields();
+  }
 
   var form=document.getElementById('orderForm');
   var status=document.getElementById('orderStatus');
   form.addEventListener('submit',async function(e){
     e.preventDefault();
+    if (typeof window.populateAquaAttributionFields === 'function') {
+      window.populateAquaAttributionFields();
+    }
     var btn=form.querySelector('button[type=submit]');
     var orig=btn.textContent; btn.textContent='Wysyłanie...'; btn.disabled=true;
     try{
@@ -291,8 +319,30 @@ footer a{color:#bcd4e0}
       if(res.ok){
         status.className='status ok';
         status.textContent='Dziękujemy! Zamówienie przyjęte. Potwierdzimy dostępność i termin wysyłki mailem lub telefonicznie.';
+        var attribution = window.aquaAttribution || {};
+        var firstTouch = window.aquaFirstTouch || {};
+        if(typeof gtag==='function'){
+          gtag('event','generate_lead',{
+            event_category:'landing_zestaw',
+            event_label:'orderForm',
+            currency:'PLN',
+            value:190,
+            item_name:'zestaw_domowy_mikrobiologia',
+            first_landing_path:firstTouch.landing_path || firstTouch.landingPath || '',
+            session_id:attribution.session_id || attribution.sessionId || '',
+            source_kind:attribution.source_kind || attribution.sourceKind || '',
+            utm_source:attribution.utm_source || attribution.utmSource || '',
+            utm_medium:attribution.utm_medium || attribution.utmMedium || '',
+            utm_campaign:attribution.utm_campaign || attribution.utmCampaign || ''
+          });
+          gtag('event','diy_order_form_success',{
+            event_category:'landing_zestaw',
+            event_label:'orderForm',
+            currency:'PLN',
+            value:190
+          });
+        }
         form.reset();
-        if(typeof gtag==='function'){gtag('event','generate_lead',{event_category:'landing_zestaw',event_label:'order'});}
       }else{throw new Error('form');}
     }catch(err){
       status.className='status err';
