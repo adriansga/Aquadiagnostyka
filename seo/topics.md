@@ -33,7 +33,7 @@ Format: `- [ ] slug | Tytul | glowna fraza`
 - [x] enterokoki-w-wodzie-ze-studni | Enterokoki w wodzie ze studni - co oznaczaja | enterokoki w wodzie ze studni
 - [x] bakterie-grupy-coli-w-wodzie | Bakterie grupy coli w wodzie - czy mozna pic wode | bakterie grupy coli w wodzie
 - [x] badanie-wody-po-dezynfekcji-studni | Badanie wody po dezynfekcji studni - kiedy zrobic kontrole | badanie wody po dezynfekcji studni
-- [ ] badanie-wody-po-ulewach | Badanie wody po ulewach i podtopieniach - kiedy jest konieczne | badanie wody po ulewach
+- [x] badanie-wody-po-ulewach | Badanie wody po ulewach i podtopieniach - kiedy jest konieczne | badanie wody po ulewach
 - [ ] woda-ze-studni-dla-dzieci | Woda ze studni w domu z dziecmi - kiedy zrobic mikrobiologie | woda ze studni dla dzieci
 - [ ] filtr-a-bakterie-w-wodzie | Czy filtr usuwa bakterie z wody ze studni | filtr bakterie woda ze studni
 - [ ] studnia-nieuzywana-przerwa-badanie | Studnia po dlugiej przerwie - jakie badanie wody zrobic | studnia po przerwie badanie wody
