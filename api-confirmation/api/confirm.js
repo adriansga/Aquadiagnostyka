@@ -51,6 +51,151 @@ function listFromSemicolon(value) {
     .filter(Boolean);
 }
 
+function firstValue(payload, names, limit = 220) {
+  for (const name of names) {
+    const value = clean(payload[name], limit);
+    if (value) return value;
+  }
+  return '';
+}
+
+function adminRecipients() {
+  return (process.env.ADMIN_TO || 'awielochapv@gmail.com')
+    .split(',')
+    .map(item => item.trim())
+    .filter(Boolean);
+}
+
+function leadTitle(payload, email) {
+  return firstValue(payload, ['imie_nazwisko', 'name', 'nazwisko'], 160)
+    || firstValue(payload, ['telefon', 'phone'], 80)
+    || email
+    || 'bez danych';
+}
+
+function leadRows(payload) {
+  const rows = [
+    ['Imię i nazwisko', firstValue(payload, ['imie_nazwisko', 'name', 'nazwisko'], 180)],
+    ['Telefon', firstValue(payload, ['telefon', 'phone'], 80)],
+    ['Email', firstValue(payload, ['email'], 220)],
+    ['Adres pobrania', firstValue(payload, ['adres', 'adres_pobrania'], 260)],
+    ['Adres wysyłki', firstValue(payload, ['adres_wysylki'], 260)],
+    ['Produkt', firstValue(payload, ['produkt', 'pakiet_nazwa'], 260)],
+    ['Zakres / pakiet', firstValue(payload, ['pakiet_parametry', 'liczba_zestawow'], 4000)],
+    ['Cena brutto', firstValue(payload, ['pakiet_cena_brutto', 'diy_suma_brutto'], 120)],
+    ['Rabat', firstValue(payload, ['pakiet_rabat_kwota'], 120)],
+    ['Kod rabatu', firstValue(payload, ['pakiet_kod_rabatu'], 120)],
+    ['Uwagi', firstValue(payload, ['uwagi', 'message'], 900)],
+    ['Źródło', firstValue(payload, ['zrodlo', 'source_kind'], 220)],
+    ['Landing URL', firstValue(payload, ['landing_url'], 900)],
+    ['Pierwszy landing', firstValue(payload, ['first_landing_url'], 900)],
+    ['UTM source', firstValue(payload, ['utm_source'], 160)],
+    ['UTM medium', firstValue(payload, ['utm_medium'], 160)],
+    ['UTM campaign', firstValue(payload, ['utm_campaign'], 180)],
+    ['GCLID', firstValue(payload, ['gclid'], 220)],
+    ['Session ID', firstValue(payload, ['session_id'], 120)]
+  ];
+
+  return rows.filter(([, value]) => value);
+}
+
+function buildAdminHtml(payload, email) {
+  const rows = leadRows(payload);
+  const htmlRows = rows.map(([label, value]) => `
+          <tr>
+            <td style="padding:8px 10px;border-bottom:1px solid #dbeaf0;color:#5d7280;width:165px;vertical-align:top;">${escapeHtml(label)}</td>
+            <td style="padding:8px 10px;border-bottom:1px solid #dbeaf0;color:#102532;vertical-align:top;">${escapeHtml(value)}</td>
+          </tr>`).join('');
+
+  return `<!doctype html>
+<html lang="pl">
+  <body style="margin:0;background:#f4fafc;color:#102532;font-family:Arial,sans-serif;line-height:1.55;">
+    <div style="max-width:760px;margin:0 auto;padding:24px 16px;">
+      <div style="background:#ffffff;border:1px solid #dbeaf0;border-radius:14px;padding:24px;">
+        <p style="margin:0 0 8px;color:#147fa8;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">AquaDiagnostyka - nowe zlecenie</p>
+        <h1 style="margin:0 0 14px;font-size:22px;line-height:1.2;color:#102532;">Nowe zgłoszenie z formularza</h1>
+        <p style="margin:0 0 16px;">Formspree przyjęło formularz, a ten mail jest niezależnym powiadomieniem admina z endpointu Resend.</p>
+        <table cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;background:#fbfdfe;border:1px solid #dbeaf0;border-radius:10px;overflow:hidden;">
+          ${htmlRows || '<tr><td style="padding:10px;">Brak pól formularza.</td></tr>'}
+        </table>
+        <p style="margin-top:18px;">Odpowiedz na tego maila, żeby napisać bezpośrednio do klienta: <strong>${escapeHtml(email)}</strong>.</p>
+      </div>
+    </div>
+  </body>
+</html>`;
+}
+
+function buildAdminText(payload, email) {
+  const lines = [
+    'AquaDiagnostyka - nowe zlecenie z formularza',
+    '',
+    'Formspree przyjęło formularz, a ten mail jest niezależnym powiadomieniem admina z endpointu Resend.',
+    ''
+  ];
+
+  for (const [label, value] of leadRows(payload)) {
+    lines.push(`${label}: ${value}`);
+  }
+
+  lines.push('', `Odpowiedz na tego maila, żeby napisać bezpośrednio do klienta: ${email}`);
+  return lines.join('\n');
+}
+
+async function sendResendMail(mail) {
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+      'User-Agent': 'AquaDiagnostykaConfirmation/1.1'
+    },
+    body: JSON.stringify(mail)
+  });
+
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    const error = new Error('resend_error');
+    error.status = response.status;
+    error.details = data && data.name ? data.name : 'unknown';
+    throw error;
+  }
+
+  return data;
+}
+
+async function fetchEmailStatus(id) {
+  if (!id) return null;
+
+  try {
+    const response = await fetch(`https://api.resend.com/emails/${encodeURIComponent(id)}`, {
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        'User-Agent': 'AquaDiagnostykaConfirmation/1.1'
+      }
+    });
+
+    if (!response.ok) return null;
+    const data = await response.json().catch(() => ({}));
+    return data && data.last_event ? data.last_event : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function waitForEmailStatus(id) {
+  for (const delay of [900, 1600, 2600]) {
+    await sleep(delay);
+    const status = await fetchEmailStatus(id);
+    if (status) return status;
+  }
+  return null;
+}
+
 function buildHtml(payload) {
   const selected = listFromSemicolon(payload.pakiet_parametry);
   const total = clean(payload.pakiet_cena_brutto, 80) || 'do potwierdzenia';
@@ -170,25 +315,43 @@ module.exports = async function handler(req, res) {
   };
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-        'User-Agent': 'AquaDiagnostykaConfirmation/1.0'
-      },
-      body: JSON.stringify(mail)
-    });
+    const data = await sendResendMail(mail);
+    const customerId = data.id || null;
+    let admin = { ok: false, id: null, last_event: null };
 
-    const data = await response.json().catch(() => ({}));
-
-    if (!response.ok) {
-      json(res, 502, { ok: false, error: 'resend_error', status: response.status, details: data && data.name ? data.name : 'unknown' });
-      return;
+    try {
+      const title = leadTitle(payload, email);
+      const adminMail = {
+        from: process.env.MAIL_FROM || 'Zespół AquaDiagnostyka <kontakt@aquadiagnostyka.pl>',
+        to: adminRecipients(),
+        reply_to: email,
+        subject: `NOWE ZLECENIE - AquaDiagnostyka - ${title}`,
+        html: buildAdminHtml(payload, email),
+        text: buildAdminText(payload, email)
+      };
+      const adminData = await sendResendMail(adminMail);
+      admin = {
+        ok: true,
+        id: adminData.id || null,
+        last_event: await waitForEmailStatus(adminData.id || null)
+      };
+    } catch (adminError) {
+      admin = {
+        ok: false,
+        id: null,
+        error: adminError.message || 'admin_send_failed',
+        status: adminError.status || null,
+        details: adminError.details || null
+      };
     }
 
-    json(res, 200, { ok: true, id: data.id || null });
+    json(res, 200, { ok: true, id: customerId, admin });
   } catch (error) {
-    json(res, 502, { ok: false, error: 'send_failed' });
+    json(res, 502, {
+      ok: false,
+      error: error.message === 'resend_error' ? 'resend_error' : 'send_failed',
+      status: error.status || null,
+      details: error.details || null
+    });
   }
 };

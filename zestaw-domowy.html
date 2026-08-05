@@ -295,6 +295,7 @@ footer a{color:#bcd4e0}
 
 <script>
 (function(){
+  var CUSTOMER_CONFIRMATION_ENDPOINT='https://api-confirmation.vercel.app/api/confirm';
   var p=new URLSearchParams(location.search);
   var set=function(id,v){var el=document.getElementById(id);if(el)el.value=v;};
   set('fLandingUrl',location.href);
@@ -307,6 +308,31 @@ footer a{color:#bcd4e0}
 
   var form=document.getElementById('orderForm');
   var status=document.getElementById('orderStatus');
+
+  async function sendConfirmationAndAdminNotification(formData){
+    var payload={};
+    formData.forEach(function(value,key){
+      payload[key]=value;
+    });
+    payload.adres=payload.adres_wysylki || payload.adres || '';
+    payload.pakiet_parametry=[
+      payload.produkt || 'Zestaw domowy do badania wody - mikrobiologia',
+      payload.liczba_zestawow || ''
+    ].filter(Boolean).join('; ');
+    payload.pakiet_cena_brutto=payload.liczba_zestawow || '190 zl + wysylka';
+
+    var response=await fetch(CUSTOMER_CONFIRMATION_ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    var data=await response.json().catch(function(){return{};});
+    if(!response.ok || !data.ok){
+      throw new Error('confirmation');
+    }
+    return data;
+  }
+
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if (typeof window.populateAquaAttributionFields === 'function') {
@@ -315,8 +341,10 @@ footer a{color:#bcd4e0}
     var btn=form.querySelector('button[type=submit]');
     var orig=btn.textContent; btn.textContent='Wysyłanie...'; btn.disabled=true;
     try{
-      var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      var formData=new FormData(form);
+      var res=await fetch(form.action,{method:'POST',body:formData,headers:{'Accept':'application/json'}});
       if(res.ok){
+        await sendConfirmationAndAdminNotification(formData);
         status.className='status ok';
         status.textContent='Dziękujemy! Zamówienie przyjęte. Potwierdzimy dostępność i termin wysyłki mailem lub telefonicznie.';
         var attribution = window.aquaAttribution || {};
